@@ -6,9 +6,11 @@ public class Health : MonoBehaviour
 {
     [SerializeField] public int health;
     [SerializeField] public int maxHealth;
+
     // Start is called before the first frame update
     void Start()
     {
+        //når man starter spillet bliver health initialiseret 
         health = maxHealth;
     }
 
@@ -24,7 +26,7 @@ public class Health : MonoBehaviour
 
         if (health <= 0)
         {
-           // player or enimy dies
+            Destroy(gameObject);
         }
     }
 }

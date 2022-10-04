@@ -9,24 +9,23 @@ public class PlanetGravity : MonoBehaviour
 
     public GameObject planet;
 
-    private float _lookAngle;
+    private float _rotateAngle;
 
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    private void Update()
     {
-
         Vector2 v = planet.transform.position - transform.position;
         
         // Gravity
         rb.AddForce(v.normalized * gravityForce);
 
-
-        _lookAngle = 90 + Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, _lookAngle);
+        //Rotate object to be perpendicular to the planet surface
+        _rotateAngle = 90 + Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, _rotateAngle);
     }
 
     public void SetPlanet(GameObject newPlanet)

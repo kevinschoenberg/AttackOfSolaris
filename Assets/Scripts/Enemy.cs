@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] public int health;
-    [SerializeField] public int maxHealth;
-
     [SerializeField] public GameObject player;
     [SerializeField] public float speed = 4.0f;
 
@@ -20,7 +17,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health = maxHealth;
+        
     }
     // Update is called once per frame
     void Update()
@@ -55,14 +52,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damageAmount)
-    {
-        health -= damageAmount;
-        
-        if (health <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
+
 
 }

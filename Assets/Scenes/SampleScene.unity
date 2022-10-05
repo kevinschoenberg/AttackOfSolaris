@@ -502,7 +502,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a1cddbe47c684cc89f8b355f2874512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityDistance: 250
   gravityForce: 5
   planet: {fileID: 210126134}
 --- !u!114 &881373367
@@ -518,7 +517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  jumpForce: 30
+  jumpForce: 25
   isFacingRight: 1
   groundCheck: {fileID: 61092797}
   groundLayer:
@@ -561,20 +560,10 @@ MonoBehaviour:
   firePoint: {fileID: 269992349}
   bulletPrefab: {fileID: 2054606728904864191, guid: 898c7f9236c44441bb6b9b1ec78a0344, type: 3}
   bulletForce: 20
---- !u!114 &881373370
-MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 881373362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b2fc2cfaa6b9d6458987cb2da2993a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 100
 --- !u!1 &1357915002
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,7 +598,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a1cddbe47c684cc89f8b355f2874512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityDistance: 250
   gravityForce: 5
   planet: {fileID: 210126134}
 --- !u!212 &1357915004

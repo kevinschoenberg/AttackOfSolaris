@@ -4,32 +4,28 @@ using UnityEngine;
 public class PlanetGravity : MonoBehaviour
 {
     Rigidbody2D rb;
-
-    public float gravityDistance = 250.0f;
+    
     public float gravityForce = 5.0f;
 
     public GameObject planet;
 
-    private float lookAngle;
+    private float _rotateAngle;
 
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
-    {   
-        // Distance to the planet
-        float dist = Vector3.Distance(planet.transform.position, transform.position);
-        
-        Vector3 v = planet.transform.position - transform.position;
+    private void Update()
+    {
+        Vector2 v = planet.transform.position - transform.position;
         
         // Gravity
-        rb.AddForce(v.normalized * ((1.0f - dist / gravityDistance) * gravityForce));
+        rb.AddForce(v.normalized * gravityForce);
 
-
-        lookAngle = 90 + Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, lookAngle);
+        //Rotate object to be perpendicular to the planet surface
+        _rotateAngle = 90 + Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, _rotateAngle);
     }
 
     public void SetPlanet(GameObject newPlanet)

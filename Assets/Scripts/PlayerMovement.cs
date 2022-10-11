@@ -13,8 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     private SpriteRenderer sprite;
     private Animator anim;
-    
-    
+    private enum MovementState {idle, running, jumping, falling};
     public bool isFacingRight = true;
     
     [SerializeField] private Transform groundCheck;
@@ -34,19 +33,14 @@ public class PlayerMovement : MonoBehaviour
         _inputX = Input.GetAxis("Horizontal");
         if (_inputX > 0f)
         {
-            anim.SetBool("running", true);
-            sprite.flipX = false;
             transform.Translate(Vector2.right * (Time.deltaTime * speed), Space.Self);
         }
         else if (_inputX < 0f)
         {
-            anim.SetBool("running", true);
-            sprite.flipX = true;
             transform.Translate(Vector2.left * (Time.deltaTime * speed), Space.Self);
         }
         else
         {
-            anim.SetBool("running", false);
             transform.Translate(Vector2.zero, Space.Self);
         }
         if(Input.GetButtonDown("Jump") && IsGrounded())
@@ -54,8 +48,36 @@ public class PlayerMovement : MonoBehaviour
             Vector3 v = transform.position - planet.transform.position;
             rb.AddForce(v * jumpForce);
         }
-
+        UpdateAnimationState();
         //Flip();
+    }
+    
+    private void UpdateAnimationState()
+    {
+        MovementState State;
+        if (_inputX > 0f)
+        {
+            State = MovementState.running;
+            sprite.flipX = false;
+        }
+        else if (_inputX < 0f)
+        {
+            State = MovementState.running;
+            sprite.flipX = true;
+        }
+        else
+        {
+            State = MovementState.idle;
+        }
+        if(rb.velocity.y > .1f)
+        {
+            State = MovementState.jumping;
+        }
+        else if (rb.velocity.y < -.1f)
+        {
+            State = MovementState.falling;
+        }
+        anim.SetInteger("AnimState", (int)State);
     }
 
     private bool IsGrounded()

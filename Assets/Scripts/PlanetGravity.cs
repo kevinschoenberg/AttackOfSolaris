@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+
+using Unity.VisualScripting;
 using UnityEngine;
 public class PlanetGravity : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class PlanetGravity : MonoBehaviour
     public float gravityForce = 5.0f;
 
     public GameObject planet;
+    public PlayerMovement pm;
 
     private float _rotateAngle;
 
@@ -21,7 +24,9 @@ public class PlanetGravity : MonoBehaviour
         Vector2 v = planet.transform.position - transform.position;
         
         // Gravity
-        rb.AddForce(v.normalized * gravityForce);
+        
+        if(pm.IsUnityNull() || !pm.IsGrounded())
+            rb.AddForce(v.normalized * gravityForce);
 
         //Rotate object to be perpendicular to the planet surface
         _rotateAngle = 90 + Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;

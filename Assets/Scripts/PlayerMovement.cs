@@ -10,8 +10,10 @@ public class PlayerMovement : MonoBehaviour
 
     public float jumpForce = 20;
     private float _inputX;
-    
-    
+
+    private SpriteRenderer sprite;
+    private Animator anim;
+    private enum MovementState {idle, running, jumping, falling};
     public bool isFacingRight = true;
     
     [SerializeField] private Transform groundCheck;
@@ -22,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sprite = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -39,23 +43,47 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.Translate(Vector2.zero, Space.Self);
         }
-        
-
         if(Input.GetButtonDown("Jump") && IsGrounded())
         {
             Vector3 v = transform.position - planet.transform.position;
-            
             rb.AddForce(v * jumpForce);
         }
-
-        Flip();
+        UpdateAnimationState();
+        //Flip();
+    }
+    
+    private void UpdateAnimationState()
+    {
+        MovementState State;
+        if (_inputX > 0f)
+        {
+            State = MovementState.running;
+            sprite.flipX = false;
+        }
+        else if (_inputX < 0f)
+        {
+            State = MovementState.running;
+            sprite.flipX = true;
+        }
+        else
+        {
+            State = MovementState.idle;
+        }
+        if(rb.velocity.y > .1f)
+        {
+            State = MovementState.jumping;
+        }
+        else if (rb.velocity.y < -.1f)
+        {
+            State = MovementState.falling;
+        }
+        anim.SetInteger("AnimState", (int)State);
     }
 
     private bool IsGrounded()
-    {
+    { 
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
-    
     private void Flip()
     {
         if(isFacingRight && _inputX < 0f || !isFacingRight && _inputX > 0f)
@@ -66,7 +94,6 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = localScale;
         }
     }
-
 }
 
 

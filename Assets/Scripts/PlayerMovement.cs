@@ -41,7 +41,11 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            transform.Translate(Vector2.zero, Space.Self);
+            rb.angularVelocity = 0f;
+            
+            if(IsGrounded())
+                rb.velocity = Vector2.zero;
+                
         }
         if(Input.GetButtonDown("Jump") && IsGrounded())
         {
@@ -81,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool IsGrounded()
     { 
-        return Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
     /*
     private void Flip()

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Shooting : MonoBehaviour
@@ -20,7 +18,7 @@ public class Shooting : MonoBehaviour
             _isFacingRight = pm.isFacingRight;
             
             Shoot();
-            _lastTime = Time.time;
+            _lastTime = Time.timeSinceLevelLoad;
         }
     }
 

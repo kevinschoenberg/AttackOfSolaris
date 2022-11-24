@@ -6,6 +6,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] public GameObject player;
+    private readonly int EnemyMeleeDmg = 1;
 
     public static int MaxDist = 7;
     public static int MinDist = 2;
@@ -19,10 +20,13 @@ public class Enemy : MonoBehaviour
     {
 
         //If the player is close, attack
-        if (Vector2.Distance(transform.position, player.transform.position) <= MinDist) 
-        {
-            //Attack Player
-        }
+        
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        player.TryGetComponent<Health>(out Health HealthComponent);
+        HealthComponent.TakeDamage(EnemyMeleeDmg);
     }
 
 

@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
         //If the player is close, attack
         
     }
-
+    // Needs to only be on collision with the player, not with all other objects.
     private void OnCollisionEnter2D(Collision2D collision)
     {
         player.TryGetComponent<Health>(out Health HealthComponent);

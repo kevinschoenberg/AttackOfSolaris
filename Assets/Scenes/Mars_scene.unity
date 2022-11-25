@@ -799,9 +799,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a1cddbe47c684cc89f8b355f2874512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityForce: 5
+  gravityForce: 10
   planet: {fileID: 210126134}
-  pm: {fileID: 0}
+  pm: {fileID: 395075117}
 --- !u!114 &395075117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -821,7 +821,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 1024
-  planet: {fileID: 0}
+  planet: {fileID: 210126134}
 --- !u!50 &395075118
 Rigidbody2D:
   serializedVersion: 4

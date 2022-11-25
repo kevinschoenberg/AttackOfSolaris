@@ -12,6 +12,17 @@ public class PatrolChase : MonoBehaviour
     private float _walkingSpeed = 2f;
     private int _isPlayerOnRightSide = 0;
 
+    /*Variables for animation*/
+    private enum MovementState {idle, walking};
+    private SpriteRenderer sprite;
+    private Animator anim;
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
+    }
 
     private void Update()
     {
@@ -56,7 +67,28 @@ public class PatrolChase : MonoBehaviour
             {
                 transform.Translate(Vector2.zero, Space.Self);
             }
+            UpdateAnimationState();  
         }
+    }
+
+    private void UpdateAnimationState()
+    {
+        MovementState State;
+        if (_isPlayerOnRightSide == 1 || index > 0)
+        {
+            State = MovementState.walking;
+            sprite.flipX = false;
+        }
+        else if (_isPlayerOnRightSide == -1 || index < 0)
+        {
+            State = MovementState.walking;
+            sprite.flipX = true;
+        }
+        else
+        {
+            State = MovementState.idle;
+        }
+        anim.SetInteger("AnimState", (int)State);
     }
 
 }

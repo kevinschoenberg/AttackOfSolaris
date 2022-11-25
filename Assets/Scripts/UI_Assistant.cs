@@ -47,4 +47,9 @@ public class UI_Assistant : MonoBehaviour
             }
         };
     }
+    private void Start()
+    {
+        //messageText = transform.Find("message").Find("messageText").GetComponent<TMPro.TextMeshProUGUI>();
+        //textWriterSingle = TextWriter.AddWriter_Static(messageText, "Hello World!", 0.1f, true, true);
+    }
 }

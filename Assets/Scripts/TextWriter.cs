@@ -39,7 +39,6 @@ public class TextWriter : MonoBehaviour
             {
                 timer += Interval;
                 Index++;
-                print("Character Index = " + Index);
                 string Temptext = Text.Substring(0, Index);
                 if (invisibleCharacters)
                 {

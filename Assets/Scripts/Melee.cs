@@ -1,21 +1,36 @@
-using System.Drawing;
+using System;
+using TMPro;
 using UnityEngine;
 
 public class Melee : MonoBehaviour
 {
-    public int damage = 20;
-    public int weaponRange = 10;
+    public int damage = 2;
+    public int weaponRange = 1;
     public Transform hitPoint;
-    private float _lastTime = 0f;
+    private float lastTime = 0f;
+    private PlayerMovement _pm;
+    private bool oldDir = true;
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1") && Time.timeSinceLevelLoad > _lastTime + 0.2f)
+        if (Input.GetButton("Fire1") && Time.timeSinceLevelLoad > lastTime + 0.2f)
         {
             Hit();
-            _lastTime = Time.timeSinceLevelLoad;
+            lastTime = Time.timeSinceLevelLoad;
         }
+        _pm = GetComponentInParent<PlayerMovement>();
+        if (_pm.isFacingRight && !oldDir)
+        {
+            hitPoint.Translate(2f, 0f, 0f);
+        }
+        else if (!_pm.isFacingRight && oldDir)
+        {
+            hitPoint.Translate(-2f, 0f, 0f);
+        }
+        oldDir = _pm.isFacingRight;
+        
+        print(hitPoint.position.ToString());
+
     }
 
     void Hit()

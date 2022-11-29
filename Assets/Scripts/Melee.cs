@@ -28,9 +28,6 @@ public class Melee : MonoBehaviour
             hitPoint.Translate(-2f, 0f, 0f);
         }
         oldDir = _pm.isFacingRight;
-        
-        print(hitPoint.position.ToString());
-
     }
 
     void Hit()

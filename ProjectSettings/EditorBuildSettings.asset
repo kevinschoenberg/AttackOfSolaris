@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Introduction.unity
+    guid: b1501b8042689f64fab84687f95fbe96
+  - enabled: 1
     path: Assets/Scenes/Moon_scene.unity
     guid: 85e57a966fbd2a64fabbc030fdf37da2
   - enabled: 1

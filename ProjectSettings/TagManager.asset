@@ -42,3 +42,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 3432036375
+    locked: 0
+  - name: Rain
+    uniqueID: 1577773829
+    locked: 0
+  - name: LightningT
+    uniqueID: 631429145
+    locked: 0
+  - name: Text
+    uniqueID: 241044567
+    locked: 0

@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
+
 public class TextWriter : MonoBehaviour
 {
     private TMPro.TextMeshProUGUI message;

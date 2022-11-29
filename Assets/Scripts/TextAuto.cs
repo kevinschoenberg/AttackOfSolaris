@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TextAuto : MonoBehaviour
 {
@@ -19,8 +20,11 @@ public class TextAuto : MonoBehaviour
             if (DateTimeOffset.Now.ToUnixTimeMilliseconds() - timer > 1500)
             {
                 messageText = transform.Find("message").Find("messageText").GetComponent<TMPro.TextMeshProUGUI>();
-
-                if (TextWriterInstance != null && TextWriterInstance.Index < TextWriterInstance.Text.Length)
+                if (msgindex == messageArray.Length)
+                {
+                    SceneManager.LoadScene(2);
+                }
+                else if (TextWriterInstance != null && TextWriterInstance.Index < TextWriterInstance.Text.Length)
                 {
                     //timer = DateTimeOffset.Now.ToUnixTimeMilliseconds();
                     TextWriterInstance.DisplayRemove();
@@ -40,12 +44,15 @@ public class TextAuto : MonoBehaviour
                     TextWriterInstance.AddTextor(messageText, message, 0.04f, true);
                     msgindex++;
                 }
+                
             }
         }
+
         else
         {
             timer = DateTimeOffset.Now.ToUnixTimeMilliseconds();
         }
+
 
     }
 }

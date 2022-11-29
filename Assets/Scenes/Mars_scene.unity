@@ -954,7 +954,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1362649213}
   bulletPrefab: {fileID: 2054606728904864191, guid: 898c7f9236c44441bb6b9b1ec78a0344, type: 3}
-  bulletForce: 20
+  bulletForce: 10
 --- !u!61 &395075115
 BoxCollider2D:
   m_ObjectHideFlags: 0

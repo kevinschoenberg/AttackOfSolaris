@@ -30,14 +30,8 @@ public class Shooting : MonoBehaviour
 
         pg.SetPlanet(GetComponent<PlanetGravity>().planet);
 
-        if (_isFacingRight)
-        {
-            rb.AddForce(firePoint.right * bulletForce, ForceMode2D.Impulse);
-        }
-        else
-        {
-            rb.AddForce(firePoint.right * (-1 * bulletForce), ForceMode2D.Impulse);
-        }
+        rb.AddForce(firePoint.right * bulletForce, ForceMode2D.Impulse);
+       
         
     }
 }

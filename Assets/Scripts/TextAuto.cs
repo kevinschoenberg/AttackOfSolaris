@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TextAuto : MonoBehaviour
 {
@@ -20,6 +21,10 @@ public class TextAuto : MonoBehaviour
             {
                 messageText = transform.Find("message").Find("messageText").GetComponent<TMPro.TextMeshProUGUI>();
 
+                if (msgindex == messageArray.Length)
+                {
+                    SceneManager.LoadScene(2);
+                }
                 if (TextWriterInstance != null && TextWriterInstance.Index < TextWriterInstance.Text.Length)
                 {
                     //timer = DateTimeOffset.Now.ToUnixTimeMilliseconds();

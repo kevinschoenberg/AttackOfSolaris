@@ -8,10 +8,12 @@ public class TextAuto : MonoBehaviour
     private int msgindex = 0;
     [SerializeField] private TextWriter TextWriterInstance;
     [SerializeField] private string[] messageArray;
+    [SerializeField] public Smooth_Transition Smooth_Trans;
     private long timer;
     private void Awake()
     {
         timer = DateTimeOffset.Now.ToUnixTimeMilliseconds();
+        Smooth_Trans.SwapSound();
     }
     private void Update()
     {

@@ -15,14 +15,11 @@ public class Smooth_Transition : MonoBehaviour
 
     IEnumerator TransitionSound(AudioSource current)
     {
-        print("1");
         float percentage = 0;
         if (current.volume > 0)
         {
-            print("2");
             while (current.volume > 0)
             {
-                print("3");
                 current.volume = Mathf.Lerp(normalVolume, 0, percentage);
                 percentage += Time.deltaTime / transitionTime;
                 yield return null;

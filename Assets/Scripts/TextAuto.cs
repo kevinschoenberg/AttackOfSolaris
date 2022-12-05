@@ -13,7 +13,8 @@ public class TextAuto : MonoBehaviour
     private void Awake()
     {
         timer = DateTimeOffset.Now.ToUnixTimeMilliseconds();
-        Smooth_Trans.SwapSound();
+        if (Smooth_Trans != null)
+            Smooth_Trans.SwapSound();
     }
     private void Update()
     {

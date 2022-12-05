@@ -16,13 +16,6 @@ public class TextButton : MonoBehaviour
             {
                 TextWriterInstance.DisplayRemove();
             }
-            else if (msgindex == 8)
-            {
-                // Allow User to name Character.
-                string message = messageArray[msgindex];
-                TextWriterInstance.AddTextor(messageText, message, 0.04f, true);
-                msgindex++;
-            }
             else if (msgindex < messageArray.Length)
             {
                 string message = messageArray[msgindex];

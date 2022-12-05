@@ -28,20 +28,17 @@ public class TextAuto : MonoBehaviour
                 }
                 else if (TextWriterInstance != null && TextWriterInstance.Index < TextWriterInstance.Text.Length)
                 {
-                    //timer = DateTimeOffset.Now.ToUnixTimeMilliseconds();
                     TextWriterInstance.DisplayRemove();
                 }
-                else if (msgindex == 8)
+                else if (msgindex == 7)
                 {
-                    //timer = DateTimeOffset.Now.ToUnixTimeMilliseconds();
-                    // Allow User to name Character.
+                    Smooth_Trans.SwapSound();
                     string message = messageArray[msgindex];
                     TextWriterInstance.AddTextor(messageText, message, 0.04f, true);
                     msgindex++;
                 }
                 else if (msgindex < messageArray.Length)
                 {
-                    //timer = DateTimeOffset.Now.ToUnixTimeMilliseconds();
                     string message = messageArray[msgindex];
                     TextWriterInstance.AddTextor(messageText, message, 0.04f, true);
                     msgindex++;

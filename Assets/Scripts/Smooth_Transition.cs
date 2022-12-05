@@ -7,6 +7,14 @@ public class Smooth_Transition : MonoBehaviour
 
     [SerializeField] private float normalVolume;
     [SerializeField] private float transitionTime;
+
+    private void Start()
+    {
+        if (Sound.name == "Music")
+        {
+            SwapSound();
+        }
+    }
     public void SwapSound()
     {
         AudioSource current = Sound;

@@ -177,7 +177,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 7
-  Smooth_Trans: {fileID: 0}
 --- !u!114 &22484099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,7 +364,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 5
-  Smooth_Trans: {fileID: 0}
 --- !u!114 &58996902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1641,7 +1639,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 3
-  Smooth_Trans: {fileID: 0}
 --- !u!114 &669265622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1936,7 +1933,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 2
-  Smooth_Trans: {fileID: 0}
 --- !u!114 &675053165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2853,7 +2849,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 8
-  Smooth_Trans: {fileID: 0}
 --- !u!114 &1025724717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3108,7 +3103,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 4
-  Smooth_Trans: {fileID: 0}
 --- !u!114 &1237738385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3873,7 +3867,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  Smooth_Trans: {fileID: 633090867}
 --- !u!114 &1604817513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5130,7 +5123,7 @@ GameObject:
   - component: {fileID: 2046985243}
   - component: {fileID: 2046985242}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: MenuMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5301,7 +5294,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 6
-  Smooth_Trans: {fileID: 0}
 --- !u!114 &2066081108
 MonoBehaviour:
   m_ObjectHideFlags: 0

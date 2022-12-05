@@ -10,7 +10,7 @@ public class Smooth_Transition : MonoBehaviour
 
     private void Start()
     {
-        if (Sound.name == "Music")
+        if (Sound.name == "MarsMusic" || Sound.name == "MenuMusic"  || Sound.name == "MoonMusic")
         {
             SwapSound();
         }

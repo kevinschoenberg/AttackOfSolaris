@@ -11,5 +11,9 @@ public class Select_level : MonoBehaviour
     {
         SceneManager.LoadScene(level);
     }
+    public void next_level()
+    {
+        SceneManager.LoadScene(level + 1);
+    }
 }
 

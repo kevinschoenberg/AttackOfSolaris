@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
     [SerializeField] public int health;
     [SerializeField] public int maxHealth;
     public HealthBar healthbar;
+    killcounter killcounterscript;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +16,7 @@ public class Health : MonoBehaviour
         //når man starter spillet bliver health initialiseret 
         health = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
+        killcounterscript = GameObject.Find("StageManager").GetComponent<killcounter>();
 
     }
     public void TakeDamage(int damageAmount)
@@ -24,7 +26,10 @@ public class Health : MonoBehaviour
 
         if (health <= 0)
         {
+
+            killcounterscript.Enemykilled();
             Destroy(gameObject);
+
         }
     }
 }

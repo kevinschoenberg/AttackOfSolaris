@@ -5549,7 +5549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1723477103}
   - component: {fileID: 1723477102}
-  - component: {fileID: 1723477101}
+  - component: {fileID: 1723477104}
   m_Layer: 3
   m_Name: Brightness
   m_TagString: Untagged
@@ -5557,22 +5557,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1723477101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1723477100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0150506b16380e4faba5420045e8885, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  brightnessslider: {fileID: 0}
-  brightness: {fileID: 11400000, guid: e0b8ccc181195684c89e16e293ebc117, type: 2}
-  layer: {fileID: 0}
-  global_exposure: 0
 --- !u!114 &1723477102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5605,6 +5589,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1723477104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723477100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edc546a21c64d6d4eb1cd5e14ea3a5fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brightness: {fileID: 11400000, guid: e0b8ccc181195684c89e16e293ebc117, type: 2}
+  layer: {fileID: 0}
 --- !u!1 &1959613623
 GameObject:
   m_ObjectHideFlags: 0

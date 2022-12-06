@@ -5156,7 +5156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a1cddbe47c684cc89f8b355f2874512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityForce: 5
+  gravityForce: 2
   planet: {fileID: 184730016}
   pm: {fileID: 881373367}
 --- !u!114 &881373367
@@ -5172,7 +5172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  jumpForce: 25
+  jumpForce: 8
   isFacingRight: 1
   groundCheck: {fileID: 61092797}
   groundLayer:

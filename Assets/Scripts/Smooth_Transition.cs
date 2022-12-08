@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Smooth_Transition : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Smooth_Transition : MonoBehaviour
     public float normalVolume;
     private float transitionTime = 5f;
     AdjustVolume VolumeSystem;
+    public Slider sliderInstance;
     public void AdjustVolume(float Volume)
     {
         VolumeSystem.SetVolume(Volume);
@@ -35,7 +37,18 @@ public class Smooth_Transition : MonoBehaviour
         if (VolumeSystem.GetVolume() == 0)
             VolumeSystem.SetVolume(normalVolume);
         normalVolume = VolumeSystem.GetVolume();
-        if (current.volume > normalVolume || current.volume < normalVolume)
+        if (sliderInstance != null)
+            sliderInstance.value = VolumeSystem.GetVolume();
+        if (current.volume == 0)
+        {
+            while (current.volume < normalVolume)
+            {
+                current.volume = Mathf.Lerp(0, normalVolume, percentage);
+                percentage += Time.deltaTime / transitionTime;
+                yield return null;
+            }
+        }
+        else if (current.volume > normalVolume || current.volume < normalVolume)
         {
             startingVolume = current.volume;
             while (current.volume != normalVolume)
@@ -53,15 +66,6 @@ public class Smooth_Transition : MonoBehaviour
                 yield return null;
             }
             current.Pause();
-        }
-        else if (current.volume == 0)
-        {
-            while (current.volume < normalVolume)
-            {
-                current.volume = Mathf.Lerp(0, normalVolume, percentage);
-                percentage += Time.deltaTime / transitionTime;
-                yield return null;
-            }
         }
     }
     

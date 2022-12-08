@@ -1465,6 +1465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sound: {fileID: 722756586}
   normalVolume: 0.5
+  sliderInstance: {fileID: 1562019550}
 --- !u!1 &666846134
 GameObject:
   m_ObjectHideFlags: 0
@@ -5278,7 +5279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fded46f4c4df38147acff4bb8d1b2401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeValue: 0
 --- !u!4 &1856676849
 Transform:
   m_ObjectHideFlags: 0

@@ -4,9 +4,16 @@ using UnityEngine;
 public class Smooth_Transition : MonoBehaviour
 {
     public AudioSource Sound;
+    public float startingVolume = 0.5f;
+    public float normalVolume = 0.5f;
+    private float transitionTime = 5f;
 
-    [SerializeField] private float normalVolume;
-    [SerializeField] private float transitionTime;
+    public void AdjustVolume(float Volume)
+    {
+        startingVolume = normalVolume;
+        normalVolume = Volume;
+        SwapSound();
+    }
 
     private void Start()
     {
@@ -24,7 +31,17 @@ public class Smooth_Transition : MonoBehaviour
     IEnumerator TransitionSound(AudioSource current)
     {
         float percentage = 0;
-        if (current.volume > 0)
+        if (current.volume > normalVolume || current.volume < normalVolume)
+        {
+            while (current.volume != normalVolume)
+            {
+                current.volume = Mathf.Lerp(startingVolume, normalVolume, percentage);
+                percentage += Time.deltaTime / transitionTime;
+                yield return null;
+            }
+            current.Pause();
+        }
+        else if (current.volume > 0)
         {
             while (current.volume > 0)
             {

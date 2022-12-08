@@ -9,6 +9,8 @@ public class Command_enemy : MonoBehaviour
     public Transform spawnpoint;
     public GameObject enemy_to_spawn;
     Health Command_heatlh;
+    public GameObject spawn_effect;
+    public AudioClip spawn_sound;
 
     /*Variables for animation*/
     public Rigidbody2D rb;
@@ -59,12 +61,18 @@ public class Command_enemy : MonoBehaviour
     }
     public void Spawn_enemy()
     {
+        spawneffect();
         GameObject spawn = Instantiate(enemy_to_spawn, spawnpoint.position, spawnpoint.rotation);
         PlanetGravity pg = spawn.GetComponent<PlanetGravity>();
         pg.SetPlanet(GetComponent<PlanetGravity>().planet);
 
         PatrolChase pc = spawn.GetComponent<PatrolChase>();
         pc.SetPlayer(GetComponent<PatrolChase>().player);
+    }
+    private void spawneffect()
+    {
+        Instantiate(spawn_effect, spawnpoint.position, spawnpoint.rotation);
+        AudioSource.PlayClipAtPoint(spawn_sound, spawnpoint.position);
     }
 
 }

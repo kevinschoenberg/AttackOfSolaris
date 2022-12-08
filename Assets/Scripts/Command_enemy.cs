@@ -59,7 +59,12 @@ public class Command_enemy : MonoBehaviour
     }
     public void Spawn_enemy()
     {
-        Instantiate(enemy_to_spawn, spawnpoint.position, spawnpoint.rotation);
+        GameObject spawn = Instantiate(enemy_to_spawn, spawnpoint.position, spawnpoint.rotation);
+        PlanetGravity pg = spawn.GetComponent<PlanetGravity>();
+        pg.SetPlanet(GetComponent<PlanetGravity>().planet);
+
+        PatrolChase pc = spawn.GetComponent<PatrolChase>();
+        pc.SetPlayer(GetComponent<PatrolChase>().player);
     }
 
 }

@@ -71,6 +71,11 @@ public class PatrolChase : MonoBehaviour
         }
     }
 
+    public void SetPlayer(GameObject newPlayer)
+    {
+        player = newPlayer;
+    }
+
     private void UpdateAnimationState()
     {
         MovementState State;

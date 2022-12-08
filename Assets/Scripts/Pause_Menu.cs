@@ -7,12 +7,7 @@ public class Pause_Menu : MonoBehaviour
 {
     public static bool IsPaused = false;
     public GameObject PausePanel;
-    static SaveLoadSystem SLS;
 
-    void start()
-    {
-        SLS = GameObject.FindGameObjectWithTag("SaveLoadSystem").GetComponent<SaveLoadSystem>();
-    }
     void Update()
     {
        if (Input.GetKeyDown(KeyCode.P))
@@ -43,13 +38,5 @@ public class Pause_Menu : MonoBehaviour
     {
         IsPaused = true;
         Time.timeScale = 0;
-    }
-    public static void Save()
-    {
-        SLS.Save();
-    }
-    public static void Load()
-    {
-        SLS.Load();
     }
 }

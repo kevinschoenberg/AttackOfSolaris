@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using CodeMonkey.Utils;
 using UnityEngine.UI;
 
 public class TextBubble : MonoBehaviour
@@ -24,8 +23,8 @@ public class TextBubble : MonoBehaviour
                 TextWriterInstance.AddTextor(messageText, message, 0.04f, true);
                 msgindex++;
             }
-           
-            transform.Find("message").GetComponent<Button_UI>().ClickFunc = () =>
+
+            if (Input.GetKeyDown(KeyCode.Return))
             {
                 if (TextWriterInstance != null && TextWriterInstance.Index < TextWriterInstance.Text.Length)
                 {
@@ -42,7 +41,7 @@ public class TextBubble : MonoBehaviour
                     messageText.enabled = false;
                     ChatBubble.enabled = false;
                 }
-            };
+            }
         }
         //counter is increasing by deltaTime till to reach the trigger time
         _counter += Time.deltaTime;

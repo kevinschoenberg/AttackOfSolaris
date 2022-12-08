@@ -5,14 +5,16 @@ using UnityEngine;
 public class killcounter : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int kills = 0;
+    public int score = 0;
     public GameObject LevelCompletePanel;
-    public int scorre_threshold = 2;
+    public int scorre_threshold = 100;
 
-    public void Enemykilled()
+
+    public void Enemykilled(int points)
     {
-        kills++;
-        if (kills > scorre_threshold)
+        
+        score += points;
+        if (score >= scorre_threshold)
         {
             Pause_Menu.PlayerDiedPause();
             LevelCompletePanel.SetActive(true);

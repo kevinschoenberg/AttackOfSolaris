@@ -46,22 +46,12 @@ public class PatrolChase : MonoBehaviour
         }
     else
         {
-            //Find the player
-            // use player location to get a direction (right or left)
+            //Find the distance to the player
             _distanceToPLayer = player.transform.position - transform.position;
-            if (_distanceToPLayer[0] >= 0)
-            {
-                _isPlayerOnRightSide = -1;
-            }
-            else
-            {
-                _isPlayerOnRightSide = 1;
-            }
-            // Use that to change "_isPlayerOnRightSide" and walk in that direction
             //Walk towards the player
             if (Vector2.Distance(transform.position, player.transform.position) <= Enemy.MaxDist)
             {
-                transform.Translate(Vector2.left * (Time.deltaTime * speed * _isPlayerOnRightSide), Space.Self);
+                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, Time.deltaTime * speed);
             }
             else
             {

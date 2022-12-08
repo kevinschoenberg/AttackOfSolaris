@@ -4,19 +4,19 @@ using UnityEngine;
 public class Smooth_Transition : MonoBehaviour
 {
     public AudioSource Sound;
-    public float startingVolume = 0.5f;
-    public float normalVolume = 0.5f;
+    private float startingVolume;
+    public float normalVolume;
     private float transitionTime = 5f;
-
+    AdjustVolume VolumeSystem;
     public void AdjustVolume(float Volume)
     {
-        startingVolume = normalVolume;
-        normalVolume = Volume;
+        VolumeSystem.SetVolume(Volume);
         SwapSound();
     }
 
     private void Start()
     {
+        VolumeSystem = FindObjectOfType<AdjustVolume>();
         if (Sound.name == "MarsMusic" || Sound.name == "MenuMusic"  || Sound.name == "MoonMusic")
         {
             SwapSound();
@@ -24,22 +24,25 @@ public class Smooth_Transition : MonoBehaviour
     }
     public void SwapSound()
     {
+        VolumeSystem = FindObjectOfType<AdjustVolume>();
         AudioSource current = Sound;
         StartCoroutine(TransitionSound(current));
     }
 
     IEnumerator TransitionSound(AudioSource current)
-    {
+    {        
         float percentage = 0;
+        if (VolumeSystem.GetVolume() == 0)
+            VolumeSystem.SetVolume(normalVolume);
+        normalVolume = VolumeSystem.GetVolume();
         if (current.volume > normalVolume || current.volume < normalVolume)
         {
+            startingVolume = current.volume;
             while (current.volume != normalVolume)
             {
-                current.volume = Mathf.Lerp(startingVolume, normalVolume, percentage);
-                percentage += Time.deltaTime / transitionTime;
+                current.volume = normalVolume;
                 yield return null;
             }
-            current.Pause();
         }
         else if (current.volume > 0)
         {

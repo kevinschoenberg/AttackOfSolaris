@@ -10,6 +10,9 @@ public class SwordControl : MonoBehaviour
 
     private PlayerMovement pm;
 
+    public Transform sword;
+    private bool oldDir = true;
+
     void Start()
     {
         pm = GameObject.Find("Player").GetComponent<PlayerMovement>();
@@ -21,22 +24,35 @@ public class SwordControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pm.isFacingRight)
+        float offset = 0.75f;
+        if (pm.isFacingRight && !oldDir)
         {
-            sprite.flipX = false;
+            anim.SetBool("FacingLeft", false);
+            sword.Translate(offset, 0f, 0f);
+        
         }
-        else
+        else if (!pm.isFacingRight && oldDir)
         {
-            sprite.flipX = true;
+            anim.SetBool("FacingLeft", true);
+            sword.Translate(-offset, 0f, 0f);
         }
+        oldDir = pm.isFacingRight;
+
         if (Input.GetButton("Fire1"))
         {
-            anim.SetTrigger("SwordSwing");
-            print(pm.isFacingRight);
+            if (pm.isFacingRight)
+            {
+                anim.SetTrigger("SwordSwing");
+            }
+            else if (!pm.isFacingRight)
+            {
+                anim.SetTrigger("SwordSwingLeft");
+            }
         }
         else
         {
             anim.ResetTrigger("SwordSwing");
+            anim.ResetTrigger("SwordSwingLeft");
         }
     }
 }

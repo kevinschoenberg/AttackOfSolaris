@@ -4782,7 +4782,7 @@ Transform:
   m_LocalScale: {x: 0.5276692, y: 0.5287, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1950107261}
+  - {fileID: 1084990886}
   - {fileID: 1282599165}
   - {fileID: 290609764}
   - {fileID: 519420032}
@@ -5814,6 +5814,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050793356}
   m_CullTransparentMesh: 1
+--- !u!1 &1084990885
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1084990886}
+  m_Layer: 0
+  m_Name: Weopen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1084990886
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084990885}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.52, y: -0.83, z: -0.12268242}
+  m_LocalScale: {x: 1.8951268, y: 1.8914317, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1950107261}
+  m_Father: {fileID: 881373364}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1111802214
 GameObject:
   m_ObjectHideFlags: 0
@@ -12205,14 +12237,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950107260}
-  m_LocalRotation: {x: -0, y: -0, z: 0.2614137, w: -0.9652268}
-  m_LocalPosition: {x: 0.47, y: -1.05, z: -0.020873519}
-  m_LocalScale: {x: 1.8951268, y: 1.8914317, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.26458964, w: -0.96436113}
+  m_LocalPosition: {x: 0.218, y: -0.108, z: 0.1018089}
+  m_LocalScale: {x: 1.0004976, y: 0.9995034, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 881373364}
+  m_Father: {fileID: 1084990886}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -30.308}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -30.685}
 --- !u!95 &1950107262
 Animator:
   serializedVersion: 4
@@ -12297,6 +12329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcb50ed7ef2e6dd4f832718b6291f3bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sword: {fileID: 1084990886}
 --- !u!1 &1994777227
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,11 +11,13 @@ public class PlayerHealth : MonoBehaviour, ISaveable
     public int maxHealth = 10;
     public HealthBar healthbar;
     public GameObject DeathPanel;
+    DeathCounter deathCounter;
     // Start is called before the first frame update
     void Start()
     {
         health = maxHealth;
-        healthbar.SetMaxHealth(maxHealth);        
+        healthbar.SetMaxHealth(maxHealth);
+        deathCounter = GameObject.Find("StageManager").GetComponent<DeathCounter>(); 
     }
 
     void Update()
@@ -29,6 +31,7 @@ public class PlayerHealth : MonoBehaviour, ISaveable
         if(health <= 0)
         {
             //Destroy(gameObject);
+            deathCounter.PlayerDeath(1);
             Pause_Menu.PlayerDiedPause();
             DeathPanel.SetActive(true);
         }

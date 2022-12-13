@@ -53,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(v * jumpForce);
         }
         UpdateAnimationState();
+        Flip();
     }
     
     private void UpdateAnimationState()
@@ -87,18 +88,15 @@ public class PlayerMovement : MonoBehaviour
     { 
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
-    /*
+    
     private void Flip()
     {
         if(isFacingRight && _inputX < 0f || !isFacingRight && _inputX > 0f)
         {
             isFacingRight = !isFacingRight;
-            Vector3 localScale = transform.localScale;
-            localScale.x *= -1f;
-            transform.localScale = localScale;
         }
     }
-    */
+    
 }
 
 

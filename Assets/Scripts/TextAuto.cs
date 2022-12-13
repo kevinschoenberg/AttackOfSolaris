@@ -8,10 +8,13 @@ public class TextAuto : MonoBehaviour
     private int msgindex = 0;
     [SerializeField] private TextWriter TextWriterInstance;
     [SerializeField] private string[] messageArray;
+    [SerializeField] public Smooth_Transition Smooth_Trans;
     private long timer;
     private void Awake()
     {
         timer = DateTimeOffset.Now.ToUnixTimeMilliseconds();
+        if (Smooth_Trans != null)
+            Smooth_Trans.SwapSound();
     }
     private void Update()
     {
@@ -20,37 +23,36 @@ public class TextAuto : MonoBehaviour
             if (DateTimeOffset.Now.ToUnixTimeMilliseconds() - timer > 1500)
             {
                 messageText = transform.Find("message").Find("messageText").GetComponent<TMPro.TextMeshProUGUI>();
-
                 if (msgindex == messageArray.Length)
                 {
                     SceneManager.LoadScene(2);
                 }
-                if (TextWriterInstance != null && TextWriterInstance.Index < TextWriterInstance.Text.Length)
+                else if (TextWriterInstance != null && TextWriterInstance.Index < TextWriterInstance.Text.Length)
                 {
-                    //timer = DateTimeOffset.Now.ToUnixTimeMilliseconds();
                     TextWriterInstance.DisplayRemove();
                 }
-                else if (msgindex == 8)
+                else if (msgindex == 7)
                 {
-                    //timer = DateTimeOffset.Now.ToUnixTimeMilliseconds();
-                    // Allow User to name Character.
+                    Smooth_Trans.SwapSound();
                     string message = messageArray[msgindex];
                     TextWriterInstance.AddTextor(messageText, message, 0.04f, true);
                     msgindex++;
                 }
                 else if (msgindex < messageArray.Length)
                 {
-                    //timer = DateTimeOffset.Now.ToUnixTimeMilliseconds();
                     string message = messageArray[msgindex];
                     TextWriterInstance.AddTextor(messageText, message, 0.04f, true);
                     msgindex++;
                 }
+                
             }
         }
+
         else
         {
             timer = DateTimeOffset.Now.ToUnixTimeMilliseconds();
         }
+
 
     }
 }

@@ -12,9 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Moon_scene.unity
-    guid: 85e57a966fbd2a64fabbc030fdf37da2
+    path: Assets/Scenes/Introduction_brightness_fix.unity
+    guid: b1501b8042689f64fab84687f95fbe96
   - enabled: 1
-    path: Assets/Scenes/Mars_scene.unity
+    path: Assets/Scenes/moon_enemy_spawn_test.unity
+    guid: 315853b23d29b944996b3a52391bbabc
+  - enabled: 1
+    path: Assets/Scenes/Mars_scene_level_complete.unity
     guid: cbf79b22d7f1c62498ed44591e6e0c29
   m_configObjects: {}

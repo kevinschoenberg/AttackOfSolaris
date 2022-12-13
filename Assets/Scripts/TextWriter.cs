@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
+
 public class TextWriter : MonoBehaviour
 {
     private TMPro.TextMeshProUGUI message;
@@ -39,7 +40,6 @@ public class TextWriter : MonoBehaviour
             {
                 timer += Interval;
                 Index++;
-                print("Character Index = " + Index);
                 string Temptext = Text.Substring(0, Index);
                 if (invisibleCharacters)
                 {

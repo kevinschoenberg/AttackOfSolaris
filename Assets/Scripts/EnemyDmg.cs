@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,9 @@ public class EnemyDmg : MonoBehaviour
 {
     public PlayerHealth playerHealth;
     public int damage = 2;
+    public float hitDelay = .5f;
+    private float _lastHit = 0f;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +21,13 @@ public class EnemyDmg : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.CompareTag("Player") && _lastHit + hitDelay < Time.timeSinceLevelLoad)
         {
             playerHealth.TakeDamage(damage);
+            _lastHit = Time.timeSinceLevelLoad;
         }
-
     }
 }

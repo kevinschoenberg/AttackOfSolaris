@@ -856,8 +856,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc546a21c64d6d4eb1cd5e14ea3a5fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brightness: {fileID: 11400000, guid: e0b8ccc181195684c89e16e293ebc117, type: 2}
-  layer: {fileID: 512067264}
 --- !u!1 &881373362
 GameObject:
   m_ObjectHideFlags: 0
@@ -1047,6 +1045,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 269992349}
   bulletPrefab: {fileID: 2054606728904864191, guid: 898c7f9236c44441bb6b9b1ec78a0344, type: 3}
+  soundEngine: {fileID: 0}
+  shootingDelay: 0.4
   bulletForce: 20
 --- !u!95 &881373370
 Animator:
@@ -1254,10 +1254,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 881373362}
-  speed: 4
-  MoveSpeed: 4
-  MaxDist: 7
-  MinDist: 2
+  rb: {fileID: 0}
+  dirX: 0
 --- !u!50 &1357915007
 Rigidbody2D:
   serializedVersion: 4
@@ -1319,6 +1317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 20
+  Enemy: {fileID: 0}
   healthbar: {fileID: 1709808394}
 --- !u!114 &1357915010
 MonoBehaviour:

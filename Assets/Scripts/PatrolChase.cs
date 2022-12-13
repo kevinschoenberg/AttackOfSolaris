@@ -10,13 +10,14 @@ public class PatrolChase : MonoBehaviour
     private float _currentTime = 0f;
     private Vector2 _distanceToPLayer;    
     private float _walkingSpeed = 2f;
-    private int _isPlayerOnRightSide = 0;
 
     /*Variables for animation*/
+    public bool isFacingRight = true;
     private enum MovementState {idle, walking};
     private SpriteRenderer sprite;
     private Animator anim;
-    
+    public Vector2 dir;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +27,8 @@ public class PatrolChase : MonoBehaviour
 
     private void Update()
     {
-    if (Vector2.Distance(transform.position, player.transform.position) > Enemy.MaxDist)
+        dir = Vector2.left * (Time.deltaTime * _walkingSpeed * index);
+        if (Vector2.Distance(transform.position, player.transform.position) > Enemy.MaxDist)
         {
             if (_lastTime == 0f)
             {
@@ -35,7 +37,7 @@ public class PatrolChase : MonoBehaviour
             }
             if (_currentTime - _lastTime < walkingTime)
             {
-                transform.Translate(Vector2.left * (Time.deltaTime * _walkingSpeed * index), Space.Self);
+                transform.Translate(dir, Space.Self);
                 _currentTime = Time.time;
             }
             else
@@ -44,7 +46,7 @@ public class PatrolChase : MonoBehaviour
                 _lastTime = Time.time;
             }
         }
-    else
+        else
         {
             //Find the distance to the player
             _distanceToPLayer = player.transform.position - transform.position;
@@ -57,8 +59,10 @@ public class PatrolChase : MonoBehaviour
             {
                 transform.Translate(Vector2.zero, Space.Self);
             }
-            UpdateAnimationState();  
+            
         }
+        UpdateAnimationState(); 
+
     }
 
     public void SetPlayer(GameObject newPlayer)
@@ -69,12 +73,12 @@ public class PatrolChase : MonoBehaviour
     private void UpdateAnimationState()
     {
         MovementState State;
-        if (_isPlayerOnRightSide == 1 || index > 0)
+        if (dir.x < 0)
         {
             State = MovementState.walking;
             sprite.flipX = false;
         }
-        else if (_isPlayerOnRightSide == -1 || index < 0)
+        else if (dir.x > 0)
         {
             State = MovementState.walking;
             sprite.flipX = true;

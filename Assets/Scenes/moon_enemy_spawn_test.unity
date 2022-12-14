@@ -2177,6 +2177,7 @@ MonoBehaviour:
   player: {fileID: 881373362}
   speed: 4
   walkingTime: 5
+  CenterPoint: {fileID: 0}
   isFacingRight: 1
   dir: {x: 0, y: 0}
   dir2: {x: 0, y: 0}
@@ -3891,6 +3892,7 @@ MonoBehaviour:
   player: {fileID: 881373362}
   speed: 4
   walkingTime: 5
+  CenterPoint: {fileID: 0}
   isFacingRight: 1
   dir: {x: 0, y: 0}
   dir2: {x: 0, y: 0}
@@ -5707,6 +5709,7 @@ MonoBehaviour:
   player: {fileID: 881373362}
   speed: 4
   walkingTime: 5
+  CenterPoint: {fileID: 0}
   isFacingRight: 1
   dir: {x: 0, y: 0}
   dir2: {x: 0, y: 0}
@@ -8105,6 +8108,7 @@ MonoBehaviour:
   player: {fileID: 881373362}
   speed: 4
   walkingTime: 5
+  CenterPoint: {fileID: 0}
   isFacingRight: 1
   dir: {x: 0, y: 0}
   dir2: {x: 0, y: 0}
@@ -9626,6 +9630,7 @@ MonoBehaviour:
   player: {fileID: 881373362}
   speed: 4
   walkingTime: 5
+  CenterPoint: {fileID: 0}
   isFacingRight: 1
   dir: {x: 0, y: 0}
   dir2: {x: 0, y: 0}
@@ -11015,6 +11020,7 @@ MonoBehaviour:
   player: {fileID: 881373362}
   speed: 4
   walkingTime: 5
+  CenterPoint: {fileID: 0}
   isFacingRight: 1
   dir: {x: 0, y: 0}
   dir2: {x: 0, y: 0}

@@ -4,16 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-public class StopWatch : MonoBehaviour
+public class StopWatch : MonoBehaviour, ISaveable
 {
     bool StopWatchActive = true;
     float currentTime;
+    float temp;
     public Text currentTimeText;
     // Start is called before the first frame update
     void Start()
     {
         currentTime = 0;
-        
     }
 
     // Update is called once per frame
@@ -36,5 +36,25 @@ public class StopWatch : MonoBehaviour
     public void stopStopWatch()
     {
         StopWatchActive = false;
+    }
+    
+    public object SaveState()
+    {
+        return new SaveData()
+        {
+            currentTime = this.currentTime
+        };
+    }
+
+    public void LoadState(object state)
+    {
+        var saveData = (SaveData)state;
+        currentTime = saveData.currentTime;
+    }
+
+    [Serializable]
+    private struct SaveData
+    {
+        public float currentTime;
     }
 }

@@ -8,6 +8,7 @@ public class SaveLoadSystem : MonoBehaviour
 {
     public string SavePath => $"{Application.persistentDataPath}/save.txt";
 
+    //Function to save data. (Can be called from Unity)
     [ContextMenu("save")]
     public void Save()
     {
@@ -16,11 +17,24 @@ public class SaveLoadSystem : MonoBehaviour
         SaveFile(state);
     }
 
+    //Function to load earlier save data. (Can be called from Unity)
     [ContextMenu("load")]
     public void Load()
     {
         var state = LoadFile();
         LoadState(state);
+    }
+
+    //Function to generate Id's for all saveable objects. (Can be called from Unity)
+    [ContextMenu("GenerateIdForAllObjects")]
+    public void GenerateIdForAllObjects()
+    {
+        foreach(var saveable in FindObjectsOfType<SaveableEntity>())
+        {
+            saveable.GenerateId();
+            print("Generated Id: " + saveable.Id + " for object " + saveable.name);
+        }
+
     }
 
     public void SaveFile(object state)

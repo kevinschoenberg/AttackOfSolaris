@@ -11,7 +11,7 @@ public class DeathCounter : MonoBehaviour, ISaveable
     // Start is called before the first frame update
     void Start()
     {
-        
+        deathCount = PlayerPrefs.GetInt("deathCount");
     }
 
     // Update is called once per frame
@@ -22,7 +22,9 @@ public class DeathCounter : MonoBehaviour, ISaveable
 
     public void PlayerDeath(int points)
     {
+        
         deathCount += points;
+        PlayerPrefs.SetInt("deathCount", deathCount);
     }
 
     public object SaveState()

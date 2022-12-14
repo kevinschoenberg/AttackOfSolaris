@@ -10,6 +10,7 @@ public class PatrolChase : MonoBehaviour
     private float _currentTime = 0f;
     private Vector2 _distanceToPLayer;    
     private float _walkingSpeed = 2f;
+    public Transform CenterPoint;
 
     /*Variables for animation*/
     public bool isFacingRight = true;
@@ -25,6 +26,7 @@ public class PatrolChase : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        CenterPoint = GameObject.Find("CenterPoint").GetComponent<Transform>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
     }
@@ -57,15 +59,64 @@ public class PatrolChase : MonoBehaviour
             //Walk towards the player
             if (Vector2.Distance(transform.position, player.transform.position) <= Enemy.MaxDist)
             {
-                dir2 = Vector2.MoveTowards(transform.position, player.transform.position, Time.deltaTime * speed);
-                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, Time.deltaTime * speed);
-
+                if (player.transform.position.x > CenterPoint.position.x)
+                {
+                    if (player.transform.position.y > CenterPoint.position.y)
+                    {
+                        if (player.transform.position.x > transform.position.x && transform.position.y - CenterPoint.position.y > 0)
+                        {
+                            transform.Translate(Vector2.right * Time.deltaTime * speed);
+                        }
+                        else if (player.transform.position.x < transform.position.x || transform.position.y - CenterPoint.position.y < 0)
+                        {
+                            transform.Translate(Vector2.left * Time.deltaTime * speed);
+                        }
+                    }
+                    else
+                    {
+                        if (player.transform.position.y > CenterPoint.position.y)
+                        {
+                            if (player.transform.position.x > transform.position.x && transform.position.y - CenterPoint.position.y < 0)
+                            {
+                                transform.Translate(Vector2.left * Time.deltaTime * speed);
+                            }
+                            else if (player.transform.position.x < transform.position.x || transform.position.y - CenterPoint.position.y > 0)
+                            {
+                                transform.Translate(Vector2.right * Time.deltaTime * speed);
+                            }
+                        }
+                    }
+                }
+                else if (player.transform.position.x < CenterPoint.position.x)
+                {
+                    if (player.transform.position.y > CenterPoint.position.y)
+                    {
+                        if (player.transform.position.x > transform.position.x || transform.position.y - CenterPoint.position.y < 0)
+                        {
+                            transform.Translate(Vector2.right * Time.deltaTime * speed);
+                        }
+                        else if (player.transform.position.x < transform.position.x && transform.position.y - CenterPoint.position.y > 0)
+                        {
+                            transform.Translate(Vector2.left * Time.deltaTime * speed);
+                        }
+                    }
+                    else
+                    {
+                        if (player.transform.position.x > transform.position.x || transform.position.y - CenterPoint.position.y > 0)
+                        {
+                            transform.Translate(Vector2.left * Time.deltaTime * speed);
+                        }
+                        else if (player.transform.position.x < transform.position.x && transform.position.y - CenterPoint.position.y < 0)
+                        {
+                            transform.Translate(Vector2.right * Time.deltaTime * speed);
+                        }
+                    }
+                }
             }
             else
             {
                 transform.Translate(Vector2.zero, Space.Self);
             }
-            
         }
         UpdateAnimationState(); 
 

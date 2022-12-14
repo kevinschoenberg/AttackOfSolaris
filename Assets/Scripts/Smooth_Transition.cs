@@ -18,8 +18,9 @@ public class Smooth_Transition : MonoBehaviour
 
     private void Start()
     {
+        print(Sound.name);
         VolumeSystem = FindObjectOfType<AdjustVolume>();
-        if (Sound.name == "MarsMusic" || Sound.name == "MenuMusic"  || Sound.name == "MoonMusic")
+        if (Sound.name == "MarsMusic" || Sound.name == "MenuMusic"  || Sound.name == "MoonMusic" || Sound.name == "Rain_Noise" || Sound.name == "IntroMusic" || Sound.name == "FireNoise")
         {
             SwapSound();
         }
@@ -32,7 +33,7 @@ public class Smooth_Transition : MonoBehaviour
     }
 
     IEnumerator TransitionSound(AudioSource current)
-    {        
+    {
         float percentage = 0;
         if (VolumeSystem.GetVolume() == 0)
             VolumeSystem.SetVolume(normalVolume);
@@ -48,7 +49,7 @@ public class Smooth_Transition : MonoBehaviour
                 yield return null;
             }
         }
-        else if (current.volume > normalVolume || current.volume < normalVolume)
+        else if ((current.volume > normalVolume || current.volume < normalVolume) && Sound.name != "Rain_Noise" && Sound.name != "IntroMusic" && Sound.name != "FireNoise")
         {
             startingVolume = current.volume;
             while (current.volume != normalVolume)

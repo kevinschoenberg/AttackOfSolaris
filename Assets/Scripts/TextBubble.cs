@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TextBubble : MonoBehaviour
 {
@@ -10,7 +11,17 @@ public class TextBubble : MonoBehaviour
     private float _counter = 0;
     private bool _showText = false;
     public Image ChatBubble;
+    public SpriteRenderer TextBox;
+    [SerializeField] public Smooth_Transition Smooth_Trans;
 
+    private void Start()
+    {
+        if (TextBox != null)
+        {
+            _showText = true;
+            TextBox.enabled = true;
+        }
+    }
     void Update()
     {
         messageText = transform.Find("message").Find("messageText").GetComponent<TMPro.TextMeshProUGUI>();
@@ -32,6 +43,8 @@ public class TextBubble : MonoBehaviour
                 }
                 else if (msgindex < messageArray.Length)
                 {
+                    if (msgindex == messageArray.Length - 2 && TextBox != null)
+                        Smooth_Trans.SwapSound();
                     string message = messageArray[msgindex];
                     TextWriterInstance.AddTextor(messageText, message, 0.04f, true);
                     msgindex++;
@@ -39,18 +52,25 @@ public class TextBubble : MonoBehaviour
                 else if (msgindex == messageArray.Length)
                 {
                     messageText.enabled = false;
-                    ChatBubble.enabled = false;
+                    if (ChatBubble != null)
+                        ChatBubble.enabled = false;
+                    else if (TextBox != null && TextBox.name == "IntroChatFrame")
+                        TextBox.enabled = false;
+                        SceneManager.LoadScene(2);  
+                        
                 }
             }
         }
         //counter is increasing by deltaTime till to reach the trigger time
+        /*
         _counter += Time.deltaTime;
         //after or equals 5 sec. show a simple GUIText
         if (_counter >= 5 && !_showText)
         {
             _showText = true;
-            ChatBubble.enabled = true;
-        }
+            if (ChatBubble != null)
+                ChatBubble.enabled = true;
+        }*/
 
     }
 }

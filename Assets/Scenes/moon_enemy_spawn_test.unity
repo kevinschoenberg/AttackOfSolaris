@@ -2177,6 +2177,7 @@ MonoBehaviour:
   player: {fileID: 881373362}
   speed: 4
   walkingTime: 5
+  CenterPoint: {fileID: 0}
   isFacingRight: 1
   dir: {x: 0, y: 0}
   dir2: {x: 0, y: 0}
@@ -2214,6 +2215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 881373371}
   damage: 2
+  hitDelay: 0.5
 --- !u!114 &403285575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3303,6 +3305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 881373371}
   damage: 2
+  hitDelay: 0.5
 --- !u!114 &598673435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3889,6 +3892,7 @@ MonoBehaviour:
   player: {fileID: 881373362}
   speed: 4
   walkingTime: 5
+  CenterPoint: {fileID: 0}
   isFacingRight: 1
   dir: {x: 0, y: 0}
   dir2: {x: 0, y: 0}
@@ -3926,6 +3930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 881373371}
   damage: 2
+  hitDelay: 0.5
 --- !u!114 &697353053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4998,7 +5003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a1cddbe47c684cc89f8b355f2874512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityForce: 1
+  gravityForce: 5
   planet: {fileID: 184730016}
   pm: {fileID: 881373367}
 --- !u!114 &881373367
@@ -5016,6 +5021,7 @@ MonoBehaviour:
   speed: 7
   jumpForce: 8
   isFacingRight: 1
+  jumpSound: {fileID: 2046049910}
   groundCheck: {fileID: 61092797}
   groundLayer:
     serializedVersion: 2
@@ -5110,6 +5116,7 @@ MonoBehaviour:
   damage: 2
   weaponRange: 1
   hitPoint: {fileID: 1282599165}
+  soundEngine: {fileID: 0}
 --- !u!114 &881373373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5669,6 +5676,7 @@ MonoBehaviour:
   player: {fileID: 881373362}
   speed: 4
   walkingTime: 5
+  CenterPoint: {fileID: 0}
   isFacingRight: 1
   dir: {x: 0, y: 0}
   dir2: {x: 0, y: 0}
@@ -5706,6 +5714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 881373371}
   damage: 2
+  hitDelay: 0.5
 --- !u!114 &1025611840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6702,6 +6711,8 @@ MonoBehaviour:
   - Gulgrog can be found somewhere on the moon.
   - Good luck!
   ChatBubble: {fileID: 1155119141}
+  TextBox: {fileID: 0}
+  Smooth_Trans: {fileID: 0}
 --- !u!114 &1155119141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7936,6 +7947,7 @@ MonoBehaviour:
   player: {fileID: 881373362}
   speed: 4
   walkingTime: 5
+  CenterPoint: {fileID: 0}
   isFacingRight: 1
   dir: {x: 0, y: 0}
   dir2: {x: 0, y: 0}
@@ -7973,6 +7985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 881373371}
   damage: 2
+  hitDelay: 0.5
 --- !u!114 &1284191068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9328,6 +9341,7 @@ MonoBehaviour:
   player: {fileID: 881373362}
   speed: 4
   walkingTime: 5
+  CenterPoint: {fileID: 0}
   isFacingRight: 1
   dir: {x: 0, y: 0}
   dir2: {x: 0, y: 0}
@@ -9365,6 +9379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 881373371}
   damage: 2
+  hitDelay: 0.5
 --- !u!114 &1472413981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10716,6 +10731,7 @@ MonoBehaviour:
   player: {fileID: 881373362}
   speed: 4
   walkingTime: 5
+  CenterPoint: {fileID: 0}
   isFacingRight: 1
   dir: {x: 0, y: 0}
   dir2: {x: 0, y: 0}
@@ -10753,6 +10769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 881373371}
   damage: 2
+  hitDelay: 0.5
 --- !u!114 &1614388505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11142,6 +11159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 2
+  inputField: {fileID: 0}
 --- !u!4 &1660843585
 Transform:
   m_ObjectHideFlags: 0
@@ -13090,6 +13108,134 @@ MonoBehaviour:
   blendDistance: 0
   weight: 0.141
   priority: 0
+--- !u!1 &2046049909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2046049911}
+  - component: {fileID: 2046049910}
+  m_Layer: 0
+  m_Name: JumpSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &2046049910
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046049909}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1cd9289fff66543929d8340e6e34cf4c, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.3
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &2046049911
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046049909}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.8729477, y: 11.019858, z: -0.1289285}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2051784563
 GameObject:
   m_ObjectHideFlags: 0

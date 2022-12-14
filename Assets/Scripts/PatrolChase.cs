@@ -63,24 +63,36 @@ public class PatrolChase : MonoBehaviour
                 {
                     if (player.transform.position.y > CenterPoint.position.y)
                     {
-                        if (player.transform.position.x > transform.position.x && player.transform.position.y < transform.position.y && transform.position.y - CenterPoint.position.y > 0)
+                        if (player.transform.position.x > transform.position.x && transform.position.y - CenterPoint.position.y > 0) // && player.transform.position.y < transform.position.y && transform.position.y - CenterPoint.position.y > 0)
                         {
-                            transform.Translate(Vector2.right * Time.deltaTime * speed);
+                            if (player.transform.position.y < transform.position.y)
+                                transform.Translate(Vector2.right * Time.deltaTime * speed);
+                            else
+                                transform.Translate(Vector2.left * Time.deltaTime * speed);
                         }
-                        else if ((player.transform.position.x < transform.position.x && player.transform.position.y > transform.position.y) || transform.position.y - CenterPoint.position.y < 0)
+                        else if (player.transform.position.x < transform.position.x || transform.position.y - CenterPoint.position.y < 0) //&& player.transform.position.y > transform.position.y) || transform.position.y - CenterPoint.position.y < 0)
                         {
-                            transform.Translate(Vector2.left * Time.deltaTime * speed);
+                            if(player.transform.position.y > transform.position.y)
+                                transform.Translate(Vector2.left * Time.deltaTime * speed);
+                            else
+                                transform.Translate(Vector2.right * Time.deltaTime * speed);
                         }
                     }
                     else
                     {
-                        if (player.transform.position.x > transform.position.x && player.transform.position.y > transform.position.y && transform.position.y - CenterPoint.position.y < 0)
+                        if (player.transform.position.x > transform.position.x && transform.position.y - CenterPoint.position.y < 0)//&& player.transform.position.y > transform.position.y && transform.position.y - CenterPoint.position.y < 0)
                         {
-                            transform.Translate(Vector2.left * Time.deltaTime * speed);
+                            if(player.transform.position.y > transform.position.y)
+                                transform.Translate(Vector2.left * Time.deltaTime * speed);
+                            else
+                                transform.Translate(Vector2.right * Time.deltaTime * speed);
                         }
-                        else if ((player.transform.position.x < transform.position.x && player.transform.position.y > transform.position.y) || transform.position.y - CenterPoint.position.y > 0)
+                        else if (player.transform.position.x < transform.position.x || transform.position.y - CenterPoint.position.y > 0)// && player.transform.position.y > transform.position.y) || transform.position.y - CenterPoint.position.y > 0)
                         {
-                            transform.Translate(Vector2.right * Time.deltaTime * speed);
+                            if (player.transform.position.y < transform.position.y)
+                                transform.Translate(Vector2.right * Time.deltaTime * speed);
+                            else
+                                transform.Translate(Vector2.left * Time.deltaTime * speed);
                         }
                     }
                 }
@@ -88,24 +100,31 @@ public class PatrolChase : MonoBehaviour
                 {
                     if (player.transform.position.y > CenterPoint.position.y)
                     {
-                        if ((player.transform.position.x > transform.position.x && player.transform.position.y > transform.position.y) || transform.position.y - CenterPoint.position.y < 0)
+                        if (player.transform.position.x > transform.position.x || transform.position.y - CenterPoint.position.y < 0) //&& player.transform.position.y > transform.position.y) || transform.position.y - CenterPoint.position.y < 0)
                         {
                             transform.Translate(Vector2.right * Time.deltaTime * speed);
                         }
-                        else if (player.transform.position.x < transform.position.x && player.transform.position.y < transform.position.y && transform.position.y - CenterPoint.position.y > 0)
+                        else if (player.transform.position.x < transform.position.x && transform.position.y - CenterPoint.position.y > 0)//player.transform.position.y < transform.position.y && transform.position.y - CenterPoint.position.y > 0)
                         {
-                            transform.Translate(Vector2.left * Time.deltaTime * speed);
+                            if (player.transform.position.y < transform.position.y)
+                                transform.Translate(Vector2.left * Time.deltaTime * speed);
+                            else
+                                transform.Translate(Vector2.right * Time.deltaTime * speed);
                         }
                     }
                     else
                     {
-                        if ((player.transform.position.x > transform.position.x && player.transform.position.y < transform.position.y) || transform.position.y - CenterPoint.position.y > 0)
+                        if (player.transform.position.x > transform.position.x || transform.position.y - CenterPoint.position.y > 0)//&& player.transform.position.y < transform.position.y) || transform.position.y - CenterPoint.position.y > 0)
                         {
                             transform.Translate(Vector2.left * Time.deltaTime * speed);
                         }
-                        else if (player.transform.position.x < transform.position.x && player.transform.position.y > transform.position.y && transform.position.y - CenterPoint.position.y < 0)
+                        else if (player.transform.position.x < transform.position.x && transform.position.y - CenterPoint.position.y < 0)//&& player.transform.position.y > transform.position.y && transform.position.y - CenterPoint.position.y < 0)
                         {
-                            transform.Translate(Vector2.right * Time.deltaTime * speed);
+                            if (player.transform.position.y > transform.position.y)
+                                transform.Translate(Vector2.right * Time.deltaTime * speed);
+                            else
+                                //transform.Translate(Vector2.left * Time.deltaTime * speed);
+                                transform.Translate(Vector2.zero, Space.Self);
                         }
                     }
                 }

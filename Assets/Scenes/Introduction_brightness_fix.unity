@@ -5235,6 +5235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sound: {fileID: 1152692711}
   normalVolume: 0.5
+  sliderInstance: {fileID: 0}
 --- !u!4 &1152692713
 Transform:
   m_ObjectHideFlags: 0
@@ -5592,7 +5593,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1723477103}
   - component: {fileID: 1723477102}
-  - component: {fileID: 1723477104}
   m_Layer: 3
   m_Name: Brightness
   m_TagString: Untagged
@@ -5632,18 +5632,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1723477104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1723477100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edc546a21c64d6d4eb1cd5e14ea3a5fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1959613623
 GameObject:
   m_ObjectHideFlags: 0

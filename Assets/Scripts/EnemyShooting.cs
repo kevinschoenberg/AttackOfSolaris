@@ -10,6 +10,7 @@ public class EnemyShooting : MonoBehaviour
     public AudioSource soundEngine;
     public float shootingDelay = 4f;
     public float bulletForce = 20f;
+    public float distanceToPlayer = 10;
     private float _inputX;
     private float _lastTime = 0f;
     public Transform player;
@@ -24,7 +25,7 @@ public class EnemyShooting : MonoBehaviour
         gunRotationPoint.rotation = Quaternion.Euler(0f, 0f, angle);
 
 
-        if (Time.timeSinceLevelLoad > _lastTime + shootingDelay)
+        if (Time.timeSinceLevelLoad > _lastTime + shootingDelay && Vector3.Distance(player.position, gunRotationPoint.position) < distanceToPlayer)
         {
             StartCoroutine(ShootCommand());
             

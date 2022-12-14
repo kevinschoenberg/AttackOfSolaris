@@ -62,7 +62,7 @@ public class Health : MonoBehaviour, ISaveable
             }
             SR.enabled = false;
             BC2.enabled = false;
-            PI.enabled = false;
+            ED.enabled = false;
             A.enabled = false;
 
         }

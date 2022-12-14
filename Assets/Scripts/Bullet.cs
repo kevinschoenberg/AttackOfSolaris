@@ -7,7 +7,9 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private readonly int _bulletDamage = 1;
+    public float bulletTime = 10f;
+    public int bulletDamageEnemy = 1;
+    public int bulletDamagePlayer = 1;
     private float _createTime;
     private void Start()
     {
@@ -18,20 +20,23 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
-        if (Time.time > _createTime + 5f)
+        if (Time.time > _createTime + bulletTime)
         {
             Destroy(gameObject);
         }
     }
-    
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.TryGetComponent<Health>(out Health HealthComponent))
         {
-            
-            HealthComponent.TakeDamage(_bulletDamage);
+            HealthComponent.TakeDamage(bulletDamageEnemy);
         }
-        
+        else if (collision.gameObject.TryGetComponent(out PlayerHealth PlayerHealthComponent))
+        {
+            PlayerHealthComponent.TakeDamage(bulletDamagePlayer);
+        }
+
         Destroy(gameObject);
     }
 }

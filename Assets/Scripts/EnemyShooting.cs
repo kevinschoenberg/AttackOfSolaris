@@ -34,11 +34,11 @@ public class EnemyShooting : MonoBehaviour
 
     IEnumerator ShootCommand()
     {
-        Shoot(0.2f);
-        yield return new WaitForSeconds(0.2f);
         Shoot(0.1f);
         yield return new WaitForSeconds(0.2f);
         Shoot(0.0f);
+        yield return new WaitForSeconds(0.2f);
+        Shoot(-0.1f);
     }
     void Shoot(float ang)
     {

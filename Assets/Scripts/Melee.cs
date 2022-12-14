@@ -10,12 +10,14 @@ public class Melee : MonoBehaviour
     private float lastTime = 0f;
     private PlayerMovement _pm;
     private bool oldDir = true;
+    public AudioSource soundEngine;
 
     void Update()
     {
         if (Input.GetButton("Fire1") && Time.timeSinceLevelLoad > lastTime + 0.2f)
         {
             Hit();
+            soundEngine.Play();
             lastTime = Time.timeSinceLevelLoad;
         }
         _pm = GetComponentInParent<PlayerMovement>();

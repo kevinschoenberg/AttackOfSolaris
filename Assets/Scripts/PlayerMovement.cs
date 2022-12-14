@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     private enum MovementState {idle, running, jumping, falling};
     public bool isFacingRight = true;
     
+    public AudioSource jumpSound;
+    
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     
@@ -49,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if(Input.GetButtonDown("Jump") && IsGrounded())
         {
+            jumpSound.Play();
             Vector3 v = transform.position - planet.transform.position;
             rb.AddForce(v * jumpForce);
         }

@@ -15,10 +15,12 @@ public class Health : MonoBehaviour, ISaveable
 
     //Following are used for alternate death so that the objects can be saved after death
     public bool Dead;
+    bool patrol;
     SpriteRenderer SR;
     BoxCollider2D BC2;
     Animator A;
     PatrolChase PC;
+    PatrolIgnore PI;
     EnemyDmg ED;
 
 
@@ -50,17 +52,32 @@ public class Health : MonoBehaviour, ISaveable
 
         if(Dead)
         {
+            if(TryGetComponent<PatrolChase>(out var PC))
+            {
+                PC.enabled = false;
+            }
+            else if(TryGetComponent<PatrolIgnore>(out var PI))
+            {
+                PI.enabled = false;
+            }
             SR.enabled = false;
             BC2.enabled = false;
-            PC.enabled = false;
+            PI.enabled = false;
             A.enabled = false;
 
         }
         else
         {
+            if(TryGetComponent<PatrolChase>(out var PC))
+            {
+                PC.enabled = true;
+            }
+            else if(TryGetComponent<PatrolIgnore>(out var PI))
+            {
+                PI.enabled = true;
+            }
             SR.enabled = true;
             BC2.enabled = true;
-            PC.enabled = true;
             ED.enabled = true;
             A.enabled = true;
 

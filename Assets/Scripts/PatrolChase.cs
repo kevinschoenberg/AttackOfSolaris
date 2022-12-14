@@ -17,6 +17,10 @@ public class PatrolChase : MonoBehaviour
     private SpriteRenderer sprite;
     private Animator anim;
     public Vector2 dir;
+    public Vector2 dir2;
+    Vector3 pos_old;
+    Vector3 pos;
+    Vector3 dif_pos;
 
     // Start is called before the first frame update
     void Start()
@@ -53,7 +57,9 @@ public class PatrolChase : MonoBehaviour
             //Walk towards the player
             if (Vector2.Distance(transform.position, player.transform.position) <= Enemy.MaxDist)
             {
+                dir2 = Vector2.MoveTowards(transform.position, player.transform.position, Time.deltaTime * speed);
                 transform.position = Vector2.MoveTowards(transform.position, player.transform.position, Time.deltaTime * speed);
+
             }
             else
             {
@@ -72,21 +78,47 @@ public class PatrolChase : MonoBehaviour
 
     private void UpdateAnimationState()
     {
+        Vector3 pos = transform.position;
+        dif_pos = pos_old - pos;
         MovementState State;
-        if (dir.x < 0)
+
+        if (transform.rotation.z > 0)
         {
-            State = MovementState.walking;
-            sprite.flipX = false;
-        }
-        else if (dir.x > 0)
-        {
-            State = MovementState.walking;
-            sprite.flipX = true;
+            if ((dif_pos.x > 0 & dif_pos.x > 0) || (dif_pos.x < 0 & dif_pos.x > 0)/* || dir.x < 0*/)
+            {
+                State = MovementState.walking;
+                sprite.flipX = false;
+            }
+            else if ((dif_pos.x < 0 & dif_pos.x < 0) || (dif_pos.x > 0 & dif_pos.x < 0)/* || dir.x > 0*/)
+            {
+                State = MovementState.walking;
+                sprite.flipX = true;
+            }
+            else
+            {
+                State = MovementState.idle;
+            }
         }
         else
         {
-            State = MovementState.idle;
+            if ((dif_pos.x < 0 & dif_pos.x < 0) || (dif_pos.x > 0 & dif_pos.x < 0) /* || dir.x < 0*/)
+            {
+                State = MovementState.walking;
+                sprite.flipX = false;
+            }
+            else if ((dif_pos.x > 0 & dif_pos.x > 0) || (dif_pos.x < 0 & dif_pos.x > 0) /* || dir.x > 0*/)
+            {
+                State = MovementState.walking;
+                sprite.flipX = true;
+            }
+            else
+            {
+                State = MovementState.idle;
+            }
         }
+
+
+        pos_old = pos;
         anim.SetInteger("AnimState", (int)State);
     }
 

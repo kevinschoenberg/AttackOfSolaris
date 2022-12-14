@@ -18,8 +18,9 @@ public class Smooth_Transition : MonoBehaviour
 
     private void Start()
     {
+        print(Sound.name);
         VolumeSystem = FindObjectOfType<AdjustVolume>();
-        if (Sound.name == "MarsMusic" || Sound.name == "MenuMusic"  || Sound.name == "MoonMusic" || Sound.name == "Rain_Noise" || Sound.name == "IntroMusic")
+        if (Sound.name == "MarsMusic" || Sound.name == "MenuMusic"  || Sound.name == "MoonMusic" || Sound.name == "Rain_Noise" || Sound.name == "IntroMusic" || Sound.name == "FireNoise")
         {
             SwapSound();
         }
@@ -48,7 +49,7 @@ public class Smooth_Transition : MonoBehaviour
                 yield return null;
             }
         }
-        else if ((current.volume > normalVolume || current.volume < normalVolume) && Sound.name != "Rain_Noise" && Sound.name != "IntroMusic")
+        else if ((current.volume > normalVolume || current.volume < normalVolume) && Sound.name != "Rain_Noise" && Sound.name != "IntroMusic" && Sound.name != "FireNoise")
         {
             startingVolume = current.volume;
             while (current.volume != normalVolume)

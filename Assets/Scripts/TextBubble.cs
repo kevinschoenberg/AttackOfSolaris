@@ -16,11 +16,8 @@ public class TextBubble : MonoBehaviour
 
     private void Start()
     {
-        if (TextBox != null)
-        {
-            _showText = true;
-            TextBox.enabled = true;
-        }
+        _showText = true;
+        TextBox.enabled = true;
     }
     void Update()
     {
@@ -43,7 +40,7 @@ public class TextBubble : MonoBehaviour
                 }
                 else if (msgindex < messageArray.Length)
                 {
-                    if (msgindex == messageArray.Length - 2 && TextBox != null)
+                    if (msgindex == messageArray.Length - 2 && TextBox.name == "IntroChatFrame")
                         Smooth_Trans.SwapSound();
                     string message = messageArray[msgindex];
                     TextWriterInstance.AddTextor(messageText, message, 0.04f, true);
@@ -52,25 +49,21 @@ public class TextBubble : MonoBehaviour
                 else if (msgindex == messageArray.Length)
                 {
                     messageText.enabled = false;
-                    if (ChatBubble != null)
-                        ChatBubble.enabled = false;
-                    else if (TextBox != null && TextBox.name == "IntroChatFrame")
-                        TextBox.enabled = false;
+                    TextBox.enabled = false;
+                    if (TextBox.name == "IntroChatFrame")
                         SceneManager.LoadScene(2);  
-                        
                 }
             }
         }
         //counter is increasing by deltaTime till to reach the trigger time
-        /*
+        
         _counter += Time.deltaTime;
         //after or equals 5 sec. show a simple GUIText
         if (_counter >= 5 && !_showText)
         {
             _showText = true;
-            if (ChatBubble != null)
-                ChatBubble.enabled = true;
-        }*/
+            TextBox.enabled = true;
+        }
 
     }
 }

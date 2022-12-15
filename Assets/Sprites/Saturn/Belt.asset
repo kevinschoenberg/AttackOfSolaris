@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af7181f404f1447c0a7a17b3070b952b, type: 3}
-  m_Name: Surface
+  m_Name: Belt
   m_EditorClassIdentifier: 
   m_Angles:
   - m_Start: -180
     m_End: 180
     m_Order: 0
     m_Sprites:
-    - {fileID: 21300000, guid: f61c81d29e764ca459c6ba9f354e560c, type: 3}
-  m_FillTexture: {fileID: 2800000, guid: 33e172f902e0084429b3125e9db9cd3d, type: 3}
+    - {fileID: 21300000, guid: 74b4db3b9f0214d498a105ad79c7c71a, type: 3}
+  m_FillTexture: {fileID: 2800000, guid: b281b91a70a624a0da1c43adc1c30c7b, type: 3}
   m_CornerSprites:
   - m_CornerType: 0
     m_Sprites:

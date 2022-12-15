@@ -11,12 +11,17 @@ public class TextBubble : MonoBehaviour
     private float _counter = 0;
     private bool _showText = false;
     public SpriteRenderer TextBox;
+    public Image ChatBubble;
     [SerializeField] public Smooth_Transition Smooth_Trans;
 
     private void Start()
     {
-        _showText = true;
-        TextBox.enabled = true;
+        if (TextBox != null && TextBox.name == "IntroChatFrame")
+        {
+            _showText = true;
+            TextBox.enabled = true;
+        }
+        
     }
     void Update()
     {
@@ -39,7 +44,7 @@ public class TextBubble : MonoBehaviour
                 }
                 else if (msgindex < messageArray.Length)
                 {
-                    if (msgindex == messageArray.Length - 2 && TextBox.name == "IntroChatFrame")
+                    if (msgindex == messageArray.Length - 2 && TextBox != null && TextBox.name == "IntroChatFrame")
                         Smooth_Trans.SwapSound();
                     string message = messageArray[msgindex];
                     TextWriterInstance.AddTextor(messageText, message, 0.04f, true);
@@ -48,8 +53,14 @@ public class TextBubble : MonoBehaviour
                 else if (msgindex == messageArray.Length)
                 {
                     messageText.enabled = false;
-                    TextBox.enabled = false;
-                    if (TextBox.name == "IntroChatFrame")
+                    if (ChatBubble != null)
+                    {
+                        _showText = false;
+                        ChatBubble.enabled = false;
+                    }
+                    
+                    if (TextBox != null && TextBox.name == "IntroChatFrame")
+                        TextBox.enabled = false;
                         SceneManager.LoadScene(2);  
                 }
             }
@@ -60,8 +71,11 @@ public class TextBubble : MonoBehaviour
         //after or equals 5 sec. show a simple GUIText
         if (_counter >= 5 && !_showText)
         {
-            _showText = true;
-            TextBox.enabled = true;
+            if (ChatBubble != null)
+            {
+                _showText = true;
+                ChatBubble.enabled = true;
+            }
         }
 
     }

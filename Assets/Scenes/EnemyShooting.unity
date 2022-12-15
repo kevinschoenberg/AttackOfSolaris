@@ -3114,7 +3114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a1cddbe47c684cc89f8b355f2874512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityForce: 10
+  gravityForce: 20
   planet: {fileID: 210126134}
   pm: {fileID: 395075117}
 --- !u!114 &395075117
@@ -3130,7 +3130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  jumpForce: 30
+  jumpForce: 20
   isFacingRight: 1
   jumpSound: {fileID: 460741134}
   groundCheck: {fileID: 2091153845}

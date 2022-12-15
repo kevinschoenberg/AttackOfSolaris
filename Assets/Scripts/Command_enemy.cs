@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Command_enemy : MonoBehaviour
 {
@@ -9,20 +10,19 @@ public class Command_enemy : MonoBehaviour
     public Transform spawnpoint;
     public GameObject enemy_to_spawn;
     Health Command_heatlh;
-    public GameObject spawn_effect;
-    public AudioClip spawn_sound;
 
-    /*Variables for animation*/
-    public Rigidbody2D rb;
-    public float dirX;
+    //for spawning
+    public ParticleSystem spawneffect;
+    public AudioClip spawnsound;
+
+
+
     private enum MovementState { idle, walking };
-    private SpriteRenderer sprite;
-    private Animator anim;
     private float _lastTime = 0f;
     private float spawn_offset = 2f;
-    private Vector2 _distanceToPLayer;
     public int max_spawns = 2;
     private int spawn_count;
+
 
     
 
@@ -32,8 +32,7 @@ public class Command_enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animator>();
-        sprite = GetComponent<SpriteRenderer>();
+
         Command_heatlh = GameObject.Find("Enemy_command").GetComponent<Health>();
 
     }
@@ -55,24 +54,22 @@ public class Command_enemy : MonoBehaviour
                     }
             }
 
-        //dirX = rb.velocity.x;
-        //UpdateAnimationState();
-
     }
     public void Spawn_enemy()
     {
-        spawneffect();
+     
         GameObject spawn = Instantiate(enemy_to_spawn, spawnpoint.position, spawnpoint.rotation);
+
+
+
+        Instantiate(spawneffect, spawnpoint.position, spawnpoint.rotation);
+
         PlanetGravity pg = spawn.GetComponent<PlanetGravity>();
         pg.SetPlanet(GetComponent<PlanetGravity>().planet);
 
         PatrolChase pc = spawn.GetComponent<PatrolChase>();
         pc.SetPlayer(GetComponent<PatrolChase>().player);
     }
-    private void spawneffect()
-    {
-        Instantiate(spawn_effect, spawnpoint.position, spawnpoint.rotation);
-        AudioSource.PlayClipAtPoint(spawn_sound, spawnpoint.position);
-    }
+  
 
 }

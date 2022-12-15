@@ -742,6 +742,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 828188398}
+        m_TargetAssemblyTypeName: Begin_new_game, Assembly-CSharp
+        m_MethodName: Reset_prefs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 797640158}
         m_TargetAssemblyTypeName: Select_level, Assembly-CSharp
         m_MethodName: Begin_new_game
@@ -3085,6 +3097,7 @@ GameObject:
   m_Component:
   - component: {fileID: 828188396}
   - component: {fileID: 828188397}
+  - component: {fileID: 828188398}
   m_Layer: 5
   m_Name: NewGamePanel
   m_TagString: Untagged
@@ -3130,6 +3143,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   inputField: {fileID: 0}
+--- !u!114 &828188398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828188395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c91c58ffbbde24c9f6da23469f953c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &856865862
 GameObject:
   m_ObjectHideFlags: 0
@@ -5533,7 +5558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4dd336cc1a4c294d8fe1d4d74263e6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 2
+  level: 3
   inputField: {fileID: 0}
 --- !u!114 &1517707594
 MonoBehaviour:
@@ -5842,7 +5867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4dd336cc1a4c294d8fe1d4d74263e6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
+  level: 2
   inputField: {fileID: 0}
 --- !u!114 &1630031154
 MonoBehaviour:
@@ -6824,7 +6849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4dd336cc1a4c294d8fe1d4d74263e6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 2
+  level: 3
   inputField: {fileID: 0}
 --- !u!114 &1878410796
 MonoBehaviour:
@@ -7264,7 +7289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4dd336cc1a4c294d8fe1d4d74263e6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
+  level: 2
   inputField: {fileID: 0}
 --- !u!114 &2018085752
 MonoBehaviour:

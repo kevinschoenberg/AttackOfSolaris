@@ -59,55 +59,32 @@ public class PatrolChase : MonoBehaviour
             //Walk towards the player
             if (Vector2.Distance(transform.position, player.transform.position) <= Enemy.MaxDist)
             {
-                if (player.transform.position.x > CenterPoint.position.x)
+                Vector2 CenterToEnemy =  transform.position- CenterPoint.transform.position;
+                Vector2 CenterToPlayer = player.transform.position- CenterPoint.transform.position;
+
+                float EnemyAngle = Mathf.Atan2(CenterToEnemy.x, CenterToEnemy.y) * Mathf.Rad2Deg * Mathf.Sign(CenterToEnemy.x);
+                float PlayerAngle = Mathf.Atan2(CenterToPlayer.x, CenterToPlayer.y) * Mathf.Rad2Deg * Mathf.Sign(CenterToPlayer.x);
+
+                if (transform.position.x < CenterPoint.position.x)
+                    EnemyAngle = 360 - EnemyAngle;
+                if (player.transform.position.x < CenterPoint.position.x)
+                    PlayerAngle = 360 - PlayerAngle;
+                float totalangle = EnemyAngle - PlayerAngle;
+                if (totalangle > 180)
                 {
-                    if (player.transform.position.y > CenterPoint.position.y)
-                    {
-                        if (player.transform.position.x > transform.position.x && player.transform.position.y < transform.position.y && transform.position.y - CenterPoint.position.y > 0)
-                        {
-                            transform.Translate(Vector2.right * Time.deltaTime * speed);
-                        }
-                        else if ((player.transform.position.x < transform.position.x && player.transform.position.y > transform.position.y) || transform.position.y - CenterPoint.position.y < 0)
-                        {
-                            transform.Translate(Vector2.left * Time.deltaTime * speed);
-                        }
-                    }
-                    else
-                    {
-                        if (player.transform.position.x > transform.position.x && player.transform.position.y > transform.position.y && transform.position.y - CenterPoint.position.y < 0)
-                        {
-                            transform.Translate(Vector2.left * Time.deltaTime * speed);
-                        }
-                        else if ((player.transform.position.x < transform.position.x && player.transform.position.y > transform.position.y) || transform.position.y - CenterPoint.position.y > 0)
-                        {
-                            transform.Translate(Vector2.right * Time.deltaTime * speed);
-                        }
-                    }
+                    transform.Translate(Vector2.right * Time.deltaTime * speed);
                 }
-                else if (player.transform.position.x < CenterPoint.position.x)
+                else if (totalangle < -180)
                 {
-                    if (player.transform.position.y > CenterPoint.position.y)
-                    {
-                        if ((player.transform.position.x > transform.position.x && player.transform.position.y > transform.position.y) || transform.position.y - CenterPoint.position.y < 0)
-                        {
-                            transform.Translate(Vector2.right * Time.deltaTime * speed);
-                        }
-                        else if (player.transform.position.x < transform.position.x && player.transform.position.y < transform.position.y && transform.position.y - CenterPoint.position.y > 0)
-                        {
-                            transform.Translate(Vector2.left * Time.deltaTime * speed);
-                        }
-                    }
-                    else
-                    {
-                        if ((player.transform.position.x > transform.position.x && player.transform.position.y < transform.position.y) || transform.position.y - CenterPoint.position.y > 0)
-                        {
-                            transform.Translate(Vector2.left * Time.deltaTime * speed);
-                        }
-                        else if (player.transform.position.x < transform.position.x && player.transform.position.y > transform.position.y && transform.position.y - CenterPoint.position.y < 0)
-                        {
-                            transform.Translate(Vector2.right * Time.deltaTime * speed);
-                        }
-                    }
+                    transform.Translate(Vector2.left * Time.deltaTime * speed);
+                }
+                else if (totalangle > 0)
+                {
+                    transform.Translate(Vector2.left * Time.deltaTime * speed);
+                }
+                else
+                {
+                    transform.Translate(Vector2.right * Time.deltaTime * speed);
                 }
             }
             else

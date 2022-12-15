@@ -59,9 +59,9 @@ public class TextBubble : MonoBehaviour
                         ChatBubble.enabled = false;
                     }
                     
-                    if (TextBox != null && TextBox.name == "IntroChatFrame")
+                    else if (TextBox != null && TextBox.name == "IntroChatFrame")
                         TextBox.enabled = false;
-                        SceneManager.LoadScene(2);  
+                        SceneManager.LoadScene(2); 
                 }
             }
         }

@@ -5977,6 +5977,7 @@ MonoBehaviour:
   speed: 3
   jumpForce: 0
   isFacingRight: 1
+  jumpSound: {fileID: 0}
   groundCheck: {fileID: 2102022575}
   groundLayer:
     serializedVersion: 2
@@ -6955,18 +6956,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1723477104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1723477100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edc546a21c64d6d4eb1cd5e14ea3a5fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1790940228
 GameObject:
   m_ObjectHideFlags: 0

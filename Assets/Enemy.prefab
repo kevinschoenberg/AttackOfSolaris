@@ -470,6 +470,7 @@ MonoBehaviour:
   maxHealth: 20
   Enemy: {fileID: 0}
   healthbar: {fileID: 2403416886905751530}
+  Dead: 0
 --- !u!114 &2428932243275977855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,6 +485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
   damage: 2
+  hitDelay: 0.5
 --- !u!95 &1809813087387010233
 Animator:
   serializedVersion: 4
@@ -519,6 +521,9 @@ MonoBehaviour:
   player: {fileID: 0}
   speed: 4
   walkingTime: 5
+  isFacingRight: 1
+  dir: {x: 0, y: 0}
+  dir2: {x: 0, y: 0}
 --- !u!114 &5126056213946914598
 MonoBehaviour:
   m_ObjectHideFlags: 0

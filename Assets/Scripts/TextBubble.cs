@@ -10,7 +10,6 @@ public class TextBubble : MonoBehaviour
     [SerializeField] private string[] messageArray;
     private float _counter = 0;
     private bool _showText = false;
-    public Image ChatBubble;
     public SpriteRenderer TextBox;
     [SerializeField] public Smooth_Transition Smooth_Trans;
 

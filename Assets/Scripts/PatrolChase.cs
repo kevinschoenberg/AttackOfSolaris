@@ -22,6 +22,7 @@ public class PatrolChase : MonoBehaviour
     Vector3 pos_old;
     Vector3 pos;
     Vector3 dif_pos;
+    MovementState State;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,16 @@ public class PatrolChase : MonoBehaviour
     private void Update()
     {
         dir = Vector2.left * (Time.deltaTime * _walkingSpeed * index);
+        if (index < 0)
+        {
+            State = MovementState.walking;
+            sprite.flipX = true;
+        }
+        else
+        {
+            State = MovementState.walking;
+            sprite.flipX = false;
+        }
         if (Vector2.Distance(transform.position, player.transform.position) > Enemy.MaxDist)
         {
             if (_lastTime == 0f)
@@ -73,18 +84,26 @@ public class PatrolChase : MonoBehaviour
                 if (totalangle > 180)
                 {
                     transform.Translate(Vector2.right * Time.deltaTime * speed);
+                    State = MovementState.walking;
+                    sprite.flipX = true;
                 }
                 else if (totalangle < -180)
                 {
                     transform.Translate(Vector2.left * Time.deltaTime * speed);
+                    State = MovementState.walking;
+                    sprite.flipX = false;
                 }
                 else if (totalangle > 0)
                 {
                     transform.Translate(Vector2.left * Time.deltaTime * speed);
+                    State = MovementState.walking;
+                    sprite.flipX = false;
                 }
                 else
                 {
                     transform.Translate(Vector2.right * Time.deltaTime * speed);
+                    State = MovementState.walking;
+                    sprite.flipX = true;
                 }
             }
             else
@@ -92,7 +111,8 @@ public class PatrolChase : MonoBehaviour
                 transform.Translate(Vector2.zero, Space.Self);
             }
         }
-        UpdateAnimationState(); 
+        //UpdateAnimationState(); '
+        anim.SetInteger("AnimState", (int)State);
 
     }
 
@@ -141,8 +161,6 @@ public class PatrolChase : MonoBehaviour
                 State = MovementState.idle;
             }
         }
-
-
         pos_old = pos;
         anim.SetInteger("AnimState", (int)State);
     }

@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     private SpriteRenderer sprite;
     private Animator anim;
+    private Animator animFire;
     private enum MovementState {idle, running, jumping, falling};
     public bool isFacingRight = true;
     
@@ -23,11 +24,16 @@ public class PlayerMovement : MonoBehaviour
     
     public GameObject planet;
 
+    //Jetpack
+    public float fuel = 10f;
+    public float JetpackForce = 20;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        animFire = GameObject.Find("Fire").GetComponent<Animator>();
     }
 
     void Update()
@@ -54,6 +60,19 @@ public class PlayerMovement : MonoBehaviour
             jumpSound.Play();
             Vector3 v = transform.position - planet.transform.position;
             rb.AddForce(v * jumpForce);
+        }
+        if(Input.GetKey(KeyCode.F) & fuel > 0)
+        {
+            float dist = Vector3.Distance(Vector3.zero, transform.position);
+            float dist_mult = 205.025f/dist;
+            Vector3 v = transform.position - planet.transform.position;
+            rb.AddForce(v*JetpackForce*dist_mult);
+            fuel -= 0.01f;
+            animFire.SetTrigger("JetPackOn");
+        }
+        else
+        { 
+            animFire.ResetTrigger("JetPackOn");
         }
         UpdateAnimationState();
         Flip();

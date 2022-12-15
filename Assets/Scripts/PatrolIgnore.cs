@@ -10,9 +10,30 @@ public class PatrolIgnore : MonoBehaviour
     private float _lastTime = 0f;
     private float _currentTime = 0f;
     private float _walkingSpeed = 2f;
+    //For animation
+    private SpriteRenderer sprite;
+    private Animator anim;
+    private enum MovementState {idle, walking};
+    MovementState State;
+
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
+    }
 
     private void Update()
     {
+        if (index < 0)
+        {
+            State = MovementState.walking;
+            sprite.flipX = true;
+        }
+        else
+        {
+            State = MovementState.walking;
+            sprite.flipX = false;
+        }
         if (_lastTime == 0f)
         {
             _lastTime = Time.time;
@@ -28,6 +49,8 @@ public class PatrolIgnore : MonoBehaviour
             index *= -1;
             _lastTime = Time.time;
         }
+        anim.SetInteger("AnimState", (int)State);
     }
+    
 
 }

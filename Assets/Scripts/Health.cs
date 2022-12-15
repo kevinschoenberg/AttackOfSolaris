@@ -8,7 +8,7 @@ public class Health : MonoBehaviour, ISaveable
 {
     [SerializeField] public int health;
     [SerializeField] public int maxHealth;
-    public GameObject Enemy;
+    GameObject Enemy;
     public HealthBar healthbar;
     killcounter killcounterscript;
     private int score_value = 1;
@@ -22,6 +22,8 @@ public class Health : MonoBehaviour, ISaveable
     PatrolChase PC;
     PatrolIgnore PI;
     EnemyDmg ED;
+    GameObject EH;
+    PlanetGravity PG;
 
 
 
@@ -34,6 +36,8 @@ public class Health : MonoBehaviour, ISaveable
         PC = GetComponent<PatrolChase>();
         A = GetComponent<Animator>();
         ED = GetComponent<EnemyDmg>();
+        EH = GameObject.Find("EnemyHealthbar");
+        PG = GetComponent<PlanetGravity>();
 
         //n�r man starter spillet bliver health initialiseret 
         health = maxHealth;
@@ -60,10 +64,12 @@ public class Health : MonoBehaviour, ISaveable
             {
                 PI.enabled = false;
             }
+            EH.SetActive(false);
             SR.enabled = false;
             BC2.enabled = false;
             ED.enabled = false;
             A.enabled = false;
+            PG.enabled = false;
 
         }
         else
@@ -76,10 +82,12 @@ public class Health : MonoBehaviour, ISaveable
             {
                 PI.enabled = true;
             }
+            EH.SetActive(true);
             SR.enabled = true;
             BC2.enabled = true;
             ED.enabled = true;
             A.enabled = true;
+            PG.enabled = true;
 
         }
     }

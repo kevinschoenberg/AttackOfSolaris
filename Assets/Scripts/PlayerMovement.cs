@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D rb;
-    public float speed = 5;
+    public float accSpeed = 800;
+    public float maxSpeed = 10;
 
     public float jumpForce = 20;
     private float _inputX;
@@ -40,14 +41,18 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(transform.InverseTransformDirection(rb.velocity));
+
         _inputX = Input.GetAxis("Horizontal");
         if (_inputX > 0f)
         {
-            transform.Translate(Vector2.right * (Time.deltaTime * speed), Space.Self);
+            rb.AddRelativeForce(Vector2.right * (Time.deltaTime * accSpeed));
+            //transform.Translate(Vector2.right * (Time.deltaTime * speed), Space.Self);
         }
         else if (_inputX < 0f)
         {
-            transform.Translate(Vector2.left * (Time.deltaTime * speed), Space.Self);
+            rb.AddRelativeForce(Vector2.left * (Time.deltaTime * accSpeed));
+            //transform.Translate(Vector2.left * (Time.deltaTime * speed), Space.Self);
         }
         else
         {
@@ -55,8 +60,9 @@ public class PlayerMovement : MonoBehaviour
             
             if(IsGrounded())
                 rb.velocity = Vector2.zero;
-                
         }
+        rb.velocity = transform.TransformDirection(Vector2.ClampMagnitude(transform.InverseTransformDirection(rb.velocity), maxSpeed));
+        
         if(Input.GetButtonDown("Jump") && IsGrounded())
         {
             jumpSound.Play();

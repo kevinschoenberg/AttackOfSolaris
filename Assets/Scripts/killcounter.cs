@@ -10,24 +10,25 @@ public class killcounter : MonoBehaviour, ISaveable
     public int score = 0;
     public Text scoreText;
     public GameObject LevelCompletePanel;
-    public int scorre_threshold = 100;
+    public int score_threshold = 100;
 
     void Update()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         int enemiesLeft = enemies.Length;
-        scoreText.text = "Score: " + score.ToString() + "/" + scorre_threshold + ": Out of " + enemiesLeft + " Enemies";
+        scoreText.text = "Score: " + score.ToString() + "/" + score_threshold + ": Out of " + enemiesLeft + " Enemies";
+        if (score >= score_threshold)
+        {
+            Debug.Log("won");
+            Pause_Menu.PlayerDiedPause();
+            LevelCompletePanel.SetActive(true);
+        }
     }
 
     public void Enemykilled(int points)
     {
         
         score += points;
-        if (score >= scorre_threshold)
-        {
-            Pause_Menu.PlayerDiedPause();
-            LevelCompletePanel.SetActive(true);
-        }
     }
 
     public object SaveState()

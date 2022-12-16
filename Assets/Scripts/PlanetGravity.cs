@@ -13,6 +13,7 @@ public class PlanetGravity : MonoBehaviour
     public PlayerMovement pm;
 
     private float _rotateAngle;
+    private float _lastUpdate;
 
     private void Start()
     {
@@ -25,8 +26,13 @@ public class PlanetGravity : MonoBehaviour
         
         // Gravity
         
-        if(pm.IsUnityNull() || !pm.IsGrounded())
-            rb.AddForce(v.normalized * gravityForce);
+        if ((pm.IsUnityNull() || !pm.IsGrounded()))
+        {
+            rb.AddForce(v.normalized * (gravityForce * Time.deltaTime));
+            _lastUpdate = Time.time;
+        }
+            
+            
 
         //Rotate object to be perpendicular to the planet surface
         _rotateAngle = 90 + Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;

@@ -25,10 +25,10 @@ public class PlanetGravity : MonoBehaviour
         Vector2 v = planet.transform.position - transform.position;
         
         // Gravity
-
-        if ((pm.IsUnityNull() || !pm.IsGrounded()) && _lastUpdate + 0.05f < Time.time)
+        
+        if ((pm.IsUnityNull() || !pm.IsGrounded()))
         {
-            rb.AddForce(v.normalized * gravityForce);
+            rb.AddForce(v.normalized * (gravityForce * Time.deltaTime));
             _lastUpdate = Time.time;
         }
             

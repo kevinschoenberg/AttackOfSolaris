@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -33,7 +34,8 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-        animFire = GameObject.Find("Fire").GetComponent<Animator>();
+        if(SceneManager.GetActiveScene().name == "Saturn_scene")
+            animFire = GameObject.Find("Fire").GetComponent<Animator>();
     }
 
     void Update()
@@ -61,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
             Vector3 v = transform.position - planet.transform.position;
             rb.AddForce(v * jumpForce);
         }
-        if(Input.GetKey(KeyCode.F) & fuel > 0)
+        if(Input.GetKey(KeyCode.F) & fuel > 0 && SceneManager.GetActiveScene().name == "Saturn_scene")
         {
             float dist = Vector3.Distance(Vector3.zero, transform.position);
             float dist_mult = 205.025f/dist;
@@ -70,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
             fuel -= 0.01f;
             animFire.SetTrigger("JetPackOn");
         }
-        else
+        else if (SceneManager.GetActiveScene().name == "Saturn_scene")
         { 
             animFire.ResetTrigger("JetPackOn");
         }

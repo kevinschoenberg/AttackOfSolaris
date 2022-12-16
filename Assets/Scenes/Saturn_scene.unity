@@ -35976,7 +35976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a1cddbe47c684cc89f8b355f2874512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityForce: 10
+  gravityForce: 500
   planet: {fileID: 1402128629}
   pm: {fileID: 881373367}
 --- !u!114 &881373367

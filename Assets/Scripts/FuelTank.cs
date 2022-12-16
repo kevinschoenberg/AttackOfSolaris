@@ -14,11 +14,12 @@ public class FuelTank : MonoBehaviour
 
     void Update()
     {
+        float time_passed = Time.deltaTime;
         float DistToPlayer = Vector2.Distance(transform.position, player.transform.position);
 
         if (DistToPlayer < 3f && PlayerMove.fuel < 10f)
         {
-            PlayerMove.fuel += 0.01f;
+            PlayerMove.fuel += time_passed*2;
         }
     }
 }

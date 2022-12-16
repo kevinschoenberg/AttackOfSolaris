@@ -3114,7 +3114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a1cddbe47c684cc89f8b355f2874512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityForce: 90
+  gravityForce: 250
   planet: {fileID: 210126134}
   pm: {fileID: 395075117}
 --- !u!114 &395075117
@@ -3221,7 +3221,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395075110}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25.63, y: -91.2, z: -0.4845879}
+  m_LocalPosition: {x: 0, y: 9, z: -0.4845879}
   m_LocalScale: {x: 0.5276692, y: 0.5287, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6988,13 +6988,14 @@ GameObject:
   - component: {fileID: 1027367407}
   - component: {fileID: 1027367406}
   - component: {fileID: 1027367405}
+  - component: {fileID: 1027367409}
   m_Layer: 0
   m_Name: LavaSection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!68 &1027367405
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -7177,13 +7178,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1027367404}
   m_LocalRotation: {x: -0, y: -0, z: 0.9198487, w: -0.3922734}
-  m_LocalPosition: {x: 30.54, y: -5.81, z: 0}
-  m_LocalScale: {x: 0.15588, y: 1.0254674, z: 1}
+  m_LocalPosition: {x: 4.058874, y: -9.752243, z: -0.13202439}
+  m_LocalScale: {x: 0.15588002, y: 1.0254674, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 2129966630}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 226.192}
+--- !u!114 &1027367409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027367404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 962d0245e28a54dc485e0058dc43125c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 395075112}
+  damage: 1
+  hitDelay: 0.2
 --- !u!1 &1116018008
 GameObject:
   m_ObjectHideFlags: 0
@@ -12447,6 +12463,7 @@ Transform:
   - {fileID: 1725402252}
   - {fileID: 606282558}
   - {fileID: 553167666}
+  - {fileID: 1027367408}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

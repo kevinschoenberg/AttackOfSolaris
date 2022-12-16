@@ -3038,7 +3038,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 10
   healthbar: {fileID: 1333851329}
-  DeathPanel: {fileID: 0}
+  DeathPanel: {fileID: 1757957927}
 --- !u!95 &395075113
 Animator:
   serializedVersion: 4

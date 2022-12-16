@@ -76,11 +76,12 @@ public class PlayerMovement : MonoBehaviour
         }
         if(Input.GetKey(KeyCode.F) & fuel > 0 && SceneManager.GetActiveScene().name == "Saturn_scene")
         {
+            float time_passed = Time.deltaTime;
             float dist = Vector3.Distance(Vector3.zero, transform.position);
             float dist_mult = 205.025f/dist;
             Vector3 v = transform.position - planet.transform.position;
             rb.AddForce(v*JetpackForce*dist_mult);
-            fuel -= 0.01f;
+            fuel -= time_passed;
             animFire.SetTrigger("JetPackOn");
         }
         else if (SceneManager.GetActiveScene().name == "Saturn_scene")

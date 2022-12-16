@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class FuelBar : MonoBehaviour
 {
+    public Slider FuelSlider; 
     // Start is called before the first frame update
-    void Start()
+    
+    public void SetMaxFuel(float maxFuel)
     {
-        
+        FuelSlider.maxValue = maxFuel;
+        FuelSlider.value = maxFuel;
     }
-
-    // Update is called once per frame
-    void Update()
+    public void SetFuel(float fuel)
     {
-        
+        FuelSlider.value = fuel;
     }
 }

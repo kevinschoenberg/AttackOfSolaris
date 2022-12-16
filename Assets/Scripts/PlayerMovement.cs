@@ -27,8 +27,10 @@ public class PlayerMovement : MonoBehaviour
     public GameObject planet;
 
     //Jetpack
+    public float maxFuel = 10f;
     public float fuel = 10f;
     public float JetpackForce = 20;
+    public FuelBar fuelBar;
 
     void Start()
     {
@@ -37,12 +39,15 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         if(SceneManager.GetActiveScene().name == "Saturn_scene")
             animFire = GameObject.Find("Fire").GetComponent<Animator>();
+
+        fuelBar.SetMaxFuel(maxFuel);
+        fuel = maxFuel;
     }
 
     void Update()
     {
-        Debug.Log(transform.InverseTransformDirection(rb.velocity));
-
+        //Debug.Log(transform.InverseTransformDirection(rb.velocity));
+        fuelBar.SetFuel(fuel);
         _inputX = Input.GetAxis("Horizontal");
         if (_inputX > 0f)
         {

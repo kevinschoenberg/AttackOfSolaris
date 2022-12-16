@@ -22,8 +22,6 @@ public class Command_enemy : MonoBehaviour
     private float spawn_offset = 2f;
     public int max_spawns = 2;
     private int spawn_count;
-
-
     
 
 
@@ -45,7 +43,7 @@ public class Command_enemy : MonoBehaviour
             if (max_spawns >= spawn_count)
             {
                 //if the player is within enemy.maxdist start spawning
-                if (Vector2.Distance(transform.position, player.transform.position) < Enemy.MaxDist)
+                if (Vector2.Distance(transform.position, player.transform.position) < MaxDist)
                     if (Time.timeSinceLevelLoad > _lastTime + spawn_offset)
                     {
                         Spawn_enemy();

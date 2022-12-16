@@ -10,14 +10,18 @@ public class PlanetGravity : MonoBehaviour
     public float gravityForce = 5.0f;
 
     public GameObject planet;
-    public PlayerMovement pm;
 
     private float _rotateAngle;
     private float _lastUpdate;
 
+    private Transform groundCheck;
+    [SerializeField] private LayerMask groundLayer;
+
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        groundCheck = transform.Find("GroundCheck");
     }
 
     private void Update()
@@ -26,12 +30,11 @@ public class PlanetGravity : MonoBehaviour
         
         // Gravity
         
-        if ((pm.IsUnityNull() || !pm.IsGrounded()))
+        if (!groundCheck.IsUnityNull() && !IsGrounded())
         {
             rb.AddForce(v.normalized * (gravityForce * Time.deltaTime));
             _lastUpdate = Time.time;
-        }
-            
+        }            
             
 
         //Rotate object to be perpendicular to the planet surface
@@ -42,5 +45,10 @@ public class PlanetGravity : MonoBehaviour
     public void SetPlanet(GameObject newPlanet)
     {
         planet = newPlanet;
+    }
+
+    public bool IsGrounded()
+    { 
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 }

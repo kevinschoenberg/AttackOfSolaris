@@ -23,6 +23,8 @@ public class PatrolChase : MonoBehaviour
     Vector3 pos;
     Vector3 dif_pos;
     MovementState State;
+    public static int MaxDist = 7;
+    public static int MinDist = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +47,7 @@ public class PatrolChase : MonoBehaviour
             State = MovementState.walking;
             sprite.flipX = false;
         }
-        if (Vector2.Distance(transform.position, player.transform.position) > Enemy.MaxDist)
+        if (Vector2.Distance(transform.position, player.transform.position) > MaxDist)
         {
             if (_lastTime == 0f)
             {
@@ -68,7 +70,7 @@ public class PatrolChase : MonoBehaviour
             //Find the distance to the player
             _distanceToPLayer = player.transform.position - transform.position;
             //Walk towards the player
-            if (Vector2.Distance(transform.position, player.transform.position) <= Enemy.MaxDist)
+            if (Vector2.Distance(transform.position, player.transform.position) <= MaxDist)
             {
                 Vector2 CenterToEnemy =  transform.position- CenterPoint.transform.position;
                 Vector2 CenterToPlayer = player.transform.position- CenterPoint.transform.position;

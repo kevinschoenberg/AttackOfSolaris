@@ -2,27 +2,35 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.VisualScripting;
 
 public class Enemy : MonoBehaviour
 {   
-    [SerializeField] public GameObject player;
+    private Transform groundCheck;
+    [SerializeField] private LayerMask groundLayer;
 
     /*Variables for animation*/
     public Rigidbody2D rb;
-    public float dirX;
-    private enum MovementState {idle, walking};
 
-    public static int MaxDist = 7;
-    public static int MinDist = 2;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+        groundCheck = transform.Find("GroundCheck");
     }
     // Update is called once per frame
     void Update()
     {
         //dirX = rb.velocity.x;
-        //UpdateAnimationState();        
+        //UpdateAnimationState();
+        if(!groundCheck.IsUnityNull() && (IsGrounded()))
+            rb.velocity = Vector2.zero;     
     }
 
+    public bool IsGrounded()
+    { 
+        return Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
+    }
 }

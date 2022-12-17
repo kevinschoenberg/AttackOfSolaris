@@ -109,8 +109,6 @@ public class PlayerMovement : MonoBehaviour
     {
         MovementState State;
         State = MovementState.idle;
-        Vector2 CenterToPlayer = transform.position - CenterPoint.transform.position;
-        PlayerAngle = Mathf.Atan2(CenterToPlayer.x, CenterToPlayer.y) * Mathf.Rad2Deg * Mathf.Sign(CenterToPlayer.x) - 90;
         if (IsGrounded())
         {
             if (_inputX > 0f)
@@ -130,23 +128,40 @@ public class PlayerMovement : MonoBehaviour
         }            
         else
         {
-
-            if (PlayerAngle > 0 && rb.velocity.y > 0f)
+            if (_inputX > 0f)
             {
-                State = MovementState.falling;
+                sprite.flipX = false;
             }
-            else if (PlayerAngle > 0 && rb.velocity.y < 0f)
+            else if (_inputX < 0f)
             {
-                State = MovementState.jumping;
+                sprite.flipX = true;
             }
-            else if (PlayerAngle < 0 && rb.velocity.y < 0f)
+            Vector2 CenterToPlayer = transform.position - CenterPoint.transform.position;
+            PlayerAngle = Mathf.Atan2(CenterToPlayer.x, CenterToPlayer.y) * Mathf.Rad2Deg * Mathf.Sign(CenterToPlayer.x) - 90;
+            if (PlayerAngle > 0)
             {
-                State = MovementState.falling;
+                if (rb.velocity.y > 0f)
+                {
+                    State = MovementState.falling;
+                    
+                }
+                else
+                {
+                    State = MovementState.jumping;
+                } 
             }
-            else if (PlayerAngle < 0 && rb.velocity.y > 0f)            
+            else
             {
-                State = MovementState.jumping;
-            }   
+                if (rb.velocity.y < 0f)
+                {
+                    State = MovementState.falling;
+                }
+                else           
+                {
+                    State = MovementState.jumping;
+                }  
+            }
+ 
         }
         anim.SetInteger("AnimState", (int)State);
     }

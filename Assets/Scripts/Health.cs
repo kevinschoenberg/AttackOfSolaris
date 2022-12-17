@@ -17,13 +17,14 @@ public class Health : MonoBehaviour, ISaveable
     public bool Dead;
     bool patrol;
     SpriteRenderer SR;
-    CapsuleCollider2D BC2;
+    CapsuleCollider2D[] BC2;
     Animator A;
     PatrolChase PC;
     PatrolIgnore PI;
     EnemyDmg ED;
     GameObject EH;
     PlanetGravity PG;
+    GameObject Canvas;
 
 
 
@@ -32,11 +33,11 @@ public class Health : MonoBehaviour, ISaveable
     {
         Dead = false;
         SR = GetComponent<SpriteRenderer>();
-        BC2 = GetComponent<CapsuleCollider2D>();
+        BC2 = GetComponentsInChildren<CapsuleCollider2D>();
         PC = GetComponent<PatrolChase>();
         A = GetComponent<Animator>();
         ED = GetComponent<EnemyDmg>();
-        EH = GameObject.Find("EnemyHealthbar");
+        EH = transform.Find("Canvas/EnemyHealthbar").gameObject;
         PG = GetComponent<PlanetGravity>();
 
         //n�r man starter spillet bliver health initialiseret 
@@ -64,9 +65,12 @@ public class Health : MonoBehaviour, ISaveable
             {
                 PI.enabled = false;
             }
+            foreach(var collider in BC2)
+            {
+                collider.enabled = false;
+            }
             EH.SetActive(false);
             SR.enabled = false;
-            BC2.enabled = false;
             ED.enabled = false;
             A.enabled = false;
             PG.enabled = false;
@@ -82,9 +86,12 @@ public class Health : MonoBehaviour, ISaveable
             {
                 PI.enabled = true;
             }
+            foreach(var collider in BC2)
+            {
+                collider.enabled = true;
+            }
             EH.SetActive(true);
             SR.enabled = true;
-            BC2.enabled = true;
             ED.enabled = true;
             A.enabled = true;
             PG.enabled = true;

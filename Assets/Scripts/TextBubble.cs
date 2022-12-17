@@ -12,6 +12,10 @@ public class TextBubble : MonoBehaviour
     private bool _showText = false;
     public Image ChatBubble;
     [SerializeField] public Smooth_Transition Smooth_Trans;
+    public GameObject HiddenJetPack;
+    public GameObject Player;
+    public bool hasJetpack = false;
+    public bool isIntro = false;
 
     private void Start()
     {
@@ -20,10 +24,19 @@ public class TextBubble : MonoBehaviour
             _showText = true;
             ChatBubble.enabled = true;
         }
-        
     }
     void Update()
     {
+        if (hasJetpack && _showText == false)
+        {
+            float Dist_player_jetpack = Vector2.Distance(HiddenJetPack.transform.position, Player.transform.position);
+            if (Dist_player_jetpack < 3f && ChatBubble.name == "JetPackIntro")
+            {
+                _showText = true;
+                ChatBubble.enabled = true;
+            }
+        }
+ 
         messageText = transform.Find("message").Find("messageText").GetComponent<TMPro.TextMeshProUGUI>();
         if (_showText)
         {
@@ -37,7 +50,7 @@ public class TextBubble : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                if (TextWriterInstance != null && TextWriterInstance.Index < TextWriterInstance.Text.Length)
+                if (TextWriterInstance.Index < TextWriterInstance.Text.Length)
                 {
                     TextWriterInstance.DisplayRemove();
                 }
@@ -54,17 +67,16 @@ public class TextBubble : MonoBehaviour
                     messageText.enabled = false;
                     ChatBubble.enabled = false;
                     if (ChatBubble.name == "IntroChatFrame")
-                        SLevel(2); 
+                        SLevel(1); 
                 }
             }
         }
-        //counter is increasing by deltaTime till to reach the trigger time
         
         _counter += Time.deltaTime;
-        //after or equals 5 sec. show a simple GUIText
+        
         if (_counter >= 5 && !_showText)
         {
-            if (ChatBubble.name != "IntroChatFrame")
+            if (isIntro)
             {
                 _showText = true;
                 ChatBubble.enabled = true;

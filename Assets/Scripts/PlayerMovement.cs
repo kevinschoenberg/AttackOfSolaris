@@ -31,23 +31,25 @@ public class PlayerMovement : MonoBehaviour
     public float fuel = 10f;
     public float JetpackForce = 20;
     public FuelBar fuelBar;
+    public bool hasJetpack = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-        if(SceneManager.GetActiveScene().name == "Saturn_scene")
+        if(hasJetpack)
+        {
             animFire = GameObject.Find("Fire").GetComponent<Animator>();
-
-        fuelBar.SetMaxFuel(maxFuel);
-        fuel = maxFuel;
+            if (fuelBar != null)
+                fuelBar.SetMaxFuel(maxFuel);
+            fuel = maxFuel;
+        }
     }
 
     void Update()
     {
         //Debug.Log(transform.InverseTransformDirection(rb.velocity));
-        fuelBar.SetFuel(fuel);
         _inputX = Input.GetAxis("Horizontal");
         if (_inputX > 0f)
         {
@@ -74,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
             Vector3 v = transform.position - planet.transform.position;
             rb.AddForce(v * jumpForce);
         }
-        if(Input.GetKey(KeyCode.F) & fuel > 0 && SceneManager.GetActiveScene().name == "Saturn_scene")
+        if(Input.GetKey(KeyCode.F) & fuel > 0 && hasJetpack)
         {
             float time_passed = Time.deltaTime;
             float dist = Vector3.Distance(Vector3.zero, transform.position);
@@ -83,10 +85,14 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(v*JetpackForce*dist_mult);
             fuel -= time_passed;
             animFire.SetTrigger("JetPackOn");
+            if (fuelBar != null)
+                fuelBar.SetFuel(fuel);
         }
-        else if (SceneManager.GetActiveScene().name == "Saturn_scene")
+        else if (hasJetpack)
         { 
             animFire.ResetTrigger("JetPackOn");
+            if (fuelBar != null)
+                fuelBar.SetFuel(fuel);
         }
         UpdateAnimationState();
         Flip();

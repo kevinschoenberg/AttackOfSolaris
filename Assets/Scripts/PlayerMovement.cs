@@ -13,10 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 20;
     private float _inputX;
 
-    private SpriteRenderer sprite;
-    private Animator anim;
-    private Animator animFire;
-    private enum MovementState {idle, running, jumping, falling};
+
     public bool isFacingRight = true;
     
     public AudioSource jumpSound;
@@ -25,6 +22,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     
     public GameObject planet;
+    //Used for animation
+    public Transform CenterPoint;
+    public float PlayerAngle;
+    public float PlayerAngleOld;
+    private SpriteRenderer sprite;
+    private Animator anim;
+    private Animator animFire;
+    private enum MovementState {idle, running, jumping, falling};
 
     //Jetpack
     public float maxFuel = 10f;
@@ -38,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        CenterPoint = GameObject.Find("CenterPoint").GetComponent<Transform>();
         if(hasJetpack)
         {
             animFire = GameObject.Find("Fire").GetComponent<Animator>();
@@ -49,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        
         //Debug.Log(transform.InverseTransformDirection(rb.velocity));
         _inputX = Input.GetAxis("Horizontal");
         if (_inputX > 0f)
@@ -101,27 +108,45 @@ public class PlayerMovement : MonoBehaviour
     private void UpdateAnimationState()
     {
         MovementState State;
-        if (_inputX > 0f)
+        State = MovementState.idle;
+        Vector2 CenterToPlayer = transform.position - CenterPoint.transform.position;
+        PlayerAngle = Mathf.Atan2(CenterToPlayer.x, CenterToPlayer.y) * Mathf.Rad2Deg * Mathf.Sign(CenterToPlayer.x) - 90;
+        if (IsGrounded())
         {
-            State = MovementState.running;
-            sprite.flipX = false;
-        }
-        else if (_inputX < 0f)
-        {
-            State = MovementState.running;
-            sprite.flipX = true;
-        }
+            if (_inputX > 0f)
+            {
+                State = MovementState.running;
+                sprite.flipX = false;
+            }
+            else if (_inputX < 0f)
+            {
+                State = MovementState.running;
+                sprite.flipX = true;
+            }
+            else
+            {
+                State = MovementState.idle;
+            }
+        }            
         else
         {
-            State = MovementState.idle;
-        }
-        if(rb.velocity.y > .1f)
-        {
-            State = MovementState.jumping;
-        }
-        else if (rb.velocity.y < -.1f)
-        {
-            State = MovementState.falling;
+
+            if (PlayerAngle > 0 && rb.velocity.y > 0f)
+            {
+                State = MovementState.falling;
+            }
+            else if (PlayerAngle > 0 && rb.velocity.y < 0f)
+            {
+                State = MovementState.jumping;
+            }
+            else if (PlayerAngle < 0 && rb.velocity.y < 0f)
+            {
+                State = MovementState.falling;
+            }
+            else if (PlayerAngle < 0 && rb.velocity.y > 0f)            
+            {
+                State = MovementState.jumping;
+            }   
         }
         anim.SetInteger("AnimState", (int)State);
     }

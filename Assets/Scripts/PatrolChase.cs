@@ -77,7 +77,7 @@ public class PatrolChase : MonoBehaviour
 
                 float EnemyAngle = Mathf.Atan2(CenterToEnemy.x, CenterToEnemy.y) * Mathf.Rad2Deg * Mathf.Sign(CenterToEnemy.x);
                 float PlayerAngle = Mathf.Atan2(CenterToPlayer.x, CenterToPlayer.y) * Mathf.Rad2Deg * Mathf.Sign(CenterToPlayer.x);
-
+                print(PlayerAngle);
                 if (transform.position.x < CenterPoint.position.x)
                     EnemyAngle = 360 - EnemyAngle;
                 if (player.transform.position.x < CenterPoint.position.x)

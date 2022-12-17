@@ -11948,6 +11948,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1402128629}
     - target: {fileID: 9154675361536122543, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1891460339}
+    - target: {fileID: 9154675361536122543, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
       propertyPath: jumpSound
       value: 
       objectReference: {fileID: 1374186927}

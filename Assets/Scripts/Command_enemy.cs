@@ -31,7 +31,8 @@ public class Command_enemy : MonoBehaviour
     void Start()
     {
 
-        Command_heatlh = GameObject.Find("Enemy_command").GetComponent<Health>();
+        //Command_heatlh = GameObject.Find("Enemy_command").GetComponent<Health>();
+        Command_heatlh = GetComponent<Health>();
 
     }
     // Update is called once per frame

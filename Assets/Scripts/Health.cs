@@ -17,7 +17,7 @@ public class Health : MonoBehaviour, ISaveable
     public bool Dead;
     bool patrol;
     SpriteRenderer SR;
-    BoxCollider2D BC2;
+    CapsuleCollider2D BC2;
     Animator A;
     PatrolChase PC;
     PatrolIgnore PI;
@@ -32,7 +32,7 @@ public class Health : MonoBehaviour, ISaveable
     {
         Dead = false;
         SR = GetComponent<SpriteRenderer>();
-        BC2 = GetComponent<BoxCollider2D>();
+        BC2 = GetComponent<CapsuleCollider2D>();
         PC = GetComponent<PatrolChase>();
         A = GetComponent<Animator>();
         ED = GetComponent<EnemyDmg>();

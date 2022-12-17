@@ -30,7 +30,7 @@ public class PlanetGravity : MonoBehaviour
         
         // Gravity
         
-        if (!groundCheck.IsUnityNull() && !IsGrounded())
+        if ((!groundCheck.IsUnityNull() && !IsGrounded()))
         {
             rb.AddForce(v.normalized * (gravityForce * Time.deltaTime));
             _lastUpdate = Time.time;

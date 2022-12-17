@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
 
     /*Variables for animation*/
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
 
 
 

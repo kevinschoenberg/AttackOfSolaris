@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
             Vector3 v = transform.position - planet.transform.position;
             rb.AddForce(v * jumpForce);
         }
-        if(Input.GetKey(KeyCode.F) & fuel > 0 && hasJetpack)
+        if(Input.GetKey(KeyCode.F) && fuel > 0 && hasJetpack)
         {
             float time_passed = Time.deltaTime;
             float dist = Vector3.Distance(Vector3.zero, transform.position);

@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ground
   - SaveLoadSystem
+  - Command_Enemy
+  - Enemy
+  - Sword
   layers:
   - Default
   - TransparentFX
@@ -16,7 +19,7 @@ TagManager:
   - Enemy
   - 
   - 
-  - 
+  - Lava
   - Ground
   - 
   - 

@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private LayerMask lavaLayer;
     
     public GameObject planet;
 
@@ -63,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
         }
         rb.velocity = transform.TransformDirection(Vector2.ClampMagnitude(transform.InverseTransformDirection(rb.velocity), maxSpeed));
         
-        if(Input.GetButtonDown("Jump") && IsGrounded())
+        if(Input.GetButtonDown("Jump") && (IsGrounded() || OnLava()))
         {
             jumpSound.Play();
             Vector3 v = transform.position - planet.transform.position;
@@ -118,7 +119,10 @@ public class PlayerMovement : MonoBehaviour
     { 
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
-    
+    public bool OnLava()
+    {
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, lavaLayer);
+    }
     private void Flip()
     {
         if(isFacingRight && _inputX < 0f || !isFacingRight && _inputX > 0f)

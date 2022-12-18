@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -55,8 +56,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        
         //Debug.Log(transform.InverseTransformDirection(rb.velocity));
+
         _inputX = Input.GetAxis("Horizontal");
         if (_inputX > 0f)
         {
@@ -75,7 +76,11 @@ public class PlayerMovement : MonoBehaviour
             if(IsGrounded())
                 rb.velocity = Vector2.zero;
         }
-        rb.velocity = transform.TransformDirection(Vector2.ClampMagnitude(transform.InverseTransformDirection(rb.velocity), maxSpeed));
+
+        var relativeVel = transform.InverseTransformDirection(rb.velocity);
+        var limitedX = math.clamp(relativeVel.x, -10f, 10f);
+        rb.velocity = transform.TransformDirection(new Vector3(limitedX, relativeVel.y, relativeVel.y));
+        //rb.velocity = transform.TransformDirection(Vector2.ClampMagnitude(transform.InverseTransformDirection(rb.velocity), maxSpeed));
         
         if(Input.GetButtonDown("Jump") && IsGrounded())
         {

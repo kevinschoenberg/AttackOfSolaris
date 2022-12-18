@@ -9,18 +9,6 @@ public class Lava : MonoBehaviour
     public int damage = 1;
     public float hitDelay = .2f;
     private float _lastHit = 0f;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnCollisionStay2D(Collision2D collision)
     {

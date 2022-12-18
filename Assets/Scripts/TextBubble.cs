@@ -67,7 +67,7 @@ public class TextBubble : MonoBehaviour
                     messageText.enabled = false;
                     ChatBubble.enabled = false;
                     if (ChatBubble.name == "IntroChatFrame")
-                        SLevel(1); 
+                        SLevel(2); 
                 }
             }
         }

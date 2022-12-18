@@ -220,15 +220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602f74cbbbd80034b96f88091a8e7c1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverBehaviourType: 0
-  hoverBehaviour_Color_Enter: {r: 0, g: 0, b: 0, a: 0}
-  hoverBehaviour_Color_Exit: {r: 0, g: 0, b: 0, a: 0}
-  hoverBehaviour_Image: {fileID: 0}
-  hoverBehaviour_Sprite_Exit: {fileID: 0}
-  hoverBehaviour_Sprite_Enter: {fileID: 0}
-  hoverBehaviour_Move: 0
-  hoverBehaviour_Move_Amount: {x: 0, y: 0}
-  triggerMouseOutFuncOnClick: 0
 --- !u!1 &356912056
 GameObject:
   m_ObjectHideFlags: 0
@@ -5428,15 +5419,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602f74cbbbd80034b96f88091a8e7c1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverBehaviourType: 0
-  hoverBehaviour_Color_Enter: {r: 0, g: 0, b: 0, a: 0}
-  hoverBehaviour_Color_Exit: {r: 0, g: 0, b: 0, a: 0}
-  hoverBehaviour_Image: {fileID: 0}
-  hoverBehaviour_Sprite_Exit: {fileID: 0}
-  hoverBehaviour_Sprite_Enter: {fileID: 0}
-  hoverBehaviour_Move: 0
-  hoverBehaviour_Move_Amount: {x: 0, y: 0}
-  triggerMouseOutFuncOnClick: 0
 --- !u!1 &866409524
 GameObject:
   m_ObjectHideFlags: 0
@@ -6049,7 +6031,6 @@ GameObject:
   - component: {fileID: 1168259975}
   - component: {fileID: 1168259974}
   - component: {fileID: 1168259973}
-  - component: {fileID: 1168259971}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -6073,33 +6054,6 @@ Transform:
   m_Father: {fileID: 1959613627}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1168259971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1168259966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e76d268a1080e49159e29335b7780d62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  accSpeed: 800
-  maxSpeed: 10
-  jumpForce: 0
-  isFacingRight: 1
-  jumpSound: {fileID: 0}
-  groundCheck: {fileID: 2102022575}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 1024
-  planet: {fileID: 1872363809}
-  maxFuel: 10
-  fuel: 10
-  JetpackForce: 20
-  fuelBar: {fileID: 0}
-  hasJetpack: 0
 --- !u!61 &1168259973
 BoxCollider2D:
   m_ObjectHideFlags: 0

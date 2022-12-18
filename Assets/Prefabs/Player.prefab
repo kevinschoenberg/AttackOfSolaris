@@ -1181,7 +1181,13 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 1024
+  lavaLayer:
+    serializedVersion: 2
+    m_Bits: 512
   planet: {fileID: 0}
+  CenterPoint: {fileID: 0}
+  PlayerAngle: 0
+  PlayerAngleOld: 0
   maxFuel: 10
   fuel: 6.201483
   JetpackForce: 0.06

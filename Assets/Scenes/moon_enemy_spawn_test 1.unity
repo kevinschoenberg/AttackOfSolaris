@@ -5675,10 +5675,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 9154675360978449430, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9154675360978449430, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154675361280782098, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9154675361536122531, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
@@ -7406,7 +7410,6 @@ GameObject:
   - component: {fileID: 1824980878}
   - component: {fileID: 1824980880}
   - component: {fileID: 1824980879}
-  - component: {fileID: 1824980881}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -7478,18 +7481,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1824980877}
   m_CullTransparentMesh: 1
---- !u!114 &1824980881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1824980877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 612299c590b390e478d753f82d0509fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1845751930 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6997697852361274240, guid: c062e8e01078f3a429c8070fa7dd6e99, type: 3}
@@ -8103,7 +8094,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2054743854}
-  - component: {fileID: 2054743855}
   m_Layer: 5
   m_Name: message
   m_TagString: Untagged

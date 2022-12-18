@@ -15,9 +15,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Introduction_brightness_fix.unity
     guid: b1501b8042689f64fab84687f95fbe96
   - enabled: 1
-    path: Assets/Scenes/moon_enemy_spawn_test.unity
-    guid: 315853b23d29b944996b3a52391bbabc
+    path: Assets/Scenes/moon_enemy_spawn_test 1.unity
+    guid: 3fb97dae3b243f24ca50b5c25c45029d
+  - enabled: 0
+    path: Assets/Scenes/Uranus.unity
+    guid: b73ad8ebff98ec64d87453ecbec1f7fa
   - enabled: 1
     path: Assets/Scenes/EnemyShooting.unity
     guid: b8634abfb58c440ca9ee329fcb07a966
+  - enabled: 1
+    path: Assets/Scenes/Saturn_scene.unity
+    guid: 1a131f04abaf6344599e2c7308ba036d
   m_configObjects: {}

@@ -431,7 +431,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 123068801}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63deae92bb4338d469d243da83d7eb92, type: 3}
   m_Name: 
@@ -439,7 +439,7 @@ MonoBehaviour:
   score: 0
   scoreText: {fileID: 0}
   LevelCompletePanel: {fileID: 1278880941}
-  scorre_threshold: 2
+  score_threshold: 100
 --- !u!114 &123068803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -704,7 +704,8 @@ Transform:
   m_LocalPosition: {x: 0, y: -46, z: 0}
   m_LocalScale: {x: 98.54447, y: 98.54447, z: 98.54447}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1755659120}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -736,7 +737,7 @@ GameObject:
   - component: {fileID: 218486019}
   - component: {fileID: 218486018}
   m_Layer: 0
-  m_Name: Healthbar
+  m_Name: EnemyHealthbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1864,7 +1865,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 10
   healthbar: {fileID: 1333851329}
-  DeathPanel: {fileID: 0}
+  DeathPanel: {fileID: 1757957927}
 --- !u!95 &395075113
 Animator:
   serializedVersion: 4
@@ -1940,9 +1941,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a1cddbe47c684cc89f8b355f2874512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityForce: 10
+  gravityForce: 250
   planet: {fileID: 210126134}
-  pm: {fileID: 395075117}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!114 &395075117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1955,15 +1958,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76d268a1080e49159e29335b7780d62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
-  jumpForce: 25
+  accSpeed: 800
+  maxSpeed: 10
+  jumpForce: 5
   isFacingRight: 1
   jumpSound: {fileID: 460741134}
   groundCheck: {fileID: 2091153845}
   groundLayer:
     serializedVersion: 2
     m_Bits: 1024
+  lavaLayer:
+    serializedVersion: 2
+    m_Bits: 0
   planet: {fileID: 210126134}
+  CenterPoint: {fileID: 1755659120}
+  PlayerAngle: 0
+  PlayerAngleOld: 0
+  maxFuel: 10
+  fuel: 10
+  JetpackForce: 20
+  fuelBar: {fileID: 0}
+  hasJetpack: 0
 --- !u!50 &395075118
 Rigidbody2D:
   serializedVersion: 4
@@ -3041,7 +3056,7 @@ GameObject:
   - component: {fileID: 790798187}
   - component: {fileID: 790798197}
   m_Layer: 0
-  m_Name: Enemy (1)
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3062,6 +3077,7 @@ MonoBehaviour:
   player: {fileID: 395075110}
   speed: 4
   walkingTime: 5
+  CenterPoint: {fileID: 1755659120}
   isFacingRight: 1
   dir: {x: 0, y: 0}
   dir2: {x: 0, y: 0}
@@ -3114,7 +3130,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 20
-  Enemy: {fileID: 0}
   healthbar: {fileID: 218486018}
   Dead: 0
 --- !u!114 &790798191
@@ -3129,9 +3144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b2b9b8228480460c85c1cc518a05981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 395075110}
-  rb: {fileID: 790798192}
-  dirX: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!50 &790798192
 Rigidbody2D:
   serializedVersion: 4
@@ -3170,7 +3185,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.28}
+    oldSize: {x: 1.6, y: 1.65}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3191,9 +3206,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a1cddbe47c684cc89f8b355f2874512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityForce: 5
+  gravityForce: 250
   planet: {fileID: 210126134}
-  pm: {fileID: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!212 &790798195
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5209,6 +5226,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1755659119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1755659120}
+  m_Layer: 0
+  m_Name: CenterPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1755659120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755659119}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0010757333, y: -0.037, z: -0.000045575463}
+  m_LocalScale: {x: 0.010147703, y: 0.010147703, z: 0.010147703}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 210126136}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1757957927
 GameObject:
   m_ObjectHideFlags: 0
@@ -6160,7 +6208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2091153845}
   m_Layer: 0
-  m_Name: Ground Check
+  m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

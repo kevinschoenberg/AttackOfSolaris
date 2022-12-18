@@ -12,7 +12,6 @@ public class Objective_Uranus : MonoBehaviour
     public Transform jetpack;
     public Transform rocket_marker;
     public killcounter kilcounterscript;
-
     private bool has_fueltank = false;
     private bool returned_to_rocket = false;
     void Start()
@@ -27,6 +26,9 @@ public class Objective_Uranus : MonoBehaviour
         if (Dist_player_jetpack < 3f)
         {
             has_fueltank = true;
+            PlayerMove.hasJetpack = true;
+            Transform FuelBar = player.transform.Find("Canvas").Find("FuelBar");
+            FuelBar.gameObject.SetActive(true);
         }
         float Dist_player_rocket_marker = Vector2.Distance(rocket_marker.position, player.transform.position);
         if (Dist_player_rocket_marker < 3f && has_fueltank)

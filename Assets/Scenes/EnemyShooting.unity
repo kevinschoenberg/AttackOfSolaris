@@ -3549,7 +3549,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   planet: {fileID: 210126134}
-  CenterPoint: {fileID: 0}
+  CenterPoint: {fileID: 441610705}
   PlayerAngle: 0
   PlayerAngleOld: 0
   maxFuel: 10
@@ -3689,8 +3689,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 441610704}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.1, y: -48.7, z: -0.4845879}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -6, y: -48, z: 0}
+  m_LocalScale: {x: -0.0014978852, y: -0.0014978852, z: -0.0014978852}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 326906191}

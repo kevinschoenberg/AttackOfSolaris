@@ -40,7 +40,9 @@ public class TextAuto : MonoBehaviour
                 else if (msgindex < messageArray.Length)
                 {
                     string message = messageArray[msgindex];
-                    TextWriterInstance.AddTextor(messageText, message, 0.04f, true);
+                    string Playername = PlayerPrefs.GetString("playername");
+                    string newMessage = message.Replace("BLANK", Playername);
+                    TextWriterInstance.AddTextor(messageText, newMessage, 0.04f, true);
                     msgindex++;
                 }
                 

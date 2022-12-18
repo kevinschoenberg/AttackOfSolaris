@@ -44,7 +44,9 @@ public class TextBubble : MonoBehaviour
             {
                 messageText.enabled = true;
                 string message = messageArray[msgindex];
-                TextWriterInstance.AddTextor(messageText, message, 0.04f, true);
+                string Playername = PlayerPrefs.GetString("playername");
+                string newMessage = message.Replace("BLANK", Playername);
+                TextWriterInstance.AddTextor(messageText, newMessage, 0.04f, true);
                 msgindex++;
             }
 
@@ -59,7 +61,9 @@ public class TextBubble : MonoBehaviour
                     if (msgindex == messageArray.Length - 2 && ChatBubble.name == "IntroChatFrame")
                         Smooth_Trans.SwapSound();
                     string message = messageArray[msgindex];
-                    TextWriterInstance.AddTextor(messageText, message, 0.04f, true);
+                    string Playername = PlayerPrefs.GetString("playername");
+                    string newMessage = message.Replace("BLANK", Playername);
+                    TextWriterInstance.AddTextor(messageText, newMessage, 0.04f, true);
                     msgindex++;
                 }
                 else if (msgindex == messageArray.Length)

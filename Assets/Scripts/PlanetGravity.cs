@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-
-using Unity.VisualScripting;
 using UnityEngine;
 public class PlanetGravity : MonoBehaviour
 {
@@ -30,7 +26,7 @@ public class PlanetGravity : MonoBehaviour
         
         // Gravity
         
-        if ((!groundCheck.IsUnityNull() && !IsGrounded()))
+        if (groundCheck == null || !IsGrounded())
         {
             rb.AddForce(v.normalized * (gravityForce * Time.deltaTime));
             _lastUpdate = Time.time;

@@ -13,6 +13,7 @@ public class EnemyDmg : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         
     }
 
@@ -29,5 +30,10 @@ public class EnemyDmg : MonoBehaviour
             playerHealth.TakeDamage(damage);
             _lastHit = Time.timeSinceLevelLoad;
         }
+    }
+
+    public void SetPlayerHealth(PlayerHealth newPlayer)
+    {
+        playerHealth = newPlayer;
     }
 }

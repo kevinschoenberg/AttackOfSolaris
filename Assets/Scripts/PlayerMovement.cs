@@ -46,11 +46,10 @@ public class PlayerMovement : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         CenterPoint = GameObject.Find("CenterPoint").GetComponent<Transform>();
-        if(hasJetpack)
+        if(fuelBar != null)
         {
             animFire = GameObject.Find("Fire").GetComponent<Animator>();
-            if (fuelBar != null)
-                fuelBar.SetMaxFuel(maxFuel);
+            fuelBar.SetMaxFuel(maxFuel);
             fuel = maxFuel;
         }
     }
@@ -98,14 +97,12 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(v*JetpackForce*dist_mult);
             fuel -= time_passed;
             animFire.SetTrigger("JetPackOn");
-            if (fuelBar != null)
-                fuelBar.SetFuel(fuel);
+            fuelBar.SetFuel(fuel);
         }
         else if (hasJetpack)
         { 
             animFire.ResetTrigger("JetPackOn");
-            if (fuelBar != null)
-                fuelBar.SetFuel(fuel);
+            fuelBar.SetFuel(fuel);
         }
         UpdateAnimationState();
         Flip();
@@ -187,7 +184,6 @@ public class PlayerMovement : MonoBehaviour
             isFacingRight = !isFacingRight;
         }
     }
-    
 }
 
 

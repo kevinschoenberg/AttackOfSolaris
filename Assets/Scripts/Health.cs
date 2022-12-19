@@ -24,7 +24,6 @@ public class Health : MonoBehaviour, ISaveable
     EnemyDmg ED;
     GameObject EH;
     PlanetGravity PG;
-    GameObject Canvas;
 
 
 
@@ -72,7 +71,10 @@ public class Health : MonoBehaviour, ISaveable
             EH.SetActive(false);
             SR.enabled = false;
             ED.enabled = false;
-            A.enabled = false;
+            if(TryGetComponent<PatrolIgnore>(out var A))
+            {
+                A.enabled = false;
+            }
             PG.enabled = false;
 
         }
@@ -93,7 +95,10 @@ public class Health : MonoBehaviour, ISaveable
             EH.SetActive(true);
             SR.enabled = true;
             ED.enabled = true;
-            A.enabled = true;
+            if(TryGetComponent<PatrolIgnore>(out var A))
+            {
+                A.enabled = true;
+            }
             PG.enabled = true;
 
         }

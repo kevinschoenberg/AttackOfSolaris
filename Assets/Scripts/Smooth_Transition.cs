@@ -16,10 +16,10 @@ public class Smooth_Transition : MonoBehaviour
         SwapSound();
     }
 
-    private void Start()
+    public void Start()
     {
         VolumeSystem = FindObjectOfType<AdjustVolume>();
-        if (Sound.name == "MarsMusic" || Sound.name == "MenuMusic"  || Sound.name == "MoonMusic" || Sound.name == "Rain_Noise" || Sound.name == "IntroMusic" || Sound.name == "FireNoise")
+        if (Sound.name == "MarsMusic" || Sound.name == "MenuMusic" || Sound.name == "MoonMusic" || Sound.name == "Rain_Noise" || Sound.name == "IntroMusic" || Sound.name == "FireNoise")
         {
             SwapSound();
         }
@@ -68,5 +68,4 @@ public class Smooth_Transition : MonoBehaviour
             current.Pause();
         }
     }
-    
 }

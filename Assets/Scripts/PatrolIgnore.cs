@@ -13,7 +13,7 @@ public class PatrolIgnore : MonoBehaviour
     //For animation
     private SpriteRenderer sprite;
     private Animator anim;
-    private enum MovementState {idle, walking};
+    private enum MovementState {idle, notAlert, isAlert, isIgnore};
     MovementState State;
     bool commander = false;
     public bool facingRight = true;
@@ -30,29 +30,24 @@ public class PatrolIgnore : MonoBehaviour
             spawnPoint = transform.Find("SpawnPoint").transform;
             spawnPointPos = spawnPoint.position;
         }
+        State = MovementState.isIgnore;
+        anim.SetInteger("AnimState", (int)State);
     }
 
     private void Update()
     {
         if (index < 0)
         {
-            State = MovementState.walking;
+            
             sprite.flipX = true;
-            if (commander && !facingRight && oldfacingRight) {
-                Vector2 pos;
-                pos.x = spawnPointPos.x*(-1);
-                pos.y = spawnPointPos.x;
-                spawnPointPos = pos;}
+            if (commander && oldfacingRight) {
+                spawnPoint.Translate(8f, 0f, 0f);}
         }
         else
         {
-            State = MovementState.walking;
             sprite.flipX = false;
-            if (commander && facingRight && !oldfacingRight) {
-                Vector2 pos;
-                pos.x = spawnPointPos.x*(-1);
-                pos.y = spawnPointPos.x;
-                spawnPointPos = pos;}
+            if (commander && !oldfacingRight) {
+                spawnPoint.Translate(-8f, 0f, 0f);}
         }
         oldfacingRight = facingRight;
         if (_lastTime == 0f)
@@ -71,7 +66,6 @@ public class PatrolIgnore : MonoBehaviour
             index *= -1;
             _lastTime = Time.time;
         }
-        anim.SetInteger("AnimState", (int)State);
     }    
 
 }

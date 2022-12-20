@@ -40,6 +40,17 @@ public class PlayerMovement : MonoBehaviour
     public FuelBar fuelBar;
     public bool hasJetpack = false;
 
+    public bool hasBothMeleeAndRange = false;
+
+    //Swap between melee and range
+    Shooting shooting;
+    Melee melee;
+    GameObject weopen;
+    GameObject gunRotationPoint;
+    SpriteRenderer UISword;
+    SpriteRenderer UIAK47;
+    SpriteRenderer UIArrow;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -52,6 +63,24 @@ public class PlayerMovement : MonoBehaviour
             fuelBar.SetMaxFuel(maxFuel);
             fuel = maxFuel;
         }
+        UISword = transform.Find("Canvas/UI_Sword").GetComponent<SpriteRenderer>();
+        UIAK47 = transform.Find("Canvas/UI_AK47").GetComponent<SpriteRenderer>();
+        UIArrow = transform.Find("Canvas/UI_Arrow").GetComponent<SpriteRenderer>();
+        melee = GetComponent<Melee>();
+        shooting = GetComponent<Shooting>();
+        weopen = transform.Find("Weopen/Sword").gameObject;
+        gunRotationPoint = transform.Find("GunRotationPoint").gameObject;
+        if (melee.enabled)
+        {
+            UISword.color = new Color(1f,1f,1f,1f);
+            UIAK47.color = new Color(1f,1f,1f,.5f);
+        }
+        else
+        {
+            UISword.color = new Color(1f,1f,1f,.5f);
+            UIAK47.color = new Color(1f,1f,1f,1f);
+        }
+
     }
 
     void Update()
@@ -104,8 +133,55 @@ public class PlayerMovement : MonoBehaviour
             animFire.ResetTrigger("JetPackOn");
             fuelBar.SetFuel(fuel);
         }
+        if(Input.GetKeyDown(KeyCode.Q) && fuel > 0 && hasBothMeleeAndRange)
+        {
+            if (melee.enabled)
+            {
+                UISword.color = new Color(1f,1f,1f,.5f);
+                UIAK47.color = new Color(1f,1f,1f,1f);
+            }
+            else
+            {
+                UISword.color = new Color(1f,1f,1f,1f);
+                UIAK47.color = new Color(1f,1f,1f,.5f);
+            }
+            //Active for shooting
+            gunRotationPoint.SetActive(melee.enabled);
+            shooting.enabled = melee.enabled;
+            //Active for Melee
+            melee.enabled = !melee.enabled;
+            weopen.SetActive(melee.enabled);
+        }
         UpdateAnimationState();
         Flip();
+    }
+
+    [ContextMenu("SwapBetweenMeleeAndRange")]
+    public void swapMeleeRange()
+    {
+        UISword = transform.Find("Canvas/UI_Sword").GetComponent<SpriteRenderer>();
+        UIAK47 = transform.Find("Canvas/UI_AK47").GetComponent<SpriteRenderer>();
+        UIArrow = transform.Find("Canvas/UI_Arrow").GetComponent<SpriteRenderer>();
+        melee = GetComponent<Melee>();
+        shooting = GetComponent<Shooting>();
+        weopen = transform.Find("Weopen/Sword").gameObject;
+        gunRotationPoint = transform.Find("GunRotationPoint").gameObject;
+        if (melee.enabled)
+        {
+            UISword.color = new Color(1f,1f,1f,.5f);
+            UIAK47.color = new Color(1f,1f,1f,1f);
+        }
+        else
+        {
+            UISword.color = new Color(1f,1f,1f,1f);
+            UIAK47.color = new Color(1f,1f,1f,.5f);
+        }
+        //Active for shooting
+        gunRotationPoint.SetActive(melee.enabled);
+        shooting.enabled = melee.enabled;
+        //Active for Melee
+        melee.enabled = !melee.enabled;
+        weopen.SetActive(melee.enabled);
     }
     
     private void UpdateAnimationState()

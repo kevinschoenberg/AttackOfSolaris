@@ -18,11 +18,14 @@ public class Gun : MonoBehaviour
     SpriteRenderer sprite;
 
     public float angle;
+    private void Start()
+    {
+        sprite = GetComponent<SpriteRenderer>();
+    }
     void Update()
     {
         //Find mouse and point to it
         _mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-        sprite = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()

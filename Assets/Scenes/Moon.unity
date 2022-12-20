@@ -5685,6 +5685,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9154675361536122529, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
+      propertyPath: soundEngine
+      value: 
+      objectReference: {fileID: 1057860927}
     - target: {fileID: 9154675361536122531, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
       propertyPath: DeathPanel
       value: 

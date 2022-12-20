@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Mars.unity
     guid: b73ad8ebff98ec64d87453ecbec1f7fa
   - enabled: 1
+    path: Assets/Scenes/MarsToUranus.unity
+    guid: e4f2f2eccd1f6a646a5f252b679ef7c5
+  - enabled: 1
     path: Assets/Scenes/Uranus.unity
     guid: b8634abfb58c440ca9ee329fcb07a966
   - enabled: 1

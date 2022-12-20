@@ -14,7 +14,7 @@ public class PatrolChase : MonoBehaviour
 
     /*Variables for animation*/
     public bool isFacingRight = true;
-    private enum MovementState {idle, walking};
+    private enum MovementState {idle, notAlert, isAlert};
     private SpriteRenderer sprite;
     private Animator anim;
     public Vector2 dir;
@@ -39,12 +39,12 @@ public class PatrolChase : MonoBehaviour
         dir = Vector2.left * (Time.deltaTime * _walkingSpeed * index);
         if (index < 0)
         {
-            State = MovementState.walking;
+            State = MovementState.notAlert;
             sprite.flipX = true;
         }
         else
         {
-            State = MovementState.walking;
+            State = MovementState.notAlert;
             sprite.flipX = false;
         }
         if (Vector2.Distance(transform.position, player.transform.position) > MaxDist)
@@ -77,6 +77,7 @@ public class PatrolChase : MonoBehaviour
 
                 float EnemyAngle = Mathf.Atan2(CenterToEnemy.x, CenterToEnemy.y) * Mathf.Rad2Deg * Mathf.Sign(CenterToEnemy.x);
                 float PlayerAngle = Mathf.Atan2(CenterToPlayer.x, CenterToPlayer.y) * Mathf.Rad2Deg * Mathf.Sign(CenterToPlayer.x);
+                State = MovementState.isAlert;
                 if (transform.position.x < CenterPoint.position.x)
                     EnemyAngle = 360 - EnemyAngle;
                 if (player.transform.position.x < CenterPoint.position.x)
@@ -85,25 +86,22 @@ public class PatrolChase : MonoBehaviour
                 if (totalangle > 180)
                 {
                     transform.Translate(Vector2.right * Time.deltaTime * speed);
-                    State = MovementState.walking;
+                    
                     sprite.flipX = true;
                 }
                 else if (totalangle < -180)
                 {
                     transform.Translate(Vector2.left * Time.deltaTime * speed);
-                    State = MovementState.walking;
                     sprite.flipX = false;
                 }
                 else if (totalangle > 0)
                 {
                     transform.Translate(Vector2.left * Time.deltaTime * speed);
-                    State = MovementState.walking;
                     sprite.flipX = false;
                 }
                 else
                 {
                     transform.Translate(Vector2.right * Time.deltaTime * speed);
-                    State = MovementState.walking;
                     sprite.flipX = true;
                 }
             }
@@ -132,12 +130,12 @@ public class PatrolChase : MonoBehaviour
         {
             if ((dif_pos.x > 0 & dif_pos.x > 0) || (dif_pos.x < 0 & dif_pos.x > 0)/* || dir.x < 0*/)
             {
-                State = MovementState.walking;
+                State = MovementState.notAlert;
                 sprite.flipX = false;
             }
             else if ((dif_pos.x < 0 & dif_pos.x < 0) || (dif_pos.x > 0 & dif_pos.x < 0)/* || dir.x > 0*/)
             {
-                State = MovementState.walking;
+                State = MovementState.notAlert;
                 sprite.flipX = true;
             }
             else
@@ -149,12 +147,12 @@ public class PatrolChase : MonoBehaviour
         {
             if ((dif_pos.x < 0 & dif_pos.x < 0) || (dif_pos.x > 0 & dif_pos.x < 0) /* || dir.x < 0*/)
             {
-                State = MovementState.walking;
+                State = MovementState.notAlert;
                 sprite.flipX = false;
             }
             else if ((dif_pos.x > 0 & dif_pos.x > 0) || (dif_pos.x < 0 & dif_pos.x > 0) /* || dir.x > 0*/)
             {
-                State = MovementState.walking;
+                State = MovementState.notAlert;
                 sprite.flipX = true;
             }
             else

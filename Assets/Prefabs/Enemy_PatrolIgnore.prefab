@@ -14,35 +14,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3774097731911936720, guid: 68cc1e5fcfa5f3a44a51f10de2d6f9a9, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3774097731911936720, guid: 68cc1e5fcfa5f3a44a51f10de2d6f9a9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 173.46002
       objectReference: {fileID: 0}
     - target: {fileID: 3774097731911936720, guid: 68cc1e5fcfa5f3a44a51f10de2d6f9a9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 214.91
       objectReference: {fileID: 0}
     - target: {fileID: 3774097731911936720, guid: 68cc1e5fcfa5f3a44a51f10de2d6f9a9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1.0888906
       objectReference: {fileID: 0}
     - target: {fileID: 3774097731911936720, guid: 68cc1e5fcfa5f3a44a51f10de2d6f9a9, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -0.9043381
       objectReference: {fileID: 0}
     - target: {fileID: 3774097731911936720, guid: 68cc1e5fcfa5f3a44a51f10de2d6f9a9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3774097731911936720, guid: 68cc1e5fcfa5f3a44a51f10de2d6f9a9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3774097731911936720, guid: 68cc1e5fcfa5f3a44a51f10de2d6f9a9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.42681682
       objectReference: {fileID: 0}
     - target: {fileID: 3774097731911936720, guid: 68cc1e5fcfa5f3a44a51f10de2d6f9a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3774097731911936720, guid: 68cc1e5fcfa5f3a44a51f10de2d6f9a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -50.531
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -77,3 +77,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkingTime: 5
+  spawnPoint: {fileID: 0}
+  facingRight: 1
+  oldfacingRight: 0

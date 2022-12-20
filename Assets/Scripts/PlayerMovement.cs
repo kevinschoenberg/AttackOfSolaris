@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float jumpForce = 20;
     private float _inputX;
+    private float _timeSinceJump;
 
 
     public bool isFacingRight = true;
@@ -102,7 +103,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.angularVelocity = 0f;
             
-            if(IsGrounded())
+            if(IsGrounded() && Time.time > _timeSinceJump + .1f)
                 rb.velocity = Vector2.zero;
         }
 
@@ -116,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
             jumpSound.Play();
             Vector3 v = transform.position - planet.transform.position;
             rb.AddForce(v * jumpForce);
+            _timeSinceJump = Time.time;
         }
         if(Input.GetKey(KeyCode.F) && fuel > 0 && hasJetpack)
         {
@@ -247,7 +249,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool IsGrounded()
     { 
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, 0.25f, groundLayer);
     }
     public bool OnLava()
     {

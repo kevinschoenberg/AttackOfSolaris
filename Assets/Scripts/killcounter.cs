@@ -19,7 +19,6 @@ public class killcounter : MonoBehaviour, ISaveable
         scoreText.text = "Score: " + score.ToString() + "/" + score_threshold + ": Out of " + enemiesLeft + " Enemies";
         if (score >= score_threshold)
         {
-            Debug.Log("won");
             Pause_Menu.PlayerDiedPause();
             LevelCompletePanel.SetActive(true);
         }

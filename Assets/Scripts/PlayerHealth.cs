@@ -12,6 +12,13 @@ public class PlayerHealth : MonoBehaviour, ISaveable
     public HealthBar healthbar;
     public GameObject DeathPanel;
     DeathCounter deathCounter;
+
+    public float healdelay = 5f;
+    public int healammount = 1;
+    
+    private float regen_timer;
+
+    public bool rover_found = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,10 +26,18 @@ public class PlayerHealth : MonoBehaviour, ISaveable
         healthbar.SetMaxHealth(maxHealth);
         deathCounter = GameObject.Find("StageManager").GetComponent<DeathCounter>(); 
     }
-
+   
     void Update()
     {
         healthbar.SetHealth(health);
+
+        if (rover_found && regen_timer + healdelay < Time.time)
+        {
+            regen_timer = Time.time;
+            health += healammount;
+            //hp regen
+            
+        }
     }
 
     public void TakeDamage(int amount)

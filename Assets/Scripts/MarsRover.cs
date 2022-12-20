@@ -7,9 +7,8 @@ public class MarsRover : MonoBehaviour
     public GameObject player;
     
     public GameObject Rover;
-    
 
-    private bool has_rover = false;
+    [SerializeField] PlayerHealth playerhealthscript;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +22,7 @@ public class MarsRover : MonoBehaviour
         float Dist_player_rover = Vector2.Distance(Rover.transform.position, player.transform.position);
         if (Dist_player_rover < 3f)
         {
-            has_rover = true;
+            playerhealthscript.rover_found = true;
             pickuprover();
         }
     }
@@ -32,5 +31,6 @@ public class MarsRover : MonoBehaviour
         Transform pet_rover = player.transform.Find("Canvas/Rover");
         pet_rover.gameObject.SetActive(true);
         Rover.SetActive(false);
+        
     }
 }

@@ -523,7 +523,6 @@ GameObject:
   - component: {fileID: 1724974601831370160}
   - component: {fileID: 1724974601831370163}
   - component: {fileID: 1724974601831370162}
-  - component: {fileID: 1724974601831370165}
   - component: {fileID: 1724974601831370155}
   m_Layer: 0
   m_Name: Enemy_shooting_patrol
@@ -548,7 +547,7 @@ Transform:
   - {fileID: 1724974600688207658}
   - {fileID: 4268628735155868984}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 16.92}
 --- !u!212 &1724974601831370157
 SpriteRenderer:
@@ -636,7 +635,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.6, y: 1.65}
+    oldSize: {x: 1.4545455, y: 1.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -732,25 +731,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1724974601831370165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2189620673051446086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff8361988906a784ab5119ee2636c8b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  speed: 4
-  walkingTime: 5
-  CenterPoint: {fileID: 0}
-  isFacingRight: 1
-  dir: {x: 0, y: 0}
-  dir2: {x: 0, y: 0}
 --- !u!114 &1724974601831370155
 MonoBehaviour:
   m_ObjectHideFlags: 0

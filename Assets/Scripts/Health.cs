@@ -48,6 +48,10 @@ public class Health : MonoBehaviour, ISaveable
         {
             score_value = 100;
         }
+        if(Enemy.tag == "Tech_hub")
+        {
+            score_value = 100;
+        }
     }
 
     public void Update()

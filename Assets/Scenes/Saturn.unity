@@ -6929,6 +6929,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Idle (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 6590120030043127379, guid: 9feef145ea7c4ee4db34cd5841897609, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6590120030043127379, guid: 9feef145ea7c4ee4db34cd5841897609, type: 3}
+      propertyPath: m_Constraints
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6590120030043127386, guid: 9feef145ea7c4ee4db34cd5841897609, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -11960,11 +11968,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9154675361536122540, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -50.6
+      value: -40.5
       objectReference: {fileID: 0}
     - target: {fileID: 9154675361536122540, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 208
+      value: 159
       objectReference: {fileID: 0}
     - target: {fileID: 9154675361536122540, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12002,14 +12010,30 @@ PrefabInstance:
       propertyPath: planet
       value: 
       objectReference: {fileID: 1402128629}
+    - target: {fileID: 9154675361536122542, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
+      propertyPath: gravityForce
+      value: 800
+      objectReference: {fileID: 0}
     - target: {fileID: 9154675361536122543, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
       propertyPath: planet
       value: 
       objectReference: {fileID: 1402128629}
     - target: {fileID: 9154675361536122543, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
+      propertyPath: maxSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154675361536122543, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
+      propertyPath: jumpForce
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154675361536122543, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
       propertyPath: jumpSound
       value: 
       objectReference: {fileID: 1374186927}
+    - target: {fileID: 9154675361536122543, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
+      propertyPath: JetpackForce
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 9154675362091383094, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -38029,7 +38053,7 @@ MonoBehaviour:
   score: 0
   scoreText: {fileID: 1824980879}
   LevelCompletePanel: {fileID: 1631264277}
-  score_threshold: 100
+  score_threshold: 130
 --- !u!114 &1660843587
 MonoBehaviour:
   m_ObjectHideFlags: 0

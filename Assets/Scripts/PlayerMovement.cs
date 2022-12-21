@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D rb;
     public float accSpeed = 800;
-    public float maxSpeed = 10;
+    public float maxSpeed = 10f;
 
     public float jumpForce = 20;
     private float _inputX;
@@ -108,8 +108,9 @@ public class PlayerMovement : MonoBehaviour
         }
 
         var relativeVel = transform.InverseTransformDirection(rb.velocity);
-        var limitedX = math.clamp(relativeVel.x, -10f, 10f);
-        rb.velocity = transform.TransformDirection(new Vector3(limitedX, relativeVel.y, relativeVel.y));
+        var limitedX = math.clamp(relativeVel.x, -maxSpeed, maxSpeed);
+        var limitedY = math.clamp(relativeVel.y, -500f, 10f);
+        rb.velocity = transform.TransformDirection(new Vector3(limitedX, limitedY, relativeVel.y));
         //rb.velocity = transform.TransformDirection(Vector2.ClampMagnitude(transform.InverseTransformDirection(rb.velocity), maxSpeed));
         
         if(Input.GetButtonDown("Jump") && (IsGrounded() || OnLava()))
@@ -135,7 +136,7 @@ public class PlayerMovement : MonoBehaviour
             animFire.ResetTrigger("JetPackOn");
             fuelBar.SetFuel(fuel);
         }
-        if(Input.GetKeyDown(KeyCode.Q) && fuel > 0 && hasBothMeleeAndRange)
+        if(Input.GetKeyDown(KeyCode.Q) && hasBothMeleeAndRange)
         {
             if (melee.enabled)
             {

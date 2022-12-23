@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Uranus.unity
     guid: b8634abfb58c440ca9ee329fcb07a966
   - enabled: 1
+    path: Assets/Scenes/UranusToSaturn.unity
+    guid: ab9f1e93b8566b041ae4c66e0295efdd
+  - enabled: 1
     path: Assets/Scenes/Saturn.unity
     guid: 1a131f04abaf6344599e2c7308ba036d
   m_configObjects: {}

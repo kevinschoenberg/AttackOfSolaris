@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Introduction.unity
     guid: b1501b8042689f64fab84687f95fbe96
   - enabled: 1
+    path: Assets/Scenes/MoonLanding.unity
+    guid: b47d4f789bceb2145a9a93defe559d25
+  - enabled: 1
     path: Assets/Scenes/Moon.unity
     guid: 3fb97dae3b243f24ca50b5c25c45029d
   - enabled: 1

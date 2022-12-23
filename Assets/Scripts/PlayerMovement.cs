@@ -141,7 +141,7 @@ public class PlayerMovement : MonoBehaviour
             animFire.ResetTrigger("JetPackOn");
             fuelBar.SetFuel(fuel);
             if (JetPackSound.isPlaying== true)
-            JetPackSound.Stop();
+                JetPackSound.Stop();
         }
         if(Input.GetKeyDown(KeyCode.Q) && hasBothMeleeAndRange)
         {

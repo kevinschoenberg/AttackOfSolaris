@@ -19,7 +19,8 @@ public class PlayerMovement : MonoBehaviour
     public bool isFacingRight = true;
     
     public AudioSource jumpSound;
-    
+    public AudioSource JetPackSound;
+
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask lavaLayer;
@@ -57,6 +58,8 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        AdjustVolume AdjVol = GameObject.Find("Sound").transform.Find("Volume").gameObject.GetComponent<AdjustVolume>();
+        JetPackSound.volume = AdjVol.GetVolume()/2;
         CenterPoint = GameObject.Find("CenterPoint").GetComponent<Transform>();
         if(fuelBar != null)
         {
@@ -130,11 +133,15 @@ public class PlayerMovement : MonoBehaviour
             fuel -= time_passed;
             animFire.SetTrigger("JetPackOn");
             fuelBar.SetFuel(fuel);
+            if (JetPackSound.isPlaying == false)
+                JetPackSound.Play();
         }
         else if (hasJetpack)
         { 
             animFire.ResetTrigger("JetPackOn");
             fuelBar.SetFuel(fuel);
+            if (JetPackSound.isPlaying== true)
+            JetPackSound.Stop();
         }
         if(Input.GetKeyDown(KeyCode.Q) && hasBothMeleeAndRange)
         {

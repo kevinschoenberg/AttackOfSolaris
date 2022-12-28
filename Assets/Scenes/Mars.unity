@@ -5037,6 +5037,7 @@ MonoBehaviour:
   jumpForce: 8
   isFacingRight: 1
   jumpSound: {fileID: 460741134}
+  JetPackSound: {fileID: 0}
   groundCheck: {fileID: 2091153845}
   groundLayer:
     serializedVersion: 2
@@ -21890,9 +21891,17 @@ PrefabInstance:
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 395075112}
+    - target: {fileID: 5100309213409810093, guid: 5b055630364cd654d9da7aa7d55fd877, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5716403905826609862, guid: 5b055630364cd654d9da7aa7d55fd877, type: 3}
       propertyPath: m_Name
       value: Enemy_shooting_static
+      objectReference: {fileID: 0}
+    - target: {fileID: 5716403905826609862, guid: 5b055630364cd654d9da7aa7d55fd877, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6967035743339181754, guid: 5b055630364cd654d9da7aa7d55fd877, type: 3}
       propertyPath: m_RootOrder

@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Saturn.unity
     guid: 1a131f04abaf6344599e2c7308ba036d
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: e9f34b94cd0a83c4e8b023a7100819bf
   m_configObjects: {}

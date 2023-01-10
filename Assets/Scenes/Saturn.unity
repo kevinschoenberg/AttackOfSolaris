@@ -37956,7 +37956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 491f23da5ef127b47abf9d65a6088a97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PausePanel: {fileID: 0}
+  PausePanel: {fileID: 898360093}
 --- !u!114 &1660843583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38018,7 +38018,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   scoreText: {fileID: 1824980879}
-  LevelCompletePanel: {fileID: 0}
+  LevelCompletePanel: {fileID: 1540804591}
   score_threshold: 130
 --- !u!114 &1660843587
 MonoBehaviour:

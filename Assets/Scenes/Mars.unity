@@ -14405,18 +14405,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextWriterInstance: {fileID: 1728430867}
   messageArray:
-  - Welcome to Saturn!
-  - You have landed on one of the planets rings.
-  - Saturn has heavy gravity and therfore you might find it hard to jump.
-  - So it is fantastic that you managed to aquire the Jetpack on Uranus, as it will
-    come in handy.
-  - But now for your mission.
-  - Your mission is to find and kill Taukkels.
-  - Taukkels resides on one of the asteroid orbiting Saturn.
-  - To find him you will have to explore Saturns surface.
-  - There should be some holes in the ring that can allow you to reach the surface.
-  - And while you are here try to thin out the alien army who heavily guards Saturn.
-  - Well that shouldn't be hard good luck!
+  - Welcome to Mars!
+  - You now have acces to a gun, press 'g' to switch weapon
+  - The aliens have build a technical research station on the other side of the planet,
+    we need you to destroy it!
+  - They have also deployed stationary turrets that our weapons can't destroy...
+  - So be careful and good luck!
   ChatBubble: {fileID: 1334577621}
   Smooth_Trans: {fileID: 0}
   HiddenJetPack: {fileID: 0}

@@ -1906,7 +1906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 962d0245e28a54dc485e0058dc43125c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 701418879}
   damage: 1
   hitDelay: 0.2
 --- !u!68 &231323257
@@ -2842,6 +2842,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36abe7b70b602414b953e69dbd7e4ddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &358588722 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9154675361536122538, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
+  m_PrefabInstance: {fileID: 1494648111}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &360149437
 GameObject:
   m_ObjectHideFlags: 0
@@ -4099,7 +4104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 962d0245e28a54dc485e0058dc43125c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 701418879}
   damage: 1
   hitDelay: 0.2
 --- !u!1 &606282557
@@ -4697,6 +4702,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9154675361536122540, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
   m_PrefabInstance: {fileID: 1494648111}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &701418879 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9154675361536122531, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
+  m_PrefabInstance: {fileID: 1494648111}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358588722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12f2eb2e5c0dbe04e8ffb5415227ec33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &748702499
 GameObject:
   m_ObjectHideFlags: 0
@@ -5541,7 +5557,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.4545455, y: 1.5}
+    oldSize: {x: 1.6, y: 1.65}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -6216,7 +6232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 962d0245e28a54dc485e0058dc43125c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 701418879}
   damage: 1
   hitDelay: 0.2
 --- !u!1 &860193292
@@ -6826,17 +6842,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 885699986}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.9670845, w: -0.25445536}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 168936713}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -209.483}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -982.6, y: -632}
+  m_AnchoredPosition: {x: -982.76, y: -632.35}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &885699989
@@ -6911,7 +6927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20dfbafe78daefd41af8bb9eb88053e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 358588722}
 --- !u!1 &902341351
 GameObject:
   m_ObjectHideFlags: 0
@@ -8475,7 +8491,7 @@ MonoBehaviour:
   ChatBubble: {fileID: 1116268636}
   Smooth_Trans: {fileID: 0}
   HiddenJetPack: {fileID: 885699986}
-  Player: {fileID: 0}
+  Player: {fileID: 358588722}
   hasJetpack: 0
   isIntro: 1
 --- !u!114 &1116268636
@@ -11714,7 +11730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 962d0245e28a54dc485e0058dc43125c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 701418879}
   damage: 1
   hitDelay: 0.2
 --- !u!1 &1344845698
@@ -12840,7 +12856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6cb0de106fa814e9f8adb69121e6cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 358588722}
   jetpack: {fileID: 885699987}
   rocket_marker: {fileID: 1379626687}
   kilcounterscript: {fileID: 123068802}
@@ -12980,6 +12996,10 @@ PrefabInstance:
       propertyPath: CenterPoint
       value: 
       objectReference: {fileID: 1354214300}
+    - target: {fileID: 9154675361536122543, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
+      propertyPath: JetPackSound
+      value: 
+      objectReference: {fileID: 196613169}
     - target: {fileID: 9154675362091383094, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -15286,7 +15306,7 @@ MonoBehaviour:
   ChatBubble: {fileID: 1900146970}
   Smooth_Trans: {fileID: 0}
   HiddenJetPack: {fileID: 885699986}
-  Player: {fileID: 0}
+  Player: {fileID: 358588722}
   hasJetpack: 1
   isIntro: 0
 --- !u!114 &1900146970
@@ -16352,7 +16372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 962d0245e28a54dc485e0058dc43125c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 701418879}
   damage: 1
   hitDelay: 0.2
 --- !u!1 &1990774890

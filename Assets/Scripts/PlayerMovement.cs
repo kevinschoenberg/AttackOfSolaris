@@ -145,22 +145,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.Q) && hasBothMeleeAndRange)
         {
-            if (melee.enabled)
-            {
-                UISword.color = new Color(1f,1f,1f,.5f);
-                UIAK47.color = new Color(1f,1f,1f,1f);
-            }
-            else
-            {
-                UISword.color = new Color(1f,1f,1f,1f);
-                UIAK47.color = new Color(1f,1f,1f,.5f);
-            }
-            //Active for shooting
-            gunRotationPoint.SetActive(melee.enabled);
-            shooting.enabled = melee.enabled;
-            //Active for Melee
-            melee.enabled = !melee.enabled;
-            weopen.SetActive(melee.enabled);
+            swapMeleeRange();
         }
         UpdateAnimationState();
         Flip();

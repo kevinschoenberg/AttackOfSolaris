@@ -23,7 +23,7 @@ public class PatrolChase : MonoBehaviour
     Vector3 pos;
     Vector3 dif_pos;
     MovementState State;
-    public static int MaxDist = 7;
+    public int MaxDist = 7;
     public static int MinDist = 2;
 
     // Start is called before the first frame update

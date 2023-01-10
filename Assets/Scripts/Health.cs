@@ -37,7 +37,7 @@ public class Health : MonoBehaviour, ISaveable
     public void TakeDamage(float damageAmount)
     {
         health -= damageAmount;
-        if (health <= 0)
+        if (health <= 0 && !Dead)
         {
             if(enemy.tag == "Command_Enemy")    {scoreValue = 100;}
             else if(enemy.tag == "Tech_hub")    {scoreValue = 100;}

@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7957070829078407727, guid: 68a015f1641684ca282e6d38ced1c60b, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8456998619911931445, guid: 68a015f1641684ca282e6d38ced1c60b, type: 3}
       propertyPath: m_Name
       value: Bullet_playerMars

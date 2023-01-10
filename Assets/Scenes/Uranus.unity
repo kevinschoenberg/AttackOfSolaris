@@ -5558,7 +5558,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.6, y: 1.65}
+    oldSize: {x: 1.4545455, y: 1.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -13001,6 +13001,10 @@ PrefabInstance:
       propertyPath: JetPackSound
       value: 
       objectReference: {fileID: 196613169}
+    - target: {fileID: 9154675361900697191, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 1567
+      objectReference: {fileID: 0}
     - target: {fileID: 9154675362091383094, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

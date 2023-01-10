@@ -10,6 +10,8 @@ public class TextAuto : MonoBehaviour
     [SerializeField] private string[] messageArray;
     [SerializeField] public Smooth_Transition Smooth_Trans;
     private long timer;
+    public float WritingInterval = 0.08f;
+
     private void Awake()
     {
         timer = DateTimeOffset.Now.ToUnixTimeMilliseconds();
@@ -42,7 +44,7 @@ public class TextAuto : MonoBehaviour
                     string message = messageArray[msgindex];
                     string Playername = PlayerPrefs.GetString("playername");
                     string newMessage = message.Replace("BLANK", Playername);
-                    TextWriterInstance.AddTextor(messageText, newMessage, 0.04f, true);
+                    TextWriterInstance.AddTextor(messageText, newMessage, WritingInterval, true);
                     msgindex++;
                 }
                 

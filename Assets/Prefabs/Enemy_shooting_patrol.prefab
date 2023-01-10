@@ -524,6 +524,7 @@ GameObject:
   - component: {fileID: 1724974601831370163}
   - component: {fileID: 1724974601831370162}
   - component: {fileID: 1724974601831370155}
+  - component: {fileID: 1665521669076696556}
   m_Layer: 0
   m_Name: Enemy_shooting_patrol
   m_TagString: Untagged
@@ -751,6 +752,19 @@ MonoBehaviour:
   bulletForce: 10
   distanceToPlayer: 10
   player: {fileID: 0}
+--- !u!114 &1665521669076696556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2189620673051446086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42dac7e50de438d41aaacd66c76c75cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
 --- !u!1 &2887653245357545837
 GameObject:
   m_ObjectHideFlags: 0

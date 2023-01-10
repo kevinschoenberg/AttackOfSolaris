@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class NextScene : MonoBehaviour
 {
-    public int level;
     public void Start()
     {
         int current_scene = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(current_scene + 1);
+        if (current_scene != 10)
+            SceneManager.LoadScene(current_scene + 1);
+        else
+            SceneManager.LoadScene(0);
     }
 }

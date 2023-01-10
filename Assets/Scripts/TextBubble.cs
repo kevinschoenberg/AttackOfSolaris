@@ -16,6 +16,7 @@ public class TextBubble : MonoBehaviour
     public GameObject Player;
     public bool hasJetpack = false;
     public bool isIntro = false;
+    public float WritingInterval = 0.04f;
 
     private void Start()
     {
@@ -46,7 +47,7 @@ public class TextBubble : MonoBehaviour
                 string message = messageArray[msgindex];
                 string Playername = PlayerPrefs.GetString("playername");
                 string newMessage = message.Replace("BLANK", Playername);
-                TextWriterInstance.AddTextor(messageText, newMessage, 0.04f, true);
+                TextWriterInstance.AddTextor(messageText, newMessage, WritingInterval, true);
                 msgindex++;
             }
 
@@ -63,7 +64,7 @@ public class TextBubble : MonoBehaviour
                     string message = messageArray[msgindex];
                     string Playername = PlayerPrefs.GetString("playername");
                     string newMessage = message.Replace("BLANK", Playername);
-                    TextWriterInstance.AddTextor(messageText, newMessage, 0.04f, true);
+                    TextWriterInstance.AddTextor(messageText, newMessage, WritingInterval, true);
                     msgindex++;
                 }
                 else if (msgindex == messageArray.Length)

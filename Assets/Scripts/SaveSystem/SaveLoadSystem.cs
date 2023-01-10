@@ -13,12 +13,9 @@ public class SaveLoadSystem : MonoBehaviour
     void Start()
     {
         scene = SceneManager.GetActiveScene().name;
-        print(Application.persistentDataPath);
     }
 
     public string SavePath => $"{Application.persistentDataPath}/"+ scene +"save.txt";
-
-    
 
     //Function to save data. (Can be called from Unity)
     [ContextMenu("save")]

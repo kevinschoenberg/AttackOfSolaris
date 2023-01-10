@@ -14770,8 +14770,8 @@ MonoBehaviour:
   TextWriterInstance: {fileID: 1728430867}
   messageArray:
   - Welcome to Mars!
-  - You now have acces to a gun, press 'g' to switch weapon
-  - The aliens have build a technical research station on the other side of the planet,
+  - You now have access to a gun, press 'g' to switch between weapons.
+  - The aliens have built a technical research station on the other side of the planet,
     we need you to destroy it!
   - They have also deployed stationary turrets that our weapons can't destroy...
   - So be careful and good luck!

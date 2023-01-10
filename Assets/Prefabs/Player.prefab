@@ -1359,7 +1359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a1cddbe47c684cc89f8b355f2874512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityForce: 250
+  gravityForce: 800
   planet: {fileID: 0}
   groundLayer:
     serializedVersion: 2
@@ -1378,9 +1378,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accSpeed: 800
   maxSpeed: 10
-  jumpForce: 4
+  jumpForce: 3
   isFacingRight: 1
   jumpSound: {fileID: 0}
+  JetPackSound: {fileID: 0}
   groundCheck: {fileID: 9154675361719328165}
   groundLayer:
     serializedVersion: 2
@@ -1394,7 +1395,7 @@ MonoBehaviour:
   PlayerAngleOld: 0
   maxFuel: 10
   fuel: 6.201483
-  JetpackForce: 0.06
+  JetpackForce: 0.15
   fuelBar: {fileID: 9154675361280782100}
   hasJetpack: 1
   hasBothMeleeAndRange: 1
@@ -1414,6 +1415,9 @@ MonoBehaviour:
   maxHealth: 50
   healthbar: {fileID: 9154675360627935034}
   DeathPanel: {fileID: 0}
+  healdelay: 5
+  healammount: 1
+  rover_found: 0
 --- !u!114 &9154675361536122532
 MonoBehaviour:
   m_ObjectHideFlags: 0

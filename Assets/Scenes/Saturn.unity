@@ -12178,10 +12178,6 @@ PrefabInstance:
       propertyPath: soundEngine
       value: 
       objectReference: {fileID: 1420316602}
-    - target: {fileID: 9154675361536122531, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
-      propertyPath: DeathPanel
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 9154675361536122532, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
       propertyPath: soundEngine
       value: 
@@ -12238,22 +12234,10 @@ PrefabInstance:
       propertyPath: planet
       value: 
       objectReference: {fileID: 1402128629}
-    - target: {fileID: 9154675361536122542, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
-      propertyPath: gravityForce
-      value: 800
-      objectReference: {fileID: 0}
     - target: {fileID: 9154675361536122543, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
       propertyPath: planet
       value: 
       objectReference: {fileID: 1402128629}
-    - target: {fileID: 9154675361536122543, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
-      propertyPath: maxSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 9154675361536122543, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
-      propertyPath: jumpForce
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 9154675361536122543, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
       propertyPath: jumpSound
       value: 
@@ -12262,10 +12246,6 @@ PrefabInstance:
       propertyPath: JetPackSound
       value: 
       objectReference: {fileID: 837187806}
-    - target: {fileID: 9154675361536122543, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
-      propertyPath: JetpackForce
-      value: 0.15
-      objectReference: {fileID: 0}
     - target: {fileID: 9154675362091383094, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

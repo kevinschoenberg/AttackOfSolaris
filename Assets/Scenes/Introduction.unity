@@ -352,6 +352,7 @@ MonoBehaviour:
   - If they were to fail...
   - I dare not even imagine the consequences.
   Smooth_Trans: {fileID: 16615880}
+  WritingInterval: 0.08
 --- !u!95 &479853272
 Animator:
   serializedVersion: 4
@@ -467,8 +468,9 @@ MonoBehaviour:
     remaining. '
   - You, as the chosen savior, must vanquish these aliens from the celestial bodies
     of our solar system.
-  - Somewhere on each celestial body there is a commanding alien.
-  - To advance further on your alien slaying journey you must defeat this commander.
+  - On each celestial body a task will be required to advance.
+  - Your first task will be to defeat the alien commander Kruash, be careful of his
+    summons.
   - Oh, it seems we are already nearing your first stop.
   - We will continue to communicate from earth, good luck savior.
   - And... welcome to the moon.
@@ -478,6 +480,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   hasJetpack: 0
   isIntro: 0
+  WritingInterval: 0.04
 --- !u!114 &556204015
 MonoBehaviour:
   m_ObjectHideFlags: 0

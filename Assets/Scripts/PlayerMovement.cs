@@ -67,23 +67,37 @@ public class PlayerMovement : MonoBehaviour
             fuelBar.SetMaxFuel(maxFuel);
             fuel = maxFuel;
         }
-        UISword = transform.Find("Canvas/UI_Sword").GetComponent<SpriteRenderer>();
-        UIAK47 = transform.Find("Canvas/UI_AK47").GetComponent<SpriteRenderer>();
-        UIArrow = transform.Find("Canvas/UI_Arrow").GetComponent<SpriteRenderer>();
-        melee = GetComponent<Melee>();
-        shooting = GetComponent<Shooting>();
-        weopen = transform.Find("Weopen/Sword").gameObject;
-        gunRotationPoint = transform.Find("GunRotationPoint").gameObject;
-        if (melee.enabled)
+        if (hasBothMeleeAndRange == true)
         {
-            UISword.color = new Color(1f,1f,1f,1f);
-            UIAK47.color = new Color(1f,1f,1f,.5f);
+            UISword = transform.Find("Canvas/UI_Sword").GetComponent<SpriteRenderer>();
+            UIAK47 = transform.Find("Canvas/UI_AK47").GetComponent<SpriteRenderer>();
+            UIArrow = transform.Find("Canvas/UI_Arrow").GetComponent<SpriteRenderer>();
+            melee = GetComponent<Melee>();
+            shooting = GetComponent<Shooting>();
+            weopen = transform.Find("Weopen/Sword").gameObject;
+            gunRotationPoint = transform.Find("GunRotationPoint").gameObject;
+
+            if (melee.enabled)
+            {
+                UISword.color = new Color(1f,1f,1f,1f);
+                UIAK47.color = new Color(1f,1f,1f,.5f);
+            }
+            else
+            {
+                UISword.color = new Color(1f,1f,1f,.5f);
+                UIAK47.color = new Color(1f,1f,1f,1f);
+            }
         }
         else
         {
-            UISword.color = new Color(1f,1f,1f,.5f);
-            UIAK47.color = new Color(1f,1f,1f,1f);
+                UISword = transform.Find("Canvas/UI_Sword").GetComponent<SpriteRenderer>();
+                UIAK47 = transform.Find("Canvas/UI_AK47").GetComponent<SpriteRenderer>();
+                UIArrow = transform.Find("Canvas/UI_Arrow").GetComponent<SpriteRenderer>();
+                UISword.color = new Color(1f,1f,1f,0f);
+                UIAK47.color = new Color(1f,1f,1f,0f);
+                UIArrow.color = new Color(1f,1f,1f,0f);
         }
+
 
     }
 
@@ -145,22 +159,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.Q) && hasBothMeleeAndRange)
         {
-            if (melee.enabled)
-            {
-                UISword.color = new Color(1f,1f,1f,.5f);
-                UIAK47.color = new Color(1f,1f,1f,1f);
-            }
-            else
-            {
-                UISword.color = new Color(1f,1f,1f,1f);
-                UIAK47.color = new Color(1f,1f,1f,.5f);
-            }
-            //Active for shooting
-            gunRotationPoint.SetActive(melee.enabled);
-            shooting.enabled = melee.enabled;
-            //Active for Melee
-            melee.enabled = !melee.enabled;
-            weopen.SetActive(melee.enabled);
+            swapMeleeRange();
         }
         UpdateAnimationState();
         Flip();

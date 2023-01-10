@@ -25,17 +25,14 @@ public class PatrolIgnore : MonoBehaviour
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         commander = name.Contains("Enemy_Command");
-        if (commander)
-        {
-            spawnPoint = transform.Find("SpawnPoint").transform;
-            spawnPointPos = spawnPoint.position;
-        }
         State = MovementState.isIgnore;
         anim.SetInteger("AnimState", (int)State);
     }
 
     private void Update()
     {
+        State = MovementState.isIgnore;
+        anim.SetInteger("AnimState", (int)State);
         if (index < 0)
         {
             

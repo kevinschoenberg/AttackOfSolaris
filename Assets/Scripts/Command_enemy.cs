@@ -34,7 +34,7 @@ public class Command_enemy : MonoBehaviour
     string scene;
     bool moon;
 
-    public static int MaxDist = 10;
+    public static int MaxDist = 20;
     public static int MinDist = 2;
     // Start is called before the first frame update
     void Start()

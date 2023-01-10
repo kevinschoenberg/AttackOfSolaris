@@ -24,7 +24,12 @@ public class PlayerHealth : MonoBehaviour, ISaveable
     {
         health = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
-        deathCounter = GameObject.Find("StageManager").GetComponent<DeathCounter>(); 
+        deathCounter = GameObject.Find("StageManager").GetComponent<DeathCounter>();
+        if (PlayerPrefs.GetInt("HasMarsRover") == 1)
+        {
+            rover_found = true;
+            transform.Find("Canvas/Rover").gameObject.SetActive(true);
+        } 
     }
    
     void Update()

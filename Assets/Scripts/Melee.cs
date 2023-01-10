@@ -38,7 +38,7 @@ public class Melee : MonoBehaviour
 
         foreach (var thing in thingsHit)
         {
-            if (thing.gameObject.name.Contains("Enemy"))
+            if (thing.gameObject.name.Contains("Enemy")||thing.gameObject.name.Contains("Tech"))
             {
                 thing.TryGetComponent<Health>(out var health);
                 health.TakeDamage(damage);

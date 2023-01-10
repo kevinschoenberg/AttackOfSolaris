@@ -83,7 +83,6 @@ public class PatrolChase : MonoBehaviour
                 if (player.transform.position.x < CenterPoint.position.x)
                     PlayerAngle = 360 - PlayerAngle;
                 float totalangle = EnemyAngle - PlayerAngle;
-                print(totalangle);
                 if (totalangle > 180)
                 {
                     transform.Translate(Vector2.right * Time.deltaTime * speed);

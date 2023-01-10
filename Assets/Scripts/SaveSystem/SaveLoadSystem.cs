@@ -3,10 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine.SceneManagement;
+
+
 
 public class SaveLoadSystem : MonoBehaviour
 {
-    public string SavePath => $"{Application.persistentDataPath}/save.txt";
+    string scene;
+    void Start()
+    {
+        scene = SceneManager.GetActiveScene().name;
+    }
+
+    public string SavePath => $"{Application.persistentDataPath}/"+ scene +"save.txt";
 
     //Function to save data. (Can be called from Unity)
     [ContextMenu("save")]

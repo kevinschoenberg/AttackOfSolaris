@@ -30,7 +30,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent<Health>(out Health HealthComponent))
         {
-            HealthComponent.TakeDamage(bulletDamageEnemy);
+            HealthComponent.TakeRangedDamage(bulletDamageEnemy);
         }
         else if (collision.gameObject.TryGetComponent(out PlayerHealth PlayerHealthComponent))
         {

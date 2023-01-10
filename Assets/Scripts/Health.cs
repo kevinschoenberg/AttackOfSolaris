@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using Unity.Mathematics;
 
 public class Health : MonoBehaviour, ISaveable
 {
-    [SerializeField] public int health;
+    [SerializeField] public float health;
     [SerializeField] public int maxHealth;
+    [SerializeField] private float rangedDamageAmp = 1;
     GameObject enemy;
     public HealthBar healthbar;
     killcounter killcounterscript;
@@ -32,7 +34,7 @@ public class Health : MonoBehaviour, ISaveable
         else        {enemy.SetActive(true);}
     }
 
-    public void TakeDamage(int damageAmount)
+    public void TakeDamage(float damageAmount)
     {
         health -= damageAmount;
         if (health <= 0)
@@ -43,6 +45,11 @@ public class Health : MonoBehaviour, ISaveable
             Dead = true;
             killcounterscript.Enemykilled(scoreValue);
         }
+    }
+
+    public void TakeRangedDamage(int damageAmount)
+    {
+        TakeDamage(damageAmount * rangedDamageAmp);
     }
 
     public object SaveState()
@@ -67,7 +74,7 @@ public class Health : MonoBehaviour, ISaveable
     [Serializable]
     private struct SaveData
     {
-        public int health;
+        public float health;
         public int maxHealth;
         public bool Dead;
     }

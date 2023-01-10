@@ -71,7 +71,7 @@ public class TextBubble : MonoBehaviour
                     messageText.enabled = false;
                     ChatBubble.enabled = false;
                     if (ChatBubble.name == "IntroChatFrame")
-                        SLevel(2); 
+                        NextLevel(); 
                 }
             }
         }
@@ -88,8 +88,9 @@ public class TextBubble : MonoBehaviour
         }
 
     }
-    private void SLevel(int level)
+    private void NextLevel()
     {
-        SceneManager.LoadScene(level);
+        int current_scene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(current_scene + 1);
     }
 }

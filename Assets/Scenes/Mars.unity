@@ -3353,7 +3353,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 123068805}
         m_TargetAssemblyTypeName: Select_level, Assembly-CSharp
         m_MethodName: select_level
         m_Mode: 1
@@ -3365,7 +3365,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 123068803}
         m_TargetAssemblyTypeName: Pause_Menu, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
@@ -7325,7 +7325,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 123068803}
         m_TargetAssemblyTypeName: Pause_Menu, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
@@ -8469,7 +8469,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 123068804}
         m_TargetAssemblyTypeName: Death_back, Assembly-CSharp
         m_MethodName: GoBack
         m_Mode: 1
@@ -8481,7 +8481,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 123068803}
         m_TargetAssemblyTypeName: Pause_Menu, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
@@ -11765,7 +11765,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 123068805}
         m_TargetAssemblyTypeName: Select_level, Assembly-CSharp
         m_MethodName: select_level
         m_Mode: 1
@@ -11777,7 +11777,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 123068803}
         m_TargetAssemblyTypeName: Pause_Menu, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
@@ -11944,7 +11944,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 392567875}
         m_TargetAssemblyTypeName: SaveLoadSystem, Assembly-CSharp
         m_MethodName: Save
         m_Mode: 1
@@ -13056,7 +13056,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 123068804}
         m_TargetAssemblyTypeName: Death_back, Assembly-CSharp
         m_MethodName: GoBack
         m_Mode: 1
@@ -13068,7 +13068,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 123068803}
         m_TargetAssemblyTypeName: Pause_Menu, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
@@ -13354,7 +13354,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 392567875}
         m_TargetAssemblyTypeName: SaveLoadSystem, Assembly-CSharp
         m_MethodName: Load
         m_Mode: 1

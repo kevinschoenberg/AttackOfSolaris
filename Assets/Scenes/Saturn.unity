@@ -2758,7 +2758,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1660843584}
         m_TargetAssemblyTypeName: Select_level, Assembly-CSharp
         m_MethodName: next_level
         m_Mode: 1
@@ -2770,7 +2770,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1660843582}
         m_TargetAssemblyTypeName: Pause_Menu, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
@@ -2937,7 +2937,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3859038556526188890, guid: fb9bd01829b8e97458cbf35674bc88f3, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3859038556526188890, guid: fb9bd01829b8e97458cbf35674bc88f3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6391,7 +6391,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1182840710}
         m_TargetAssemblyTypeName: SaveLoadSystem, Assembly-CSharp
         m_MethodName: Save
         m_Mode: 1
@@ -7172,7 +7172,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1660843582}
         m_TargetAssemblyTypeName: Pause_Menu, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
@@ -12192,7 +12192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9154675361536122540, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9154675361536122540, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15363,7 +15363,7 @@ Transform:
   - {fileID: 1420316601}
   - {fileID: 837187805}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &756672406
 GameObject:
@@ -16364,7 +16364,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -27880,7 +27880,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1269987677
 GameObject:
@@ -30046,8 +30046,8 @@ RectTransform:
   - {fileID: 898360094}
   - {fileID: 1540804592}
   - {fileID: 617404127}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_Father: {fileID: 1660843585}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -31938,7 +31938,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1660843584}
         m_TargetAssemblyTypeName: Select_level, Assembly-CSharp
         m_MethodName: select_level
         m_Mode: 1
@@ -31950,7 +31950,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1660843582}
         m_TargetAssemblyTypeName: Pause_Menu, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
@@ -34283,7 +34283,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1660843583}
         m_TargetAssemblyTypeName: Death_back, Assembly-CSharp
         m_MethodName: GoBack
         m_Mode: 1
@@ -34295,7 +34295,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1660843582}
         m_TargetAssemblyTypeName: Pause_Menu, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
@@ -35076,7 +35076,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1182840710}
         m_TargetAssemblyTypeName: SaveLoadSystem, Assembly-CSharp
         m_MethodName: Load
         m_Mode: 1
@@ -35503,7 +35503,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1660843583}
         m_TargetAssemblyTypeName: Death_back, Assembly-CSharp
         m_MethodName: GoBack
         m_Mode: 1
@@ -35515,7 +35515,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1660843582}
         m_TargetAssemblyTypeName: Pause_Menu, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
@@ -38001,8 +38001,9 @@ Transform:
   - {fileID: 1322516269}
   - {fileID: 238047116}
   - {fileID: 499531314}
+  - {fileID: 1329702729}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1660843586
 MonoBehaviour:
@@ -38332,7 +38333,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1660843583}
         m_TargetAssemblyTypeName: Death_back, Assembly-CSharp
         m_MethodName: GoBack
         m_Mode: 1
@@ -38344,7 +38345,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1660843582}
         m_TargetAssemblyTypeName: Pause_Menu, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
@@ -42980,7 +42981,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1863905595
 GameObject:
@@ -44425,7 +44426,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1660843584}
         m_TargetAssemblyTypeName: Select_level, Assembly-CSharp
         m_MethodName: select_level
         m_Mode: 1
@@ -44437,7 +44438,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1660843582}
         m_TargetAssemblyTypeName: Pause_Menu, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
@@ -47796,7 +47797,7 @@ Transform:
   - {fileID: 548115633}
   - {fileID: 645431417}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2061106068
 PrefabInstance:
@@ -48133,7 +48134,7 @@ Transform:
   - {fileID: 1197737943}
   - {fileID: 959274075}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2066344723
 GameObject:

@@ -120,6 +120,11 @@ public class PatrolChase : MonoBehaviour
         player = newPlayer;
     }
 
+    public void SetChaseRange(int newMaxDist)
+    {
+        MaxDist = newMaxDist;
+    }
+
     private void UpdateAnimationState()
     {
         Vector3 pos = transform.position;

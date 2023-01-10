@@ -36,19 +36,6 @@ public class PatrolIgnore : MonoBehaviour
 
     private void Update()
     {
-        if (index < 0)
-        {
-            
-            sprite.flipX = true;
-            if (commander && oldfacingRight) {
-                spawnPoint.Translate(8f, 0f, 0f);}
-        }
-        else
-        {
-            sprite.flipX = false;
-            if (commander && !oldfacingRight) {
-                spawnPoint.Translate(-8f, 0f, 0f);}
-        }
         oldfacingRight = facingRight;
         if (_lastTime == 0f)
         {
@@ -63,7 +50,6 @@ public class PatrolIgnore : MonoBehaviour
         else
         {
             facingRight = !facingRight;
-            index *= -1;
             _lastTime = Time.time;
         }
     }    

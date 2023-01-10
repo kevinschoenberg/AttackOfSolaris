@@ -16,6 +16,11 @@ public class EnemyShooting : MonoBehaviour
     public Transform player;
     private Vector2 _playerPos;
 
+    void Start()
+    {
+        soundEngine = GameObject.Find("ShootSound").GetComponent<AudioSource>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -54,5 +59,9 @@ public class EnemyShooting : MonoBehaviour
         Vector3 dir = firePoint.right + ang * new Vector3(firePoint.right.y, -firePoint.right.x, 0f);
 
         rb.AddForce(dir * bulletForce, ForceMode2D.Impulse);
+    }
+    public void SetPlayer(GameObject newPlayer)
+    {
+        player = newPlayer.transform;
     }
 }

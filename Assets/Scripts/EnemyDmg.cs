@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyDmg : MonoBehaviour
 {
-    public PlayerHealth playerHealth;
+    PlayerHealth playerHealth;
     public int damage = 2;
     public float hitDelay = .5f;
     private float _lastHit = 0f;

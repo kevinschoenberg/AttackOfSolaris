@@ -36,7 +36,6 @@ public class PatrolIgnore : MonoBehaviour
 
     private void Update()
     {
-        oldfacingRight = facingRight;
         if (_lastTime == 0f)
         {
             _lastTime = Time.time;
@@ -49,7 +48,7 @@ public class PatrolIgnore : MonoBehaviour
         }
         else
         {
-            facingRight = !facingRight;
+            index *= -1;
             _lastTime = Time.time;
         }
     }    

@@ -52,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
     SpriteRenderer UISword;
     SpriteRenderer UIAK47;
     SpriteRenderer UIArrow;
+    GameObject q;
 
     void Start()
     {
@@ -67,8 +68,6 @@ public class PlayerMovement : MonoBehaviour
             fuelBar.SetMaxFuel(maxFuel);
             fuel = maxFuel;
         }
-        if (hasBothMeleeAndRange == true)
-        {
             UISword = transform.Find("Canvas/UI_Sword").GetComponent<SpriteRenderer>();
             UIAK47 = transform.Find("Canvas/UI_AK47").GetComponent<SpriteRenderer>();
             UIArrow = transform.Find("Canvas/UI_Arrow").GetComponent<SpriteRenderer>();
@@ -87,15 +86,16 @@ public class PlayerMovement : MonoBehaviour
                 UISword.color = new Color(1f,1f,1f,.5f);
                 UIAK47.color = new Color(1f,1f,1f,1f);
             }
-        }
-        else
+        if (!hasBothMeleeAndRange)
         {
-                UISword = transform.Find("Canvas/UI_Sword").GetComponent<SpriteRenderer>();
-                UIAK47 = transform.Find("Canvas/UI_AK47").GetComponent<SpriteRenderer>();
-                UIArrow = transform.Find("Canvas/UI_Arrow").GetComponent<SpriteRenderer>();
-                UISword.color = new Color(1f,1f,1f,0f);
-                UIAK47.color = new Color(1f,1f,1f,0f);
-                UIArrow.color = new Color(1f,1f,1f,0f);
+            q = GameObject.Find("StageManager/TextBoxes/Q");
+            UISword = transform.Find("Canvas/UI_Sword").GetComponent<SpriteRenderer>();
+            UIAK47 = transform.Find("Canvas/UI_AK47").GetComponent<SpriteRenderer>();
+            UIArrow = transform.Find("Canvas/UI_Arrow").GetComponent<SpriteRenderer>();
+            q.SetActive(false);
+            UISword.color = new Color(1f,1f,1f,0f);
+            UIAK47.color = new Color(1f,1f,1f,0f);
+            UIArrow.color = new Color(1f,1f,1f,0f);
         }
 
 

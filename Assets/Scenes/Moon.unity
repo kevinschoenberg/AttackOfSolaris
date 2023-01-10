@@ -6228,6 +6228,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 184730017}
     - target: {fileID: 9154675361536122543, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
+      propertyPath: JetPackSound
+      value: 
+      objectReference: {fileID: 1780802855}
+    - target: {fileID: 9154675361536122543, guid: b0385ac3f848c104c8fa7057195ac1e9, type: 3}
       propertyPath: hasBothMeleeAndRange
       value: 0
       objectReference: {fileID: 0}
@@ -8929,6 +8933,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.78
       objectReference: {fileID: 0}
+    - target: {fileID: 1869975562, guid: 7d5f67e42a1e9764d856ace93170b932, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1165598347}
+    - target: {fileID: 1869975562, guid: 7d5f67e42a1e9764d856ace93170b932, type: 3}
+      propertyPath: CenterPoint
+      value: 
+      objectReference: {fileID: 184730017}
     - target: {fileID: 4177581254798304906, guid: 7d5f67e42a1e9764d856ace93170b932, type: 3}
       propertyPath: player
       value: 

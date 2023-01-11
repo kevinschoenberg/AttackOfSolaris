@@ -3349,7 +3349,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7788432181624168548, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
 --- !u!1 &191327317
@@ -3663,7 +3664,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO (10)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7788432181624168548, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
 --- !u!1 &207538093
@@ -6444,7 +6446,7 @@ SpriteRenderer:
   m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &329028734 stripped
@@ -8311,7 +8313,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO (11)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7788432181624168548, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
 --- !u!1001 &383973654
@@ -8601,7 +8604,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7788432181624168548, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
 --- !u!1 &390666645
@@ -9208,7 +9212,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO (8)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7788432181624168548, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
 --- !u!1 &414883344
@@ -10371,7 +10376,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO (13)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7788432181624168548, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
 --- !u!1001 &479249212
@@ -10466,7 +10472,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO (14)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7788432181624168548, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
 --- !u!1 &490527215
@@ -11476,7 +11483,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7788432181624168548, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
 --- !u!4 &538051151 stripped
@@ -17368,7 +17376,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7788432181624168548, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
 --- !u!1 &819022651
@@ -18393,7 +18402,7 @@ SpriteRenderer:
   m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &850286542
@@ -18874,7 +18883,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7788432181624168548, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
 --- !u!1 &865342171
@@ -23033,7 +23043,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO (15)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7788432181624168548, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
 --- !u!4 &1022760359 stripped
@@ -30547,7 +30558,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7788432181624168548, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
 --- !u!1 &1319208053
@@ -36487,7 +36499,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7788432181624168548, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
 --- !u!1 &1540804591
@@ -38786,7 +38799,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7788432181624168548, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
 --- !u!1 &1624327607
@@ -42051,7 +42065,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO (12)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7788432181624168548, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
 --- !u!1 &1781032116
@@ -51269,7 +51284,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO (9)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7788432181624168548, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 32088d0b055bbd946881e61f235d2284, type: 3}
 --- !u!1 &2134550149

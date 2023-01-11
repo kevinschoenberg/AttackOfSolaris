@@ -143,7 +143,7 @@ public class PlayerMovement : MonoBehaviour
             float dist = Vector3.Distance(Vector3.zero, transform.position);
             float dist_mult = 205.025f/dist;
             Vector3 v = transform.position - planet.transform.position;
-            rb.AddForce(v*JetpackForce*dist_mult);
+            rb.AddForce(v*JetpackForce*dist_mult*(50*time_passed));
             fuel -= time_passed;
             animFire.SetTrigger("JetPackOn");
             fuelBar.SetFuel(fuel);

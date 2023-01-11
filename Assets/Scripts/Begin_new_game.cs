@@ -10,6 +10,6 @@ public class Begin_new_game : MonoBehaviour
     {
         
         PlayerPrefs.SetInt("deathCount", restet);
-    
+        PlayerPrefs.SetInt("HasMarsRover", restet);
     }
 }

@@ -9494,6 +9494,10 @@ PrefabInstance:
       propertyPath: planet
       value: 
       objectReference: {fileID: 1755659119}
+    - target: {fileID: 5100309212267600942, guid: 5b055630364cd654d9da7aa7d55fd877, type: 3}
+      propertyPath: m_Constraints
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5100309212267600947, guid: 5b055630364cd654d9da7aa7d55fd877, type: 3}
       propertyPath: playerHealth
       value: 
@@ -9516,11 +9520,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6967035743339181754, guid: 5b055630364cd654d9da7aa7d55fd877, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 49.11
+      value: 49.105457
       objectReference: {fileID: 0}
     - target: {fileID: 6967035743339181754, guid: 5b055630364cd654d9da7aa7d55fd877, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -93.46
+      value: -93.586754
       objectReference: {fileID: 0}
     - target: {fileID: 6967035743339181754, guid: 5b055630364cd654d9da7aa7d55fd877, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9528,7 +9532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6967035743339181754, guid: 5b055630364cd654d9da7aa7d55fd877, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.98940694
+      value: -0.045237996
       objectReference: {fileID: 0}
     - target: {fileID: 6967035743339181754, guid: 5b055630364cd654d9da7aa7d55fd877, type: 3}
       propertyPath: m_LocalRotation.x
@@ -9540,7 +9544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6967035743339181754, guid: 5b055630364cd654d9da7aa7d55fd877, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.1451686
+      value: 0.99897623
       objectReference: {fileID: 0}
     - target: {fileID: 6967035743339181754, guid: 5b055630364cd654d9da7aa7d55fd877, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

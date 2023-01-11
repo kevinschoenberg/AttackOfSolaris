@@ -48,6 +48,7 @@ public class Command_enemy : MonoBehaviour
     {
         if (moon)
         {
+            max_spawns = 1;
             bosSpawnHealthMult = 0.5f;
         }
         //if it is half health

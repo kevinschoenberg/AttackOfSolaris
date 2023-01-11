@@ -96,6 +96,7 @@ public class Command_enemy : MonoBehaviour
             //Chase enemy 1
             GameObject spawn1 = Instantiate(enemy_to_spawn_patrolChase, point1.position, point1.rotation);
             Instantiate(spawneffect, point2.position, point2.rotation);
+            spawn1.tag = "spawn";
             PlanetGravity pg1 = spawn1.GetComponent<PlanetGravity>();
             pg1.SetPlanet(GetComponent<PlanetGravity>().planet);
             PatrolChase pc1 = spawn1.GetComponent<PatrolChase>();
@@ -104,6 +105,7 @@ public class Command_enemy : MonoBehaviour
             //Chase enemy 2
             GameObject spawn2 = Instantiate(enemy_to_spawn_patrolChase, point2.position, point2.rotation);
             Instantiate(spawneffect, point2.position, point2.rotation);
+            spawn2.tag = "spawn";
             PlanetGravity pg2 = spawn2.GetComponent<PlanetGravity>();
             pg2.SetPlanet(GetComponent<PlanetGravity>().planet);
             PatrolChase pc2 = spawn2.GetComponent<PatrolChase>();
@@ -115,6 +117,7 @@ public class Command_enemy : MonoBehaviour
             //Gun enemy idle
             GameObject spawn = Instantiate(enemy_to_spawn_gun, point1.position, point1.rotation);
             Instantiate(spawneffect, point1.position, point1.rotation);
+            spawn.tag = "spawn";
             PlanetGravity pg = spawn.GetComponent<PlanetGravity>();
             pg.SetPlanet(GetComponent<PlanetGravity>().planet);
             EnemyShooting es = spawn.GetComponent<EnemyShooting>();
@@ -123,6 +126,7 @@ public class Command_enemy : MonoBehaviour
             //Chase enemy
             GameObject spawn2 = Instantiate(enemy_to_spawn_patrolChase, point2.position, point2.rotation);
             Instantiate(spawneffect, point2.position, point2.rotation);
+            spawn2.tag = "spawn";
             PlanetGravity pg2 = spawn2.GetComponent<PlanetGravity>();
             pg2.SetPlanet(GetComponent<PlanetGravity>().planet);
             PatrolChase pc2 = spawn2.GetComponent<PatrolChase>();

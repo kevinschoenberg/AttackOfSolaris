@@ -10,9 +10,11 @@ using UnityEngine.SceneManagement;
 public class SaveLoadSystem : MonoBehaviour
 {
     string scene;
+    GameObject[] spawn;
     void Start()
     {
         scene = SceneManager.GetActiveScene().name;
+        GenerateIdForAllObjects();
     }
 
     public string SavePath => $"{Application.persistentDataPath}/"+ scene +"save.txt";
@@ -32,6 +34,11 @@ public class SaveLoadSystem : MonoBehaviour
     {
         var state = LoadFile();
         LoadState(state);
+        spawn = GameObject.FindGameObjectsWithTag("spawn");
+        foreach (GameObject enemy in spawn)
+        {
+            Destroy(enemy);
+        }
     }
 
     //Function to generate Id's for all saveable objects. (Can be called from Unity)

@@ -500,6 +500,7 @@ GameObject:
   - component: {fileID: 123068803}
   - component: {fileID: 123068802}
   - component: {fileID: 123068807}
+  - component: {fileID: 123068808}
   m_Layer: 0
   m_Name: StageManager
   m_TagString: Untagged
@@ -597,6 +598,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathCounterText: {fileID: 370705361}
   deathCount: 0
+--- !u!114 &123068808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123068801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a90de343e727b4587795d6c185cb9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTimeText: {fileID: 1115014171}
 --- !u!1 &168936712
 GameObject:
   m_ObjectHideFlags: 0

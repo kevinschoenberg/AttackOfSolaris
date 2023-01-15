@@ -15,7 +15,6 @@ public class SaveLoadSystem : MonoBehaviour
     void Start()
     {
         scene = SceneManager.GetActiveScene().name;
-        GenerateIdForAllObjects();
     }
 
     public string SavePath => $"{Application.persistentDataPath}/"+ scene +"save.txt";

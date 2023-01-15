@@ -54,7 +54,6 @@ public class Health : MonoBehaviour, ISaveable
         healthbar.SetMaxHealth(maxHealth);
         killcounterscript = GameObject.Find("StageManager").GetComponent<killcounter>();
         enemy = gameObject;
-        print("Start");
     }
 
     void Update()
@@ -94,7 +93,6 @@ public class Health : MonoBehaviour, ISaveable
         }
         else     
         {
-            print(GameObject.Find("StageManager/SaveLoadSystem").GetComponent<SaveLoadSystem>().justLoad);
             if (gunEnemy)
             {
                 enemyShooting.enabled = true;

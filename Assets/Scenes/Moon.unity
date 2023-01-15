@@ -185,7 +185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6997697852361274241, guid: c062e8e01078f3a429c8070fa7dd6e99, type: 3}
       propertyPath: id
-      value: 83b9d978-a618-4155-a37d-3359eea935ef
+      value: 12dd51ff-22ca-4b77-aec8-df9233d58025
       objectReference: {fileID: 0}
     - target: {fileID: 6997697852361274244, guid: c062e8e01078f3a429c8070fa7dd6e99, type: 3}
       propertyPath: playerHealth
@@ -273,6 +273,10 @@ PrefabInstance:
     - target: {fileID: 645020698919936208, guid: 2214e20d9dcf4de4a8f0d64b058e0736, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 94.139
+      objectReference: {fileID: 0}
+    - target: {fileID: 645020698919936209, guid: 2214e20d9dcf4de4a8f0d64b058e0736, type: 3}
+      propertyPath: id
+      value: aa3ccac3-2919-4145-aed1-fd2f60450397
       objectReference: {fileID: 0}
     - target: {fileID: 645020698919936215, guid: 2214e20d9dcf4de4a8f0d64b058e0736, type: 3}
       propertyPath: planet
@@ -1257,6 +1261,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -308.093
       objectReference: {fileID: 0}
+    - target: {fileID: 6997697852361274241, guid: c062e8e01078f3a429c8070fa7dd6e99, type: 3}
+      propertyPath: id
+      value: cec2fb0e-f1d1-463e-99df-d77553daf145
+      objectReference: {fileID: 0}
     - target: {fileID: 6997697852361274244, guid: c062e8e01078f3a429c8070fa7dd6e99, type: 3}
       propertyPath: playerHealth
       value: 
@@ -1344,6 +1352,10 @@ PrefabInstance:
     - target: {fileID: 6997697852361274240, guid: c062e8e01078f3a429c8070fa7dd6e99, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -642.564
+      objectReference: {fileID: 0}
+    - target: {fileID: 6997697852361274241, guid: c062e8e01078f3a429c8070fa7dd6e99, type: 3}
+      propertyPath: id
+      value: 0a66b79e-7895-4078-91ba-c9a149395884
       objectReference: {fileID: 0}
     - target: {fileID: 6997697852361274244, guid: c062e8e01078f3a429c8070fa7dd6e99, type: 3}
       propertyPath: playerHealth
@@ -3033,6 +3045,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -78.212
       objectReference: {fileID: 0}
+    - target: {fileID: 6997697852361274241, guid: c062e8e01078f3a429c8070fa7dd6e99, type: 3}
+      propertyPath: id
+      value: 9b942a80-eaf5-41ef-b7a3-96ec0e58d147
+      objectReference: {fileID: 0}
     - target: {fileID: 6997697852361274244, guid: c062e8e01078f3a429c8070fa7dd6e99, type: 3}
       propertyPath: playerHealth
       value: 
@@ -3115,6 +3131,10 @@ PrefabInstance:
     - target: {fileID: 6997697852361274240, guid: c062e8e01078f3a429c8070fa7dd6e99, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -244.03299
+      objectReference: {fileID: 0}
+    - target: {fileID: 6997697852361274241, guid: c062e8e01078f3a429c8070fa7dd6e99, type: 3}
+      propertyPath: id
+      value: 6ee9571f-c783-48e0-988c-9c33a39fbbd0
       objectReference: {fileID: 0}
     - target: {fileID: 6997697852361274244, guid: c062e8e01078f3a429c8070fa7dd6e99, type: 3}
       propertyPath: playerHealth
@@ -4533,6 +4553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36abe7b70b602414b953e69dbd7e4ddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  justLoad: 0
 --- !u!4 &1182840711
 Transform:
   m_ObjectHideFlags: 0
@@ -7548,6 +7569,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -453.349
       objectReference: {fileID: 0}
+    - target: {fileID: 6997697852361274241, guid: c062e8e01078f3a429c8070fa7dd6e99, type: 3}
+      propertyPath: id
+      value: a31503ee-0ed4-4db3-be35-00718ad82068
+      objectReference: {fileID: 0}
     - target: {fileID: 6997697852361274244, guid: c062e8e01078f3a429c8070fa7dd6e99, type: 3}
       propertyPath: playerHealth
       value: 
@@ -9169,6 +9194,10 @@ PrefabInstance:
     - target: {fileID: 7562852576691979518, guid: 7d5f67e42a1e9764d856ace93170b932, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 178.494
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562852576691979519, guid: 7d5f67e42a1e9764d856ace93170b932, type: 3}
+      propertyPath: id
+      value: 8a82068e-dc8c-4eff-97ee-86836d19eed6
       objectReference: {fileID: 0}
     - target: {fileID: 7727459164803455601, guid: 7d5f67e42a1e9764d856ace93170b932, type: 3}
       propertyPath: m_Enabled

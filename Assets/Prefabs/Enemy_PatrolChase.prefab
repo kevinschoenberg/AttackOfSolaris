@@ -95,3 +95,4 @@ MonoBehaviour:
   isFacingRight: 1
   dir: {x: 0, y: 0}
   dir2: {x: 0, y: 0}
+  MaxDist: 7

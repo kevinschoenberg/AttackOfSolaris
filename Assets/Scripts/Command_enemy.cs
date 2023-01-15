@@ -63,7 +63,6 @@ public class Command_enemy : MonoBehaviour
                         Spawn_enemy();
                         _lastTime = Time.timeSinceLevelLoad;
                         spawn_count++;
-                        print(spawn_count);
                         if (spawn_count == max_spawns && !moon)
                         {
                             spawn_count = 0;

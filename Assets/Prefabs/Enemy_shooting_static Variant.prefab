@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2189620673051446086, guid: c42cae42cae416945a0538c9d1d8935b, type: 3}
       propertyPath: m_Name
-      value: Enemy_shooting_static
+      value: Enemy_shooting_static Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2189620673051446086, guid: c42cae42cae416945a0538c9d1d8935b, type: 3}
       propertyPath: m_IsActive

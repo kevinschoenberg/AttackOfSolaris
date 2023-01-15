@@ -103,6 +103,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        fuelBar.SetFuel(fuel);
         //Debug.Log(transform.InverseTransformDirection(rb.velocity));
 
         _inputX = Input.GetAxis("Horizontal");

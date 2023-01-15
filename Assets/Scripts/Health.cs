@@ -16,17 +16,37 @@ public class Health : MonoBehaviour, ISaveable
     private int scoreValue = 0;
     public bool Dead;
     CapsuleCollider2D[] collider2d;
+    BoxCollider2D boxcollider2d;
     PlanetGravity planetGravity;
     SpriteRenderer sprite;
     GameObject canvas;
+    GameObject gunRotation;
+    EnemyShooting enemyShooting;
+    bool gunEnemy;
+    bool pg;
+    PatrolChase patrolChase;
+    bool isPatrolChase;
+    bool isPatrolIgnore;
+    PatrolIgnore patrolIgnore;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        planetGravity = GetComponent<PlanetGravity>();
+        gunEnemy = TryGetComponent<EnemyShooting>(out enemyShooting);
+        pg = TryGetComponent<PlanetGravity>(out planetGravity);
         sprite = GetComponent<SpriteRenderer>();
-        collider2d = GetComponents<CapsuleCollider2D>();
+        if (gunEnemy)
+        {
+            boxcollider2d = GetComponent<BoxCollider2D>();
+            gunRotation = transform.Find("Gun_Rotation_Point").gameObject;
+        }
+        else
+        {
+            collider2d = GetComponents<CapsuleCollider2D>();
+        }
+        TryGetComponent<PatrolChase>(out patrolChase);
+        TryGetComponent<PatrolIgnore>(out patrolIgnore);
         canvas = transform.Find("Canvas").gameObject;
         Dead = false;
         //n�r man starter spillet bliver health initialiseret 
@@ -34,30 +54,75 @@ public class Health : MonoBehaviour, ISaveable
         healthbar.SetMaxHealth(maxHealth);
         killcounterscript = GameObject.Find("StageManager").GetComponent<killcounter>();
         enemy = gameObject;
+        print("Start");
     }
 
-    public void Update()
+    void Update()
     {
+        sprite = GetComponent<SpriteRenderer>();
         healthbar.SetHealth(health);
         if(Dead)    
         {
-            planetGravity.enabled = false;
-            sprite.enabled = false;
-            foreach (CapsuleCollider2D coll in collider2d)
+            if (gunEnemy)
             {
-                coll.enabled = false;
+                enemyShooting.enabled = false;
+                gunRotation.SetActive(false);
+                boxcollider2d.enabled = false;
             }
+            else
+            {
+                foreach (CapsuleCollider2D coll in collider2d)
+                {
+                    coll.enabled = false;
+                }
+            }
+            if (isPatrolChase)
+            {
+                patrolChase.enabled = false;
+            }
+            else if (patrolIgnore)
+            {
+                patrolIgnore.enabled = false;
+            }
+            if (pg)
+            {
+                planetGravity.enabled = false;
+            }
+
+            sprite.enabled = false;
             canvas.SetActive(false);
         }
-        else        
+        else     
         {
-            planetGravity.enabled = true;
-            sprite.enabled = true;
-            foreach (CapsuleCollider2D coll in collider2d)
+            print(GameObject.Find("StageManager/SaveLoadSystem").GetComponent<SaveLoadSystem>().justLoad);
+            if (gunEnemy)
             {
-                coll.enabled = true;
+                enemyShooting.enabled = true;
+                gunRotation.SetActive(true);
+                boxcollider2d.enabled = true;
             }
+            else
+            {
+                foreach (CapsuleCollider2D coll in collider2d)
+                {
+                    coll.enabled = true;
+                }
+            }
+            if (isPatrolChase)
+            {
+                patrolChase.enabled = true;
+            }
+            else if (patrolIgnore)
+            {
+                patrolIgnore.enabled = true;
+            }
+            if (pg)
+            {
+                planetGravity.enabled = true;
+            }
+            sprite.enabled = true;
             canvas.SetActive(true);
+            GameObject.Find("StageManager/SaveLoadSystem").GetComponent<SaveLoadSystem>().justLoad = false;
         }
     }
 

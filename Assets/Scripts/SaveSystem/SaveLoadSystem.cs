@@ -11,6 +11,7 @@ public class SaveLoadSystem : MonoBehaviour
 {
     string scene;
     GameObject[] spawn;
+    public bool justLoad = false;
     void Start()
     {
         scene = SceneManager.GetActiveScene().name;
@@ -39,6 +40,7 @@ public class SaveLoadSystem : MonoBehaviour
         {
             Destroy(enemy);
         }
+        justLoad = true;
     }
 
     //Function to generate Id's for all saveable objects. (Can be called from Unity)

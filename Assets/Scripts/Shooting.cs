@@ -29,6 +29,7 @@ public class Shooting : MonoBehaviour
         soundEngine.Play();
 
         pg.SetPlanet(GetComponent<PlanetGravity>().planet);
+        pg.tag = "spawn";
 
         rb.AddForce(firePoint.right * bulletForce, ForceMode2D.Impulse);
     }

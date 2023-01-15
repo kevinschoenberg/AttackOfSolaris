@@ -19,6 +19,7 @@ public class PlayerHealth : MonoBehaviour, ISaveable
     private float regen_timer;
 
     public bool rover_found = false;
+    float fuel;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,11 +37,15 @@ public class PlayerHealth : MonoBehaviour, ISaveable
     {
         healthbar.SetHealth(health);
 
-        if (rover_found && regen_timer + healdelay < Time.time)
+        if (rover_found && regen_timer + healdelay < Time.time && health < maxHealth)
         {
             regen_timer = Time.time;
             health += healammount;
             //hp regen
+            if (health > maxHealth)
+            {
+                health = maxHealth;
+            }
             
         }
     }
@@ -63,6 +68,7 @@ public class PlayerHealth : MonoBehaviour, ISaveable
         {
             health = this.health,
             maxHealth = this.maxHealth,
+            fuel = GetComponent<PlayerMovement>().fuel,
         };
 
     }
@@ -72,11 +78,13 @@ public class PlayerHealth : MonoBehaviour, ISaveable
         var saveData = (SaveData)state;
         health = saveData.health;
         maxHealth = saveData.maxHealth;
+        GetComponent<PlayerMovement>().fuel = saveData.fuel;
     }
 
     [Serializable]
     private struct SaveData
     {
+        public float fuel;
         public int health;
         public int maxHealth;
     }

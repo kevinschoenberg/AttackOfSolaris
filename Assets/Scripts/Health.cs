@@ -15,10 +15,19 @@ public class Health : MonoBehaviour, ISaveable
     killcounter killcounterscript;
     private int scoreValue = 0;
     public bool Dead;
+    CapsuleCollider2D[] collider2d;
+    PlanetGravity planetGravity;
+    SpriteRenderer sprite;
+    GameObject canvas;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        planetGravity = GetComponent<PlanetGravity>();
+        sprite = GetComponent<SpriteRenderer>();
+        collider2d = GetComponents<CapsuleCollider2D>();
+        canvas = transform.Find("Canvas").gameObject;
         Dead = false;
         //n�r man starter spillet bliver health initialiseret 
         health = maxHealth;
@@ -30,8 +39,26 @@ public class Health : MonoBehaviour, ISaveable
     public void Update()
     {
         healthbar.SetHealth(health);
-        if(Dead)    {enemy.SetActive(false);}
-        else        {enemy.SetActive(true);}
+        if(Dead)    
+        {
+            planetGravity.enabled = false;
+            sprite.enabled = false;
+            foreach (CapsuleCollider2D coll in collider2d)
+            {
+                coll.enabled = false;
+            }
+            canvas.SetActive(false);
+        }
+        else        
+        {
+            planetGravity.enabled = true;
+            sprite.enabled = true;
+            foreach (CapsuleCollider2D coll in collider2d)
+            {
+                coll.enabled = true;
+            }
+            canvas.SetActive(true);
+        }
     }
 
     public void TakeDamage(float damageAmount)

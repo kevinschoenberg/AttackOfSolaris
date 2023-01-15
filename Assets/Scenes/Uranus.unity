@@ -15891,7 +15891,7 @@ MonoBehaviour:
   TextWriterInstance: {fileID: 1690288258}
   messageArray:
   - You have found the Jetpack.
-  - Unforunately the jetpack has limited fuel.
+  - Unfortunately the jetpack has limited fuel.
   - To see how much fuel you have left, see the bar below the health bar.
   - You can refuel at fuel tanks.
   - 'Press and hold ''F'' to use the jetpack. '
